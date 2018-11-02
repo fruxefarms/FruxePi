@@ -1,0 +1,32 @@
+/**
+* jQuery asSpinner v0.4.3
+* https://github.com/amazingSurge/jquery-asSpinner
+*
+* Copyright (c) amazingSurge
+* Released under the LGPL-3.0 license
+*/
+.asSpinner {
+  position: relative;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.asSpinner input {
+  width: 100px;
+  height: 20px;
+  background-color: #fff;
+}
+.asSpinner-up, .asSpinner-down {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+.asSpinner-down {
+  left: -20px;
+}
+.asSpinner-up {
+  right: -20px;
+}
