@@ -4,7 +4,7 @@ A browser-based dashboard to monitor and automate indoor agriculture processes u
 
 [fruxe.co/project](http://fruxe.co/project)
 
-[FruxePi]: https://github.com/fruxefarms/FruxePi/blob/master/screenshot-frame.png "FruxePi"
+![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/screenshot-frame.png)
 
 
 ***NOTE:** This version of the FruxePi is still under development and in prototype. Our goal is to make this application painless to deploy and run on your Raspberry Pi, however, until we get all the bugs worked out, this project may require the knowledge of an advances Pi user. Nonetheless, if you are keen on this project and are having issues deploying it please create an issue.*
