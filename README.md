@@ -1,5 +1,5 @@
 # FruxePi OPEN-PROTOTYPE v0.1-BETA
-A browser-based dashboard to monitor and automate indoor agriculture processes using the RaspberryPi.
+A browser-based dashboard to monitor and automate indoor agriculture using the Raspberry Pi.
 
 
 [fruxe.co/project](http://fruxe.co/project)
@@ -7,13 +7,13 @@ A browser-based dashboard to monitor and automate indoor agriculture processes u
 ![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/screenshot-frame.png)
 
 
-***NOTE:** This version of the FruxePi is still under development and in prototype. Our goal is to make this application painless to deploy and run on your Raspberry Pi, however, until we get all the bugs worked out, this project may require the knowledge of an advances Pi user. Nonetheless, if you are keen on this project and are having issues deploying it please create an issue.*
+***NOTE:** This version of the FruxePi is still under development and in prototype. Our goal is to make this application effortless to deploy and run on your Raspberry Pi. However, until we get all the bugs worked out, this project may require the knowledge of an advanced Pi user. Nonetheless, if you are keen on this project and are having issues deploying FruxePi, please create an issue explaining your problem or contact <hello@fruxe.co>.*
 
 ---
 
 ## Getting Started
 
-These instructions will help you get the FruxePi application running on your Raspberry Pi. The full details of how to install this stack along with configuring the supporting webserver are published [here](http://fruxe.co/project).
+These instructions will help you get the FruxePi application running on your Raspberry Pi. Further instructions on how to install, configure and connect the various sensors/relays to your Raspberry Pi have been published [here](http://fruxe.co/project).
 
 ### The General Idea
 
@@ -40,14 +40,14 @@ The basic functionalies of the FruxePi include:
 The FruxePi runs on the RaspberryPi using several sensors and relays. All sensors and relays are not necessary for basic operation, however, the Climate sensor (DHT22- Temperature\Humidity) is considered a compulsory component and key to the operation of the application.
 
 #### Raspberry Pi
-The FruxePi has been tested and runs well on the following models running RASPBIAN STRETCH LITE: 
+The FruxePi has been tested and runs well on the following models running Raspian: 
 - Raspberry Pi 3 Model B+
 - Raspberry Pi Model Zero W
 
 #### Sensors and Relays
 The following sensors and relays connect to the Raspberry Pi GPIO board. Although many of these accessories are optional, to get the full experience of the FruxePi application, the Climate Sensor (DHT22) is compulsory. 
 
-Additional sensors or relays can be activated or deactivated easily using the dashboard.
+Sensors and relays can be activated or deactivated easily and at anytime using the dashboard.n
 
 - **Climate Sensor**
 </br>The DHT22 is a basic digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin, no analog input pins needed.
@@ -202,7 +202,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is released under GPL 3.0 - see the [LICENSE.md](LICENSE.md) file for more details. You are free to use, copy, distribute and transmit this Software for non-commercial purposes.
+This project is released under GPL 3.0 - see the [LICENSE.md](LICENSE.md) file for more details. You are free to use, copy, distribute and transmit this software for non-commercial purposes.
 
 ---
 

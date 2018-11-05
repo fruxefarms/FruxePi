@@ -1,0 +1,9 @@
+# Tmp
+/tmp/*
+
+# Business
+/docs/*
+
+# Misc
+/.vscode/
+/env/frx_workspace.code-workspace
