@@ -188,10 +188,10 @@
 			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py fan -s " . $gpioPIN;
 			
 			// Execute command
-			$command_callback = shell_exec($command_string);
-
+			exec($command_string, $command_callback);
+			
 			// Return True or False based on $command_callback value
-			if ($command_callback == "1") {
+			if ($command_callback[0] == "1") {
 				return 1;
 			} else {
 				return 0;
