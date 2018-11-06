@@ -112,7 +112,7 @@ For many, this is step arguably the trickiest part of setting up the FruxePi. A 
 
 ---
 
-### Installation
+## Installation
 These instructions will assist you to install the application and configure the LAMP stack (Apache, PHP, and MySQL) on your Raspberry Pi:
 
 First, update your package repositories.
@@ -160,8 +160,6 @@ To create a database user, type the following command. Replace `password` with y
 ```
 GRANT ALL PRIVILEGES ON *.* TO 'frxpi'@'localhost' IDENTIFIED BY 'password';
 ```
-Enter `\q` to exit the MySQL prompt.
-
 To create a database, type the following command.
 ```
 CREATE DATABASE frx_db;
@@ -170,6 +168,8 @@ Import the database using the following command.
 ```
 mysql -u frxpi -p frx_db < /var/www/html/db/frx_db.sql
 ```
+Enter `\q` to exit the MySQL prompt.
+
 Lastly, reboot your Raspberry Pi
 ```
 sudo reboot
@@ -206,7 +206,7 @@ database = "frx_db"
 
 ---
 
-### Dashboard Login
+## Dashboard Login
 
 If the installation and configuration process was successful, visit `http://<your-raspi-ip-address>:8080/` in your browser and login using the default credentials:
 
