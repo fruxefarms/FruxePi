@@ -112,55 +112,103 @@ For many, this is step arguably the trickiest part of setting up the FruxePi. A 
 
 ---
 
-### Installing software and dependencies
-The FruxePi applications runs on a LAMP stack (Linux, Apache, MySQL, PHP). 
+### Installation
+These instructions will assist you to install the application and configure the LAMP stack (Apache, PHP, and MySQL) on your Raspberry Pi:
 
-**Quick Install**
-</br>The fastest way to install the FruxePi application is to unzip the folder into your home directory and run the following command from the terminal:
+First, update your package repositories.
+```
+sudo apt-get update
+sudo apt-get upgrade -y
+```
 
-`sudo sh ~/frx-dev/install.sh`
+Install Apache
+```
+sudo apt-get install apache2 -y
+sudo a2enmod rewrite
+sudo service apache2 restart
+```
 
-The bash script will unpack and install the appllication including any dependencies and libraries.  
+Install PHP
+```
+sudo apt-get install php libapache2-mod-php -y
+```
 
-**Manual Install**
-</br>These instructions will assist you to install and configure Apache, PHP, and MySQL on your Raspberry Pi:
+Install MYSQL
+```
+sudo apt-get install mysql-server php-mysql -y
+```
 
-`sudo sh ~/frx-dev/install.sh`
+Install PHPMYADMIN
+```
+sudo apt-get install phpmyadmin -y
+```
+Install additional dependencies and libraries.
+```
+sudo apt-get install -y cron nano unzip
+```
+
+Download and unzip the FruxePi application to your `/var/www/html` directory.
+```
+wget https://github.com/fruxefarms/FruxePi/archive/master.zip
+sudo unzip -d /var/www/html master.zip
+```
+Log in to MySQL as the root user. You will be prompted to enter the MySQL root password.
+```
+mysql -u root -p
+```
+To create a database user, type the following command. Replace `password` with your own.
+```
+GRANT ALL PRIVILEGES ON *.* TO 'frxpi'@'localhost' IDENTIFIED BY 'password';
+```
+Enter `\q` to exit the MySQL prompt.
+
+To create a database, type the following command.
+```
+CREATE DATABASE frx_db;
+```
+Import the database using the following command.
+```
+mysql -u frxpi -p frx_db < /var/www/html/db/frx_db.sql
+```
+Lastly, reboot your Raspberry Pi
+```
+sudo reboot
+```
 
 ---
 
-### Configuring
+### Configuration
 
 Once the application has been installed please check that the following settings have been set appropriately.
 
 #### Configure Database
 
-Ensure that these database credentials match your MySQL user authorization. 
+Ensure that these database credentials match your MYSQL user authorization. 
 
 **Codeigniter Config**
-</br>Open the Codeigniter `database.php` config file in the `/frx-dev/application/config/` folder and make sure that the following fields are set properly.
+</br>Open the Codeigniter `database.php` config file in the `/frx-pi/application/config/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
 
 ```
-'hostname' => 'db:3306',
-'username' => 'dev',
-'password' => 'devpass',
-'database' => 'frx_DEV',
+'hostname' => 'localhost:3306',
+'username' => 'frxpi',
+'password' => 'password',
+'database' => 'frx_db',
 ```
-**FruxePi CLI Config**
-</br>Open the FruxePi CLI Python file `fruxepi.py` in the `/frx-dev/actions/` folder and make sure that the following fields are set properly.
+**FruxePi CLI Python Script**
+</br>Open the FruxePi CLI Python file `fruxepi.py` in the `/frx-pi/actions/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
 
 ```
 host = "localhost"
-user = "dev"
-password = "devpass"
-database = "frx_DEV"
+user = "frxpi"
+password = "password"
+database = "frx_db"
 ```
 
 ---
 
 ### Dashboard Login
 
-If the installation process was successful, visit `http://<your-raspi-ip-address>:8080/` in your browser and login using the default credentials:
+If the installation and configuration process was successful, visit `http://<your-raspi-ip-address>:8080/` in your browser and login using the default credentials:
 
 ```
 Username: hello@fruxe.com 
