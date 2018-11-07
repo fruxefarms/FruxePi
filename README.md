@@ -113,7 +113,7 @@ For many, this is step arguably the trickiest part of setting up the FruxePi. A 
 ---
 
 ## Installation
-These instructions will assist you to install the application and configure the LAMP stack (Apache, PHP, and MySQL) on your Raspberry Pi:
+These instructions will assist you to install the application and configure the LAMP stack (Apache, PHP, and MySQL) and install Python dependencies on your Raspberry Pi:
 
 First, update your package repositories.
 ```
@@ -175,6 +175,38 @@ Lastly, reboot your Raspberry Pi
 sudo reboot
 ```
 
+### Python Dependencies
+
+#### PIP Installer
+Make sure your system is able to compile and download Python extensions with `pip`.
+
+On Raspbian you can ensure your system is running `pip` by using the following commands:
+
+````
+sudo apt-get update
+sudo apt-get install python-pip
+sudo python -m pip install --upgrade pip setuptools wheel
+````
+#### Installing Dependencies
+Installing the following packages and modules from the command line:
+
+
+Install adafruit
+```
+sudo pip install Adafruit_DHT
+```
+
+Install PyMysql
+```
+sudo pip install pymysql
+```
+
+Install Camera library
+```
+sudo pip install pillow
+```
+
+
 ---
 
 ### Configuration
@@ -202,6 +234,18 @@ host = "localhost"
 user = "frxpi"
 password = "password"
 database = "frx_db"
+```
+
+#### Configure Permissions
+
+Please set these permissions and access levels.
+
+```
+# NOT TESTED
+sudo usermod -a -G gpio www-data
+
+sudo visudo
+www-data ALL=(root) NOPASSWD: /var/www/html/actions/fruxepi.py
 ```
 
 ---
