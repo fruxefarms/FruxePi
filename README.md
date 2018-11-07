@@ -144,7 +144,7 @@ sudo apt-get install phpmyadmin -y
 ```
 Install additional dependencies and libraries.
 ```
-sudo apt-get install -y cron nano unzip
+sudo apt-get install cron nano unzip -y
 ```
 
 Download and unzip the FruxePi application to your `/var/www/html` directory.
@@ -286,7 +286,7 @@ This project was built with the assistance of the following libraries and tools:
 
 ---
 
-## Versioning frx-pi-v0.1-BETA
+## Version - `frx-pi-v0.1-BETA`
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/fruxefarms/FruxePi/tags). 
 
@@ -294,7 +294,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is released under GPL 3.0 - see the [LICENSE.md](LICENSE.md) file for more details. You are free to use, copy, distribute and transmit this software for non-commercial purposes.
+This project is released under **GPL 3.0**. 
+>You are free to use, copy, distribute and transmit this software for non-commercial purposes. 
+
+See [LICENSE.md](LICENSE.md) for more details. 
 
 ---
 
