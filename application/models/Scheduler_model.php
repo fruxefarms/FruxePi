@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (frx-dev-v0.1)
+	* FruxePi (html-v0.1)
 	* Scheduler Model
 	*/
 	class Scheduler_model extends CI_Model
@@ -65,15 +65,15 @@
 			// Update CRON File
 			
 			// Clear File
-			file_put_contents('/var/www/frx-dev/assets/tmp/crontab.txt', "");
+			file_put_contents('/var/www/html/assets/tmp/crontab.txt', "");
 			
 			// Update temporary text file contents
 			foreach($output as $row) {
-				file_put_contents('/var/www/frx-dev/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
+				file_put_contents('/var/www/html/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
 			}
 
 			// Save crontab to file
-			echo exec('crontab /var/www/frx-dev/assets/tmp/crontab.txt');
+			echo exec('crontab /var/www/html/assets/tmp/crontab.txt');
 			
 		}
 
@@ -104,15 +104,15 @@
 			// Update CRON File
 			
 			// Clear File
-			file_put_contents('/var/www/frx-dev/assets/tmp/crontab.txt', "");
+			file_put_contents('/var/www/html/assets/tmp/crontab.txt', "");
 			
 			// Update temporary text file contents
 			foreach($output as $row) {
-				file_put_contents('/var/www/frx-dev/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
+				file_put_contents('/var/www/html/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
 			}
 
 			// Save crontab to file
-			echo exec('crontab /var/www/frx-dev/assets/tmp/crontab.txt');
+			echo exec('crontab /var/www/html/assets/tmp/crontab.txt');
 			
 		}
 
@@ -143,15 +143,15 @@
 			// Update CRON File
 			
 			// Clear File
-			file_put_contents('/var/www/frx-dev/assets/tmp/crontab.txt', "");
+			file_put_contents('/var/www/html/assets/tmp/crontab.txt', "");
 			
 			// Update temporary text file contents
 			foreach($output as $row) {
-				file_put_contents('/var/www/frx-dev/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
+				file_put_contents('/var/www/html/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
 			}
 
 			// Save crontab to file
-			echo exec('crontab /var/www/frx-dev/assets/tmp/crontab.txt');
+			echo exec('crontab /var/www/html/assets/tmp/crontab.txt');
 			
 		}
 
@@ -188,15 +188,15 @@
 			// Update CRON File
 			
 			// Clear File
-			file_put_contents('/var/www/frx-dev/assets/tmp/crontab.txt', "");
+			file_put_contents('/var/www/html/assets/tmp/crontab.txt', "");
 			
 			// Update temporary text file contents
 			foreach($output as $row) {
-				file_put_contents('/var/www/frx-dev/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
+				file_put_contents('/var/www/html/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
 			}
 
 			// Save crontab to file
-			echo exec('crontab /var/www/frx-dev/assets/tmp/crontab.txt');
+			echo exec('crontab /var/www/html/assets/tmp/crontab.txt');
 			
 		}
 

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (frx-dev-v0.1)
+	* FruxePi (html-v0.1)
 	* Camera Model
 	*/
 	class Camera_model extends CI_Model
@@ -60,7 +60,7 @@
 		public function takePhoto()
 		{
 			// String to execute photo capture command
-			$photo_command = "sudo /var/www/frx-dev/actions/fruxepi.py camera -capture";
+			$photo_command = "sudo /var/www/html/actions/fruxepi.py camera -capture";
 			
 			// Run capture photo command
 			$filename = shell_exec($photo_command);
@@ -98,7 +98,7 @@
 		{
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py camera -d ";
+			$command_string = "sudo /var/www/html/actions/fruxepi.py camera -d ";
 			
 			// Execute command
 			$command_callback = shell_exec($command_string);

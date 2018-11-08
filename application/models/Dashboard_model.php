@@ -271,10 +271,18 @@
 			}
 		}
 
-		// Calculate Ratio
-		$cropConditions = round(($positive_records / $total_records) * 100);
+		// Calculate Ratio check for zero division
+		if ($positive_records != 0 && $total_records != 0) {
+			
+			$cropConditions = round(($positive_records / $total_records) * 100);
 
-		return $cropConditions;
+			return $cropConditions;
+		} else {
+			return $cropConditions = 0;
+		}
+
+
+		
 		}
 	
 	}

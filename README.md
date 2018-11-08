@@ -237,16 +237,68 @@ password = "password"
 database = "frx_db"
 ```
 
+#### Virtual Hosts
+Ensure that your `.htaccess` file is enabled by setting `AllowOverride` to `All` in the virtual hosts file
+```
+sudo nano /etc/apache2/apache2.conf
+```
+Scroll to the bottom of the file and edit the `<Directory /var/www/>` edit `AllowOverride`:
+
+```
+<Directory /var/www/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+</Directory>
+```
+
 #### Configure Permissions
 
 Please set these permissions and access levels.
 
+Grant `www-data` GPIO access permissions.
 ```
-# NOT TESTED
 sudo usermod -a -G gpio www-data
+```
 
+`sudo` access is necessary to access certain functions of the GPIO. Grant super user access to the `www-data` user to call the FruxePi CLI Python script. 
+
+```
 sudo visudo
+```
+
+Add the following code to the bottom of the file. 
+
+```
+# FruxePi Actions
 www-data ALL=(root) NOPASSWD: /var/www/html/actions/fruxepi.py
+```
+
+#### CRON
+
+Cron is a tool for configuring scheduled tasks on Unix systems. It is used to schedule commands or scripts to run periodically and at fixed intervals. 
+
+Edit the CRON job schedule for the `www-data` user.
+
+```
+sudo crontab -u www-data -e
+```
+
+The first time you run `crontab` you'll be prompted to select an editor; if you are not sure which one to use, choose `nano` by pressing Enter.
+
+
+Copy the code below into the `www-data` crontab file. Save and exit.
+
+```
+# FruxePi
+* * * * * python /var/www/html/actions/fruxepi.py update -growdata
+0 * * * * python /var/www/html/actions/fruxepi-chart.py
+0 1 * * * python /var/www/html/actions/fruxepi.py maint -cleanup
+#* * * * * python /var/www/html/actions/fruxepi.py camera -crop
+#0 1 * * * python /var/www/html/actions/fruxepi.py lights -ON 15
+#0 1 * * * python /var/www/html/actions/fruxepi.py lights -OFF 15
+#11 11 * * * python /var/www/html/actions/fruxepi.py pump -RUN 15 5
 ```
 
 ---

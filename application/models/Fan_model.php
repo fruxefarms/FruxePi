@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (frx-dev-v0.1)
+	* FruxePi (html-v0.1)
 	* Fan Model
 	*/
 	class Fan_model extends CI_Model
@@ -28,7 +28,7 @@
 			$gpioPIN = $this->Fan_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py fan -ON " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -ON " . $gpioPIN;
 
 			// Execute command
 			exec($command_string);
@@ -46,7 +46,7 @@
 			$gpioPIN = $this->Fan_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py fan -OFF " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -OFF " . $gpioPIN;
 
 			// Execute command
 			exec($command_string);
@@ -185,7 +185,7 @@
 			$gpioPIN = $this->Fan_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py fan -s " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -s " . $gpioPIN;
 			
 			// Execute command
 			exec($command_string, $command_callback);
@@ -210,7 +210,7 @@
 			$gpioPIN = $this->Fan_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py fan -d " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -d " . $gpioPIN;
 			
 			// Execute command
 			$command_callback = shell_exec($command_string);

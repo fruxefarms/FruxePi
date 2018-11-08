@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (frx-dev-v0.1)
+	* FruxePi (html-v0.1)
 	* Moisture Model
 	*/
 	class Moisture_model extends CI_Model
@@ -151,7 +151,7 @@
 			$gpioPIN = $this->Pump_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py moisture -d " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py moisture -d " . $gpioPIN;
 			
 			// Execute command
 			$command_callback = shell_exec($command_string);

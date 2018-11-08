@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (frx-dev-v0.1)
+	* FruxePi (html-v0.1)
 	* Pump Model
 	*/
 	class Pump_model extends CI_Model
@@ -28,7 +28,7 @@
 			$gpioPIN = $this->Pump_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py pump -ON " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py pump -ON " . $gpioPIN;
 
 			// Execute command
 			exec($command_string);
@@ -46,7 +46,7 @@
 			$gpioPIN = $this->Pump_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py pump -OFF " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py pump -OFF " . $gpioPIN;
 
 			// Execute command
 			exec($command_string);
@@ -189,7 +189,7 @@
 			$gpioPIN = $this->Pump_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py pump -s " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py pump -s " . $gpioPIN;
 			
 			// Execute command
 			exec($command_string, $command_callback);
@@ -214,7 +214,7 @@
 			$gpioPIN = $this->Pump_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py pump -d " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py pump -d " . $gpioPIN;
 			
 			// Execute command
 			$command_callback = shell_exec($command_string);

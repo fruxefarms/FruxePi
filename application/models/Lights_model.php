@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (frx-dev-v0.1)
+	* FruxePi (html-v0.1)
 	* Lights Model
 	*/
 	class Lights_model extends CI_Model
@@ -28,7 +28,7 @@
 			$gpioPIN = $this->Lights_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py lights -ON " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -ON " . $gpioPIN;
 
 			// Execute command
 			exec($command_string);
@@ -46,7 +46,7 @@
 			$gpioPIN = $this->Lights_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py lights -OFF " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -OFF " . $gpioPIN;
 
 			// Execute command
 			exec($command_string);
@@ -152,7 +152,7 @@
 			$gpioPIN = $this->Lights_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py lights -s " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -s " . $gpioPIN;
 			
 			// Execute command
 			exec($command_string, $command_callback);
@@ -249,7 +249,7 @@
 			$gpioPIN = $this->Lights_model->getGPIO();
 
 			// Command string
-			$command_string = "sudo /var/www/frx-dev/actions/fruxepi.py lights -d " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -d " . $gpioPIN;
 			
 			// Execute command
 			$command_callback = shell_exec($command_string);
