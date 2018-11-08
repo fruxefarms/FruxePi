@@ -4,7 +4,7 @@ A browser-based dashboard to monitor and automate indoor agriculture using the R
 
 [fruxe.co/project](http://fruxe.co/project)
 
-![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/screenshot-frame.png)
+![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/docs/screenshot-frame.png)
 
 
 ***NOTE:** This version of the FruxePi is still under development and in prototype. Our goal is to make this application effortless to deploy and run on your Raspberry Pi. However, until we get all the bugs worked out, this project may require the knowledge of an advanced Pi user. Nonetheless, if you are keen on this project and are having issues deploying FruxePi, please create an issue explaining your problem or contact <hello@fruxe.co>.*
@@ -115,64 +115,74 @@ For many, this is step arguably the trickiest part of setting up the FruxePi. A 
 ## Installation
 These instructions will assist you to install the application and configure the LAMP stack (Apache, PHP, and MySQL) and install Python dependencies on your Raspberry Pi:
 
-First, update your package repositories.
+#### Update package repositories
 ```
 sudo apt-get update
 sudo apt-get upgrade -y
 ```
 
-Install Apache
+#### Install Apache HTTP Server
+Install Apache webserver and enable the `mod_rewrite` module.
+
 ```
 sudo apt-get install apache2 -y
 sudo a2enmod rewrite
 sudo service apache2 restart
 ```
 
-Install PHP
+#### Install PHP
+Install the PHP package with the following command:
 ```
 sudo apt-get install php libapache2-mod-php -y
 ```
 
-Install MYSQL
+#### Install MySQL and populate database
+Install the MySQL Server and supporting PHP MySQL packages.
 ```
 sudo apt-get install mysql-server php-mysql -y
 ```
+Log in to MySQL as the root user. You will be prompted to enter the MySQL root password.
+```
+sudo mysql -u root -p
+```
+To create the `frxpi` database user, enter the following command. Replace `password` with your own.
+```
+GRANT ALL PRIVILEGES ON *.* TO 'frxpi'@'localhost' IDENTIFIED BY 'password';
+```
+Create `frx_db` database.
+```
+CREATE DATABASE frx_db;
+```
+Import the database structure using the following command.
+```
+sudo mysql -u frxpi -p frx_db < /var/www/html/db/frx_db.sql
+```
+Enter `\q` to exit the MySQL prompt.
 
-Install PHPMYADMIN
+#### Install phpMyAdmin
+Install the phpMyAdmin package using:
 ```
 sudo apt-get install phpmyadmin -y
 ```
-Install additional dependencies and libraries.
+
+#### Additional dependencies
+Install additional dependencies and libraries:
+- cron
+- nano
+- unzip
+
 ```
 sudo apt-get install cron nano unzip -y
 ```
 
+#### Download and install FruxePi application
 Download and unzip the FruxePi application to your `/var/www/html` directory.
 ```
+cd ~
 wget https://github.com/fruxefarms/FruxePi/archive/master.zip
-sudo unzip -d /var/www/html master.zip
-```
-Log in to MySQL as the root user. You will be prompted to enter the MySQL root password.
-```
-mysql -u root -p
-```
-To create a database user, type the following command. Replace `password` with your own.
-```
-GRANT ALL PRIVILEGES ON *.* TO 'frxpi'@'localhost' IDENTIFIED BY 'password';
-```
-To create a database, type the following command.
-```
-CREATE DATABASE frx_db;
-```
-Import the database using the following command.
-```
-mysql -u frxpi -p frx_db < /var/www/html/db/frx_db.sql
-```
-Enter `\q` to exit the MySQL prompt.
-
-Lastly, reboot your Raspberry Pi
-```
-sudo reboot
+sudo unzip master.zip
+sudo mv  -v ~/FruxePi-master/* /var/www/html/
+sudo rm -rf FruxePi-master master.zip
 ```
 
 ### Python Dependencies
@@ -183,29 +193,27 @@ Make sure your system is able to compile and download Python extensions with `pi
 On Raspbian you can ensure your system is running `pip` by using the following commands:
 
 ````
-sudo apt-get update
 sudo apt-get install python-pip
 sudo python -m pip install --upgrade pip setuptools wheel
 ````
 #### Installing Dependencies
-Installing the following packages and modules from the command line:
+Install the following packages and modules from the command line:
 
+- Adafruit
+- PyMySQL
+- Pillow camera library
 
-Install adafruit
 ```
-sudo pip install Adafruit_DHT
-```
-
-Install PyMysql
-```
-sudo pip install pymysql
+sudo pip install Adafruit_DHT pymysql pillow
 ```
 
-Install Camera library
-```
-sudo pip install pillow
-```
+#### Restart Raspberry Pi
 
+Lastly, reboot your Raspberry Pi and check your configuration settings in the next step upon restart.
+
+```
+sudo reboot
+```
 
 ---
 
@@ -286,7 +294,7 @@ This project was built with the assistance of the following libraries and tools:
 
 ---
 
-## Version - `frx-pi-v0.1-BETA`
+## Version **frx-pi-v0.1-BETA**
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/fruxefarms/FruxePi/tags). 
 
