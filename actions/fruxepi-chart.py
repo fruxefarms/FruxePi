@@ -14,9 +14,9 @@ def fetchData(sql):
 
     # Connect to the database
     connection = pymysql.connect(host='localhost',
-                                 user='fruxe',
-                                 password='Budap3st1!',
-                                 db='frx_DEV',
+                                 user='frxpi',
+                                 password='password',
+                                 db='frx_db',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -34,9 +34,9 @@ def updateHistory(data):
 
     # Connect to the database
     connection = pymysql.connect(host='localhost',
-                                 user='fruxe',
-                                 password='Budap3st1!',
-                                 db='frx_DEV',
+                                 user='frxpi',
+                                 password='password',
+                                 db='frx_db',
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor)
     try:

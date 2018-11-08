@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'db:3306',
-	'username' => 'dev',
-	'password' => 'devpass',
-	'database' => 'frx_DEV',
+	'hostname' => 'localhost:3306',
+	'username' => 'frxpi',
+	'password' => 'password',
+	'database' => 'frx_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

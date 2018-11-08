@@ -22,9 +22,9 @@ action_interval = None
 
 # Database Credentials
 host = "localhost"
-user="fruxe"
-password="Budap3st1!"
-database="frx_DEV"
+user="frxpi"
+password="password"
+database="frx_db"
 
 
 # Script Argument Checker

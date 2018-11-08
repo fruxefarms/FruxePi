@@ -179,7 +179,7 @@ cd ~
 wget https://github.com/fruxefarms/FruxePi/archive/master.zip
 sudo unzip master.zip
 sudo mv  -v ~/FruxePi-master/* /var/www/html/
-sudo rm -rf FruxePi-master master.zip
+sudo rm -rf FruxePi-master master.zip /var/www/html/index.html
 ```
 
 ### Python Dependencies
@@ -200,7 +200,7 @@ Install the following packages and modules from the command line:
 sudo pip install Adafruit_DHT pymysql pillow
 ```
 
-#### Restart Raspberry Pi
+### Restart Raspberry Pi
 
 Lastly, reboot your Raspberry Pi and check your configuration settings in the next step upon restart.
 
@@ -277,10 +277,10 @@ This project was built with the assistance of the following libraries and tools:
 ### Back-End
 
 * [Codeigniter](https://codeigniter.com/) - PHP web framework.
-* [Docker](https://www.docker.com/) - Containerized LAMP stack development environment.
 * [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
 * [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
 * [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
+* [Docker](https://www.docker.com/) - Containerized LAMP stack development environment.
 
 
 
