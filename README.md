@@ -167,9 +167,6 @@ sudo apt-get install phpmyadmin -y
 
 #### Additional dependencies
 Install additional dependencies and libraries:
-- cron
-- nano
-- unzip
 
 ```
 sudo apt-get install cron nano unzip -y
@@ -187,7 +184,7 @@ sudo rm -rf FruxePi-master master.zip
 
 ### Python Dependencies
 
-#### PIP Installer
+#### pip Installer
 Make sure your system is able to compile and download Python extensions with `pip`.
 
 On Raspbian you can ensure your system is running `pip` by using the following commands:
@@ -198,10 +195,6 @@ sudo python -m pip install --upgrade pip setuptools wheel
 ````
 #### Installing Dependencies
 Install the following packages and modules from the command line:
-
-- Adafruit
-- PyMySQL
-- Pillow camera library
 
 ```
 sudo pip install Adafruit_DHT pymysql pillow
@@ -285,6 +278,11 @@ This project was built with the assistance of the following libraries and tools:
 
 * [Codeigniter](https://codeigniter.com/) - PHP web framework.
 * [Docker](https://www.docker.com/) - Containerized LAMP stack development environment.
+* [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
+* [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
+* [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
+
+
 
 ### Front-End
 * [Bootstrap](https://getbootstrap.com/) - The world's most popular HTML, CSS, and JS front-end component library.
