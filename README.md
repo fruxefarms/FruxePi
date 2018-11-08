@@ -163,6 +163,7 @@ Enter `\q` to exit the MySQL prompt.
 
 #### Install phpMyAdmin
 Install the phpMyAdmin package using:
+
 ```
 sudo apt-get install phpmyadmin -y
 ```
@@ -176,6 +177,7 @@ sudo apt-get install cron nano unzip -y
 
 #### Download and install FruxePi application
 Download and unzip the FruxePi application to your `/var/www/html` directory.
+
 ```
 cd ~
 wget https://github.com/fruxefarms/FruxePi/archive/master.zip
@@ -202,8 +204,6 @@ Install the following packages and modules from the command line:
 ```
 sudo pip install Adafruit_DHT pymysql pillow
 ```
-
----
 
 ### Configuration
 
@@ -282,7 +282,6 @@ sudo crontab -u www-data -e
 
 The first time you run `crontab` you'll be prompted to select an editor; if you are not sure which one to use, choose `nano` by pressing `Enter`.
 
-
 Copy the code below into the `www-data` crontab file. Save and exit.
 
 ```
@@ -295,8 +294,6 @@ Copy the code below into the `www-data` crontab file. Save and exit.
 #0 1 * * * python /var/www/html/actions/fruxepi.py lights -OFF 15
 #11 11 * * * python /var/www/html/actions/fruxepi.py pump -RUN 15 5
 ```
-
----
 
 ### Restart Raspberry Pi
 
@@ -332,15 +329,12 @@ Enabling and disabling sensors is easy from the dashboard using the slide toggle
 This project was built with the assistance of the following libraries and tools:
 
 ### Back-End
-
 * [Codeigniter](https://codeigniter.com/) - PHP web framework.
 * [Ion Auth](http://benedmunds.com/ion_auth/) - Ion Auth is a simple and lightweight authentication library for the CodeIgniter framework.
 * [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
 * [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
 * [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
 * [Docker](https://www.docker.com/) - Containerized LAMP stack development environment.
-
-
 
 ### Front-End
 * [Bootstrap](https://getbootstrap.com/) - The world's most popular HTML, CSS, and JS front-end component library.
