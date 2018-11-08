@@ -200,14 +200,6 @@ Install the following packages and modules from the command line:
 sudo pip install Adafruit_DHT pymysql pillow
 ```
 
-### Restart Raspberry Pi
-
-Lastly, reboot your Raspberry Pi and check your configuration settings in the next step upon restart.
-
-```
-sudo reboot
-```
-
 ---
 
 ### Configuration
@@ -246,10 +238,10 @@ Scroll to the bottom of the file and edit the `<Directory /var/www/>` edit `Allo
 
 ```
 <Directory /var/www/>
-                Options Indexes FollowSymLinks MultiViews
-                AllowOverride All
-                Order allow,deny
-                allow from all
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
 </Directory>
 ```
 
@@ -262,7 +254,7 @@ Grant `www-data` GPIO access permissions.
 sudo usermod -a -G gpio www-data
 ```
 
-`sudo` access is necessary to access certain functions of the GPIO. Grant super user access to the `www-data` user to call the FruxePi CLI Python script. 
+Super User access is necessary to access certain functions of the GPIO. Grant `sudo` access to the `www-data` user to call the FruxePi CLI Python script. 
 
 ```
 sudo visudo
@@ -275,7 +267,7 @@ Add the following code to the bottom of the file.
 www-data ALL=(root) NOPASSWD: /var/www/html/actions/fruxepi.py
 ```
 
-#### CRON
+#### Configure CRON
 
 Cron is a tool for configuring scheduled tasks on Unix systems. It is used to schedule commands or scripts to run periodically and at fixed intervals. 
 
@@ -285,7 +277,7 @@ Edit the CRON job schedule for the `www-data` user.
 sudo crontab -u www-data -e
 ```
 
-The first time you run `crontab` you'll be prompted to select an editor; if you are not sure which one to use, choose `nano` by pressing Enter.
+The first time you run `crontab` you'll be prompted to select an editor; if you are not sure which one to use, choose `nano` by pressing `Enter`.
 
 
 Copy the code below into the `www-data` crontab file. Save and exit.
@@ -299,6 +291,16 @@ Copy the code below into the `www-data` crontab file. Save and exit.
 #0 1 * * * python /var/www/html/actions/fruxepi.py lights -ON 15
 #0 1 * * * python /var/www/html/actions/fruxepi.py lights -OFF 15
 #11 11 * * * python /var/www/html/actions/fruxepi.py pump -RUN 15 5
+```
+
+---
+
+### Restart Raspberry Pi
+
+Lastly, reboot your Raspberry Pi and proceed to the Dashboard login upon restart.
+
+```
+sudo reboot
 ```
 
 ---
@@ -329,6 +331,7 @@ This project was built with the assistance of the following libraries and tools:
 ### Back-End
 
 * [Codeigniter](https://codeigniter.com/) - PHP web framework.
+* [Ion Auth](http://benedmunds.com/ion_auth/) - Ion Auth is a simple and lightweight authentication library for the CodeIgniter framework.
 * [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
 * [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
 * [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
