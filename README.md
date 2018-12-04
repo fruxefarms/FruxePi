@@ -1,7 +1,6 @@
 # FruxePi OPEN-PROTOTYPE v0.1-BETA
 A browser-based dashboard to monitor and automate indoor agriculture using the Raspberry Pi.
 
-
 ![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/screenshot-frame.png)
 
 
@@ -16,6 +15,12 @@ These instructions will help you get the FruxePi application running on your Ras
 ### The General Idea
 
 In a nutshell, the FruxePi is a web application running on a LAMP stack (Linux, Apache, MySQL, PHP) which can be accessed from the browser on your local network. The application collects grow data from a variety of sensors and controls various operations such as lighting, ventilation and watering, using relay modules.
+
+### Demo
+**URL:**  https://demo.fruxe.co/
+</br>**User:**  demo@fruxe.co
+</br>**Pass:**  password
+
 
 ### What can it do?
 
