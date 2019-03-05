@@ -223,7 +223,7 @@ Ensure that these database credentials match your MYSQL user authorization.
 
 ```
 cd /var/www/html/application/config
-nano database.php
+sudo nano database.php
 ```
 
 
