@@ -195,7 +195,7 @@
 			exec($command_string, $command_callback);
 			
 			// Return True or False based on $command_callback value
-			if ($command_callback[0] == "1") {
+			if ($command_callback == "1") {
 				return 1;
 			} else {
 				return 0;
