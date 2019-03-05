@@ -322,7 +322,7 @@ sudo reboot
 If the installation and configuration process was successful, visit `http://<your-raspi-ip-address>:80/` in your browser and login using the default credentials:
 
 ```
-Username: hello@fruxe.com 
+Username: hello@fruxe.co 
 Password: password
 ```
 You may change the password upon login in User settings. Additional users can also be added.
