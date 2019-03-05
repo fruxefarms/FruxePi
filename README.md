@@ -219,7 +219,7 @@ Once the application has been installed please check that the following settings
 Ensure that these database credentials match your MYSQL user authorization. 
 
 **Codeigniter Config**
-</br>Open the Codeigniter `database.php` config file in the `/frx-pi/application/config/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
+</br>Open the Codeigniter `database.php` config file in the `/html/application/config/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
 
 ```
 'hostname' => 'localhost:3306',
@@ -228,7 +228,7 @@ Ensure that these database credentials match your MYSQL user authorization.
 'database' => 'frx_db',
 ```
 **FruxePi CLI Python Script**
-</br>Open the FruxePi CLI Python file `fruxepi.py` in the `/frx-pi/actions/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
+</br>Open the FruxePi CLI Python file `fruxepi.py` in the `/html/actions/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
 
 ```
 host = "localhost"
@@ -248,8 +248,7 @@ Scroll to the bottom of the file and edit the `<Directory /var/www/>` edit `Allo
 <Directory /var/www/>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride All
-    Order allow,deny
-    allow from all
+    Require all granted
 </Directory>
 ```
 
