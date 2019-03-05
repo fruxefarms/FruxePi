@@ -143,6 +143,17 @@ Install the PHP package with the following command:
 sudo apt-get install php libapache2-mod-php -y
 ```
 
+#### Download and install FruxePi application
+Download and unzip the FruxePi application to your `/var/www/html` directory.
+
+```
+cd ~
+wget https://github.com/fruxefarms/FruxePi/archive/master.zip
+sudo unzip master.zip
+sudo mv  -v ~/FruxePi-master/* /var/www/html/
+sudo rm -rf FruxePi-master master.zip /var/www/html/index.html
+```
+
 #### Install MySQL and populate database
 Install the MySQL Server and supporting PHP MySQL packages.
 ```
@@ -178,17 +189,6 @@ Install additional dependencies and libraries:
 
 ```
 sudo apt-get install cron nano unzip -y
-```
-
-#### Download and install FruxePi application
-Download and unzip the FruxePi application to your `/var/www/html` directory.
-
-```
-cd ~
-wget https://github.com/fruxefarms/FruxePi/archive/master.zip
-sudo unzip master.zip
-sudo mv  -v ~/FruxePi-master/* /var/www/html/
-sudo rm -rf FruxePi-master master.zip /var/www/html/index.html
 ```
 
 ### Python Dependencies
