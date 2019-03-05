@@ -171,11 +171,12 @@ Create `frx_db` database.
 ```
 CREATE DATABASE frx_db;
 ```
+Enter `\q` to exit the MySQL prompt.
+
 Import the database structure using the following command.
 ```
 sudo mysql -u frxpi -p frx_db < /var/www/html/db/frx_db.sql
 ```
-Enter `\q` to exit the MySQL prompt.
 
 #### Install phpMyAdmin
 Install the phpMyAdmin package using:
