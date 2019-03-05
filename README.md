@@ -219,7 +219,15 @@ Once the application has been installed please check that the following settings
 Ensure that these database credentials match your MYSQL user authorization. 
 
 **Codeigniter Config**
-</br>Open the Codeigniter `database.php` config file in the `/html/application/config/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
+</br>Open the Codeigniter `database.php` config file in the `/html/application/config/` folder:
+
+```
+cd /var/www/html/application/config
+nano database.php
+```
+
+
+Make sure that the following fields are set properly with your MYSQL database credentials.
 
 ```
 'hostname' => 'localhost:3306',
