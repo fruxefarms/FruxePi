@@ -311,7 +311,7 @@ sudo reboot
 
 ## Dashboard Login
 
-If the installation and configuration process was successful, visit `http://<your-raspi-ip-address>:8080/` in your browser and login using the default credentials:
+If the installation and configuration process was successful, visit `http://<your-raspi-ip-address>:80/` in your browser and login using the default credentials:
 
 ```
 Username: hello@fruxe.com 
