@@ -295,7 +295,7 @@ sudo crontab -u www-data -e
 
 The first time you run `crontab` you'll be prompted to select an editor; if you are not sure which one to use, choose `nano` by pressing `Enter`.
 
-Copy the code below into the `www-data` crontab file. Save and exit.
+Copy the code below into the `www-data` crontab file. Remember to un-comment the lines for the sensors your wish to connect (camera, lights, fan, pump). Save and exit.
 
 ```
 # FruxePi
@@ -305,8 +305,10 @@ Copy the code below into the `www-data` crontab file. Save and exit.
 #* * * * * python /var/www/html/actions/fruxepi.py camera -crop
 #0 1 * * * python /var/www/html/actions/fruxepi.py lights -ON 15
 #0 1 * * * python /var/www/html/actions/fruxepi.py lights -OFF 15
+#0 * * * * python /var/www/html/actions/fruxepi.py fan -RUN 17 10
 #11 11 * * * python /var/www/html/actions/fruxepi.py pump -RUN 15 5
 ```
+
 
 ### Restart Raspberry Pi
 
