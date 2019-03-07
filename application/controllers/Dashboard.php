@@ -40,14 +40,12 @@
 	    	{
 				// Page Meta
 				$data['title'] = 'Dashboard';
-				$cropID = "FRX-CR0001";
 
 				// Data Fetch
 				$data['user_info'] = $this->Dashboard_model->get_user_info();
 				$data['grow_data'] = $this->Dashboard_model->get_latest_grow_data();
-				$data['crop_info'] = $this->Crop_model->cropInfo($cropID);
 				$data['crops'] = $this->Crop_model->getAllCropsInfo();
-				$data['crop_activity'] = $this->Crop_model->get_cropActivity($cropID);
+				$data['crop_activity'] = $this->Crop_model->get_cropActivity();
 
 				$data['temperature_chart'] = $this->Dashboard_model->get_temperature_chart_data();
 				$data['humidity_chart'] = $this->Dashboard_model->get_humidity_chart_data();

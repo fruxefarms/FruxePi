@@ -172,7 +172,7 @@
 		* Return all crop journal entries for specific crop.
 		* @return True
 		*/
-		public function get_cropActivity($cropID)
+		public function get_cropActivity()
     	{
 			$this->db->select("*");
 			$this->db->from("activity");
