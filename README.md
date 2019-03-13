@@ -44,7 +44,7 @@ The FruxePi runs on the RaspberryPi using several sensors and relays. All sensor
 
 #### Raspberry Pi
 The FruxePi has been tested and runs well on the following models running Raspian: 
-- Raspberry Pi 3 Model B+
+- Raspberry Pi 3 Model B
 - Raspberry Pi Model Zero W
 
 #### Sensors and Relays
