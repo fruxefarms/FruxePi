@@ -29,13 +29,13 @@ pip install docker-compose
 } &> /dev/null
 
 # Create FruxePi Docker containers
-echo 'Creating Docker containers...'
+echo 'Building Docker containers... This may take several minutes.'
 {
 cd docker/
 sudo docker-compose up -d
 } &> /dev/null
 
-echo 'Configuring containers...'
+echo 'Configuring Docker containers...'
 {
 sudo docker exec -it frxpi-APACHE /bin/bash -c 'chmod +x /var/www/html/actions/fruxepi.py;'
 sudo docker exec -it frxpi-APACHE /bin/bash -c 'chmod 777 /var/www/html/assets/tmp/crontab.txt;'
