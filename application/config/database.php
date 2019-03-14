@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost:3306',
+	'hostname' => 'db',
 	'username' => 'frxpi',
 	'password' => 'password',
 	'database' => 'frx_db',

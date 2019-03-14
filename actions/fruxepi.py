@@ -21,7 +21,7 @@ action_interval = None
 
 
 # Database Credentials
-host = "localhost"
+host = "db"
 user="frxpi"
 password="password"
 database="frx_db"
@@ -433,8 +433,8 @@ def growDataUpdate(data):
     except:
         print("Database Error!")
         db.rollback()
+        db.close()
 
-	db.close()
 
 def deleteOldGrowData():
 
@@ -456,50 +456,54 @@ def deleteOldGrowData():
         connection.close()
 
 
+def takePhoto(imgPath, imgName):
+    # Filepath
+    filePath = str(imgPath) + str(imgName)
+
+    # Take Photo
+    os.system("raspistill -w 800 -h 600 -o " + filePath)
+
+    return imgName
+
+
 def capturePhoto(usage):
-    
-    imgName = ""
-    imgPath = ""
 
     try:
 
         if usage == "crop":
             # Image Details
             imgName = "crop_bg.jpg"
-            imgPath = "/var/www/frx-dev/assets/img/"
+            imgPath = "/var/www/html/assets/img/"
+            
+            # Take photo
+            print(takePhoto(imgPath, imgName))
+
         elif usage == "candid":
             # Image Details
-            timestamp = "{:%Y-%m-%d-%H-%M}".format(datetime.now())
-            imgName = "FruxePi-capture-" + str(timestamp) + ".jpg"
-            imgPath = "/var/www/frx-dev/assets/tmp/"
+            timestamp = "{:%Y%m%d%H%M}".format(datetime.now())
+            imgName = "FruxePi_capture_" + str(timestamp) + ".jpg"
+            imgPath = "/var/www/html/assets/tmp/"
+            
+            # Take photo
+            print(takePhoto(imgPath, imgName))
+
         else:
             # Image Details
             imgName = "crop_bg.jpg"
-            imgPath = "/var/www/frx-dev/assets/img/"
+            imgPath = "/var/www/html/assets/img/"
 
-        # Take Photo
-        os.system("raspistill -w 800 -h 600 -o " + imgPath + imgName)
+            # Take photo
+            print(takePhoto(imgPath, imgName))
 
-        # Strip EXIF
-        image_file = open(imgPath + imgName)
-        image = Image.open(image_file)
-
-        # next 3 lines strip exif
-        data = list(image.getdata())
-        image_without_exif = Image.new(image.mode, image.size)
-        image_without_exif.putdata(data)
-
-        # Overwriting Image...
-        image_without_exif.save(imgPath + imgName)
-
-        print(imgName)
     except:
         print("Camera Error!")
 
+
 def cameraDiagnostics():
     status = os.popen('vcgencmd get_camera').read()
-
-    print status
+    print(status)
+    
+    # print("Error! vcgencmd will not run inside the container. Run vcgencmd get_camera on your Raspberry Pi, not inside this Docker container.")
 
 # RUN
 CLI_menu()

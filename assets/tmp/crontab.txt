@@ -1,0 +1,9 @@
+# FruxePi
+* * * * * python /var/www/html/actions/fruxepi.py update -growdata
+0 * * * * python /var/www/html/actions/fruxepi-chart.py
+0 1 * * * python /var/www/html/actions/fruxepi.py maint -cleanup
+#* * * * * python /var/www/html/actions/fruxepi.py camera -crop
+#0 1 * * * python /var/www/html/actions/fruxepi.py lights -ON 15
+#0 1 * * * python /var/www/html/actions/fruxepi.py lights -OFF 15
+#0 * * * * python /var/www/html/actions/fruxepi.py fan -RUN 17 10
+#11 11 * * * python /var/www/html/actions/fruxepi.py pump -RUN 18 5

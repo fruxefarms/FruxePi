@@ -8,11 +8,39 @@ A browser-based dashboard to monitor and automate indoor agriculture using the R
 
 ---
 
-## Getting Started
+## Easy Deployment
+Quickly deploy the FruxePi using Docker and our bash installation script. 
 
-These instructions will help you get the FruxePi application running on your Raspberry Pi. 
+### Clone Project
+Clone the FruxePi repository to your Raspberry Pi. Selecting `/home/pi` is a good directory to begin.
 
-### The General Idea
+```
+git clone https://github.com/fruxefarms/FruxePi.git
+cd FruxePi
+```
+
+### Run Installation Script
+Run the install.sh bash script to quickly install Docker, Docker Compose and some installation dependencies.
+
+```
+sudo bash install.sh
+```
+
+>**Manual Installation:** The FruxePi can be manually installed and configured by following the instructions located further down.
+
+### Launch App
+Visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard.
+
+**Default login credentials**
+
+```
+Username: hello@fruxe.co 
+Password: password
+``` 
+
+---
+
+## FruxePi Overview
 
 In a nutshell, the FruxePi is a web application running on a LAMP stack (Linux, Apache, MySQL, PHP) which can be accessed from the browser on your local network. The application collects grow data from a variety of sensors and controls various operations such as lighting, ventilation and watering, using relay modules.
 
@@ -119,8 +147,10 @@ For many, this is step arguably the trickiest part of setting up the FruxePi. A 
 
 ---
 
-## Installation
-These instructions will assist you to install the application and configure the LAMP stack (Apache, PHP, and MySQL) and install Python dependencies on your Raspberry Pi:
+## Manual Installation
+For ease of use across all Raspberry Pi models and platforms, we suggest running the Docker installer.
+
+However, for those that wish to tinker and tweak their FruxePi, these instructions will assist you to install the application and configure the LAMP stack (Apache, PHP, and MySQL) and install Python dependencies on your Raspberry Pi:
 
 #### Update package repositories
 ```

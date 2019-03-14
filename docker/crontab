@@ -1,0 +1,9 @@
+# FruxePi
+* * * * * sudo /var/www/html/actions/fruxepi.py update -growdata
+0 * * * * sudo /var/www/html/actions/fruxepi-chart.py
+0 1 * * * sudo /var/www/html/actions/fruxepi.py maint -cleanup
+#* * * * * sudo /var/www/html/actions/fruxepi.py camera -crop
+#0 1 * * * sudo /var/www/html/actions/fruxepi.py lights -ON 15
+#0 1 * * * sudo /var/www/html/actions/fruxepi.py lights -OFF 15
+#0 * * * * sudo /var/www/html/actions/fruxepi.py fan -RUN 17 10
+#11 11 * * * sudo /var/www/html/actions/fruxepi.py pump -RUN 15 5
