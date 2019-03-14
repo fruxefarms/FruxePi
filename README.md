@@ -9,7 +9,7 @@ A browser-based dashboard to monitor and automate indoor agriculture using the R
 ---
 
 ## Easy Deployment
-Quickly deploy the FruxePi using Docker and our bash installation script. 
+Quickly deploy the FruxePi application using Docker and the installation script. 
 
 ### Clone Project
 Clone the FruxePi repository to your Raspberry Pi. Selecting `/home/pi` is a good directory to begin.
@@ -20,18 +20,18 @@ cd FruxePi
 ```
 
 ### Run Installation Script
-Run the install.sh bash script to quickly install Docker, Docker Compose and some installation dependencies.
+Run the `install.sh` script to quickly install Docker, Docker Compose and some other installation dependencies.
 
 ```
 sudo bash install.sh
 ```
 
->**Manual Installation:** The FruxePi can be manually installed and configured by following the instructions located further down.
+>**Manual Installation:** The FruxePi can also be manually installed and configured by following these [instructions](#manual-installation).
 
 ### Launch App
 Visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard.
 
-**Default login credentials**
+**Default Login**
 
 ```
 Username: hello@fruxe.co 
@@ -42,7 +42,7 @@ Password: password
 
 ## FruxePi Overview
 
-In a nutshell, the FruxePi is a web application running on a LAMP stack (Linux, Apache, MySQL, PHP) which can be accessed from the browser on your local network. The application collects grow data from a variety of sensors and controls various operations such as lighting, ventilation and watering, using relay modules.
+The FruxePi is a web application running on a LAMP stack (Linux, Apache, MySQL, PHP) which can be accessed from the browser on your local network. The application collects grow data from a variety of sensors and controls various operations such as lighting, ventilation and watering, using relay modules.
 
 ### Demo
 **URL:**  https://demo.fruxe.co/

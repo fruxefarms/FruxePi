@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# FRXPI-DOCKER installation
-echo 'Starting FrxPi Installation...'
+# FRUXEPI DOCKER installation
+echo 'Starting FruxePi Installation'
 
 # To get the latest package lists
-echo 'Getting Latest Updates'
+echo 'Getting Latest Updates...'
 sudo apt-get update 
 sudo apt-get -y upgrade
 
