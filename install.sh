@@ -42,5 +42,6 @@ sudo docker exec -it frxpi-MYSQL /bin/bash -c 'mysql -u root -pfruxefarms frx_db
 
 echo 'Scheduling cron tasks...'
 sudo docker exec -it frxpi-APACHE /bin/bash -c 'bash /tmp/cron_init.sh;'
+
 echo "-----"
 echo 'Installation complete! Visit http://<your-raspi-ip-address>:80/ to view'
