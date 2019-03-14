@@ -4,15 +4,15 @@ A browser-based dashboard to monitor and automate indoor agriculture using the R
 ![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/screenshot-frame.png)
 
 
-***NOTE:** This version of the FruxePi is still under development and in prototype. Our goal is to make this application effortless to deploy and run on your Raspberry Pi. However, until we get all the bugs worked out, this project may require the knowledge of an advanced Pi user. Nonetheless, if you are keen on this project and are having issues deploying FruxePi, please create an issue explaining your problem or contact <hello@fruxe.co>.*
+***PLEASE NOTE:** This version of the FruxePi is still under development and in prototype. Our goal is to make this application effortless to deploy and run on your Raspberry Pi. However, until we get all the bugs worked out, this project may require the knowledge of an advanced Pi user. Nonetheless, if you are keen on this project and are having issues deploying FruxePi, please create an issue explaining your problem or contact <hello@fruxe.co>.*
 
 ---
 
-## Easy Deployment
+## Quick Install
 Quickly deploy the FruxePi application using Docker and the installation script. 
 
 ### Clone Project
-Clone the FruxePi repository to your Raspberry Pi. Selecting `/home/pi` is a good directory to begin.
+Clone the FruxePi repository to your Raspberry Pi.
 
 ```
 git clone https://github.com/fruxefarms/FruxePi.git
@@ -379,7 +379,7 @@ This project was built with the assistance of the following libraries and tools:
 * [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
 * [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
 * [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
-* [Docker](https://www.docker.com/) - Containerized LAMP stack development environment.
+* [Docker](https://www.docker.com/) - Containerized LAMP stack.
 
 ### Front-End
 * [Bootstrap](https://getbootstrap.com/) - The world's most popular HTML, CSS, and JS front-end component library.

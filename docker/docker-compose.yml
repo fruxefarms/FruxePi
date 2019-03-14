@@ -31,7 +31,7 @@ services:
     ports:
       - 80:80/tcp
     volumes:
-      - ../app/:/var/www/html
+      - ../app:/var/www/html
     networks:
      - web
     links:
