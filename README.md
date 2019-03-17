@@ -58,15 +58,15 @@ Using the browser-based dashboard, users can easily monitor the status of their 
 
 The basic functionalies of the FruxePi include:
 
-- Monitor growing climate (Temperature and Humidity).
-- Chart visualizations for historical data.
+- Monitoring growing climate (Temperature and Humidity).
+- Chart visualizations for historical temperature and humidity data.
 - Manage crops by tracking progress and time to harvest.
 - Monitor soil moisture.
-- Camera monitoring and manual photo capture.
-- Lighting control.
+- Camera monitoring with periodic and manual photo capture.
+- Manual and scheduled lighting control.
 - Fan control both manually and exception based (Temperature or Humidity thresholds).
 - Watering pump control and daily automation.
-- User management
+- User authentication and management.
 
 ### What do I need?
 
@@ -77,10 +77,17 @@ The FruxePi has been tested and runs well on the following models running Raspia
 - Raspberry Pi 3 Model B
 - Raspberry Pi Model Zero W
 
+> [How to Check the Software and Hardware Version of a Raspberry Pi](http://ozzmaker.com/check-raspberry-software-hardware-version-command-line/)
+
 #### Sensors and Relays
 The following sensors and relays connect to the Raspberry Pi GPIO board. Although many of these accessories are optional, to get the full experience of the FruxePi application, the Climate Sensor (DHT22) is compulsory. 
 
-Sensors and relays can be activated or deactivated easily and at anytime using the dashboard.n
+Sensors and relays can be activated or deactivated easily and at anytime using the dashboard.
+
+|||
+| ------------- |:-------------:| 
+|![Climate Sensor](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/climate_sensor.png) | **Climate Sensor** The DHT22 is a basic digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin, no analog input pins needed.|
+|![Moisture Probe](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/moisture_sensor.png)  | **Moisture Probe** The TE215 moisture probe is sensitive to ambient humidity and is used to detect the moisture content of the soil or growing medium. The module outputs a HIGH or LOW value when the the soil humidity exceeds a set threshold value. |
 
 - **Climate Sensor**
 </br>The DHT22 is a basic digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin, no analog input pins needed.
