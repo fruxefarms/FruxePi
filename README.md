@@ -37,6 +37,8 @@ Visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi
 Username: hello@fruxe.co 
 Password: password
 ``` 
+> **How do I find my Pi's IP address?**
+<br>[Check out the following link](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/finding-your-pis-ip-address)
 
 ---
 
