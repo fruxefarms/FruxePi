@@ -33,6 +33,9 @@ ADD crontab /tmp/crontab
 ADD cron_init.sh /tmp/cron_init.sh
 
 # Timezone Setup
+# List of tz database time zones
+# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+ENV TZ=Europe/Amsterdam
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Start Apache

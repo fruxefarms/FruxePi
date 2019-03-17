@@ -16,7 +16,7 @@ services:
    networks:
      - web
    ports:
-     - 3306:3306/tcp
+     - 3366:3306/tcp
   php-apache:
     container_name: frxpi-APACHE
     build: .
@@ -32,6 +32,7 @@ services:
       - 80:80/tcp
     volumes:
       - ../app:/var/www/html
+      - /etc/timezone:/etc/timezone
     networks:
      - web
     links:
