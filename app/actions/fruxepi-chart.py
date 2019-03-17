@@ -13,7 +13,7 @@ from time import gmtime, strftime
 def fetchData(sql):
 
     # Connect to the database
-    connection = pymysql.connect(host='localhost',
+    connection = pymysql.connect(host='db',
                                  user='frxpi',
                                  password='password',
                                  db='frx_db',
@@ -33,7 +33,7 @@ def fetchData(sql):
 def updateHistory(data):
 
     # Connect to the database
-    connection = pymysql.connect(host='localhost',
+    connection = pymysql.connect(host='db',
                                  user='frxpi',
                                  password='password',
                                  db='frx_db',
