@@ -84,7 +84,7 @@ The following sensors and relays connect to the Raspberry Pi GPIO board. Althoug
 
 Sensors and relays can be activated or deactivated easily and at anytime using the dashboard.
 
---- | --- | ---
+| --- | --- |
 |![Climate Sensor](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/climate_sensor.png) | **Climate Sensor** The DHT22 is a basic digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin, no analog input pins needed.|
 |![Moisture Probe](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/moisture_sensor.png)  | **Moisture Probe** The TE215 moisture probe is sensitive to ambient humidity and is used to detect the moisture content of the soil or growing medium. The module outputs a HIGH or LOW value when the the soil humidity exceeds a set threshold value. |
 |![Relay Module](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/relay.png)|**5V Relay Modules** 5V Relay Modules are a great way to control high current and high voltage devices directly from the Raspberry Pi.|
