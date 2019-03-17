@@ -236,11 +236,20 @@ sudo apt-get install python-pip
 sudo python -m pip install --upgrade pip setuptools wheel
 ````
 
-#### Installing Dependencies
-Install the following packages and modules from the command line:
+#### Installing Climate Sensor, MySQL and Camera Dependencies
+Install the following packages and modules from the command line using `pip`:
 
 ```
 sudo pip install Adafruit_DHT pymysql pillow
+```
+#### Installing WiringPi
+Install WiringPi to your `home/` directory or preferred destination.
+```
+cd ~
+git clone git://git.drogon.net/wiringPi
+cd wiringPi
+git pull origin
+sudo ./build
 ```
 
 ### Configuration
