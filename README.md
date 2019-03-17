@@ -19,6 +19,14 @@ git clone https://github.com/fruxefarms/FruxePi.git
 cd FruxePi
 ```
 
+### Configure Timezone
+Edit the `docker/Dockerfile` using a text editor and change the timezone environment variable to reflect your region.
+
+```
+ENV TZ=Europe/Amsterdam
+```
+[List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+
 ### Run Installation Script
 Run the `install.sh` script to quickly install Docker, Docker Compose and some other installation dependencies.
 
