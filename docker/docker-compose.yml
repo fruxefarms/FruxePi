@@ -37,8 +37,6 @@ services:
      - web
     links:
      - db:mysql
-    environment:
-      TZ: "America/Denver"
   phpmyadmin:
    container_name: frxpi-PHPMYADMIN
    depends_on:
