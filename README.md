@@ -26,7 +26,7 @@ Run the `install.sh` script to quickly install Docker, Docker Compose and some o
 sudo bash install.sh
 ```
 
->**Manual Installation:** The FruxePi can also be manually installed and configured by following these [instructions](#manual-installation).
+>**Manual Installation:** Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](#manual-installation).
 
 ### Launch App
 Visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard.
