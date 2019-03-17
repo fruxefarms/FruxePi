@@ -219,22 +219,27 @@ sudo apt-get install phpmyadmin -y
 After installing phpMyAdmin, you will be presented with the package configuration screen.
 
 Press TAB to highlight “OK,” and use your SPACEBAR to select `apache2`. Finally, hit ENTER.
+
 ![phpMyAdmin Setup Step 1](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_01.png)
 
 The installation process will continue until you’re back at the next package configuration screen.
 
 Select “Yes” and then hit ENTER at the dbconfig-common screen.
+
 ![phpMyAdmin Setup Step 2](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_02.png)
 
 You will be prompted to enter the database admin password.
 
 Upon entry, hit TAB to highlight “OK,” and then press ENTER.
+
 ![phpMyAdmin Setup Step 3](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_03.png)
 
 Next, enter a password for the phpMyAdmin application itself.
+
 ![phpMyAdmin Setup Step 4](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_04.png)
 
 Confirm the phpMyAdmin application password.
+
 ![phpMyAdmin Setup Step 5](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_05.png)
 
 You must restart Apache for these changes to take affect.

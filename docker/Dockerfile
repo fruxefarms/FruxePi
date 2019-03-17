@@ -28,15 +28,13 @@ RUN git clone git://git.drogon.net/wiringPi && \
     cd wiringPi && \
     ./build
 
-# Database import
-
 # CRON Setup
 ADD crontab /tmp/crontab
 ADD cron_init.sh /tmp/cron_init.sh
 
-# Camera Setup
-# https://stackoverflow.com/questions/54842833/access-raspistill-pi-camera-inside-a-docker-container
+# Timezone Setup
+ENV TZ=Europe/Amsterdam
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Restart Apache
-# RUN service apache2 restart
 CMD ["apachectl", "-D", "FOREGROUND"]

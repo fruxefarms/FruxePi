@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-#FruxePi - Chart Data
+#FruxePi - CLI
 
 import os
 import sys
 import Adafruit_DHT as dht
 import RPi.GPIO as GPIO
 from datetime import datetime, date
-from time import gmtime, strftime
+from time import strftime
 import pymysql
 from PIL import Image
 import subprocess
@@ -408,7 +408,7 @@ def getGrowData():
     GPIO = fetchSensorGPIO()
 
     data = {}
-    data['timestamp'] = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    data['timestamp'] = strftime("%Y-%m-%d %H:%M:%S")
     data['temperature'] = fetchRawTemperature(GPIO['climate_GPIO'])
     data['humidity'] = fetchRawHumidity(GPIO['climate_GPIO'])
     data['light_status'] = getGPIOState(GPIO['light_GPIO'])
