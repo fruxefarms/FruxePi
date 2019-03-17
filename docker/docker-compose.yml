@@ -32,7 +32,6 @@ services:
       - 80:80/tcp
     volumes:
       - ../app:/var/www/html
-      - /etc/timezone:/etc/timezone
     networks:
      - web
     links:
