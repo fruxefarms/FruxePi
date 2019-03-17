@@ -1,4 +1,4 @@
-# FruxePi OPEN-PROTOTYPE v0.1-BETA
+# FruxePi OPEN-PROTOTYPE v0.2-BETA
 A browser-based dashboard to monitor and automate indoor agriculture using the Raspberry Pi.
 
 ![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/screenshot-frame.png)
@@ -218,19 +218,19 @@ sudo apt-get install phpmyadmin -y
 ```
 After installing phpMyAdmin, you will be presented with the package configuration screen.
 
-Press TAB to highlight “OK,” and use your SPACEBAR to select `apache2`. Finally, hit ENTER.
+Press TAB to highlight `OK` and use your **SPACEBAR** to select `apache2`. Finally, hit **ENTER**.
 
 ![phpMyAdmin Setup Step 1](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_01.png)
 
 The installation process will continue until you’re back at the next package configuration screen.
 
-Select “Yes” and then hit ENTER at the dbconfig-common screen.
+Select `Yes` and then hit **ENTER** at the dbconfig-common screen.
 
 ![phpMyAdmin Setup Step 2](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_02.png)
 
 You will be prompted to enter the database admin password.
 
-Upon entry, hit TAB to highlight “OK,” and then press ENTER.
+Upon entry, hit **TAB** to highlight `OK` and then press **ENTER**.
 
 ![phpMyAdmin Setup Step 3](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_03.png)
 
@@ -419,6 +419,7 @@ This project was built with the assistance of the following libraries and tools:
 * [Codeigniter](https://codeigniter.com/) - PHP web framework.
 * [Ion Auth](http://benedmunds.com/ion_auth/) - Ion Auth is a simple and lightweight authentication library for the CodeIgniter framework.
 * [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
+* [Wiring Pi](http://wiringpi.com/download-and-install/) - GPIO Interface library for the Raspberry Pi.
 * [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
 * [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
 * [Docker](https://www.docker.com/) - Containerized LAMP stack.
@@ -431,7 +432,7 @@ This project was built with the assistance of the following libraries and tools:
 
 ---
 
-## Version **frx-pi-v0.1-BETA**
+## Version **frx-pi-v0.2-BETA**
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/fruxefarms/FruxePi/tags). 
 
@@ -442,7 +443,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 This project is released under **GPL 3.0**. 
 >You are free to use, copy, distribute and transmit this software for non-commercial purposes. 
 
-See [LICENSE.md](LICENSE.md) for more details. 
+Read the [LICENSE](LICENSE.md) for details in full. 
 
 ---
 

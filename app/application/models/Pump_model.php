@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (html-v0.1)
+	* FruxePi (frx-dev-v0.2)
 	* Pump Model
 	*/
 	class Pump_model extends CI_Model

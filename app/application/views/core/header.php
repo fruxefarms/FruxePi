@@ -1,4 +1,4 @@
-<!-- FruxePi (frx-dev-v0.1) - labs.fruxe.co -->
+<!-- FruxePi (frx-dev-v0.2) - fruxe.co/project -->
 <!doctype html>
 <html lang="en">
     <!-- Head -->
@@ -26,9 +26,9 @@
 
         <!-- Page title and description -->
         <?php if (!empty($title)): ?>
-            <title><?php echo $title ?> | frx-dev-v0.1</title>
+            <title><?php echo $title ?> | frx-dev-v0.2</title>
         <?php else: ?>
-            <title>frx-dev-v0.1</title>
+            <title>frx-dev-v0.2</title>
         <?php endif; ?>
 
     </head>

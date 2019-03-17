@@ -36,5 +36,5 @@ ADD cron_init.sh /tmp/cron_init.sh
 ENV TZ=Europe/Amsterdam
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-# Restart Apache
+# Start Apache
 CMD ["apachectl", "-D", "FOREGROUND"]

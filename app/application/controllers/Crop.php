@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
     ob_start();
 	/**
-	* FruxePi (frx-dev-v0.1)
+	* FruxePi (frx-dev-v0.2)
 	* Crops Controller
 	*/
 	class Crop extends CI_Controller 

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (frx-dev-v0.1)
+	* FruxePi (frx-dev-v0.2)
 	* Dashboard Model
 	*/
 	class Dashboard_model extends CI_Model
