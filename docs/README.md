@@ -416,14 +416,17 @@ Enabling and disabling sensors is easy from the dashboard using the slide toggle
 ## Built With
 This project was built with the assistance of the following libraries and tools:
 
+### Raspberry Pi
+* [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
+* [Wiring Pi](http://wiringpi.com/download-and-install/) - GPIO Interface library for the Raspberry Pi.
+* [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
+
 ### Back-End
 * [Codeigniter](https://codeigniter.com/) - PHP web framework.
 * [Ion Auth](http://benedmunds.com/ion_auth/) - Ion Auth is a simple and lightweight authentication library for the CodeIgniter framework.
-* [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
-* [Wiring Pi](http://wiringpi.com/download-and-install/) - GPIO Interface library for the Raspberry Pi.
 * [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
-* [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
 * [Docker](https://www.docker.com/) - Containerized LAMP stack.
+* [Docsify](https://docsify.js.org/#/) - A magical documentation site generator.
 
 ### Front-End
 * [Bootstrap](https://getbootstrap.com/) - The world's most popular HTML, CSS, and JS front-end component library.
