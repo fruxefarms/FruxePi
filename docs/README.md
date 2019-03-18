@@ -20,7 +20,13 @@ cd FruxePi
 ```
 
 ### Configure Timezone
-Edit the `docker/Dockerfile` using a text editor and change the timezone environment variable to reflect your region.
+Edit the `docker/Dockerfile` using a text editor:
+
+```
+sudo nano docker/Dockerfile
+```
+
+Change the timezone environment variable to reflect your region.
 
 ```
 ENV TZ=Europe/Amsterdam
@@ -221,27 +227,27 @@ After installing phpMyAdmin, you will be presented with the package configuratio
 
 Press TAB to highlight `OK` and use your **SPACEBAR** to select `apache2`. Finally, hit **ENTER**.
 
-![phpMyAdmin Setup Step 1](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_01.png)
+![phpMyAdmin Setup Step 1](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_01.png?raw=true)
 
 The installation process will continue until you’re back at the next package configuration screen.
 
 Select `Yes` and then hit **ENTER** at the dbconfig-common screen.
 
-![phpMyAdmin Setup Step 2](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_02.png)
+![phpMyAdmin Setup Step 2](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_02.png?raw=true)
 
 You will be prompted to enter the database admin password.
 
 Upon entry, hit **TAB** to highlight `OK` and then press **ENTER**.
 
-![phpMyAdmin Setup Step 3](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_03.png)
+![phpMyAdmin Setup Step 3](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_03.png?raw=true)
 
 Next, enter a password for the phpMyAdmin application itself.
 
-![phpMyAdmin Setup Step 4](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_04.png)
+![phpMyAdmin Setup Step 4](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_04.png?raw=true)
 
 Confirm the phpMyAdmin application password.
 
-![phpMyAdmin Setup Step 5](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_05.png)
+![phpMyAdmin Setup Step 5](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/phpmyadmin-step_05.png?raw=true)
 
 You must restart Apache for these changes to take affect.
 
