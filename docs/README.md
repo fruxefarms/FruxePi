@@ -1,7 +1,7 @@
 # FruxePi OPEN-PROTOTYPE v0.2-BETA
 A browser-based dashboard to monitor and automate indoor agriculture using the Raspberry Pi.
 
-![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/screenshot-frame.png)
+![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/screenshot-frame.png?raw=true)
 
 
 ***PLEASE NOTE:** This version of the FruxePi is still under development and in prototype. Our goal is to make this application effortless to deploy and run on your Raspberry Pi. However, until we get all the bugs worked out, this project may require the knowledge of an advanced Pi user. Nonetheless, if you are keen on this project and are having issues deploying FruxePi, please create an issue explaining your problem or contact <hello@fruxe.co>.*
@@ -94,10 +94,10 @@ Sensors and relays can be activated or deactivated easily and at anytime using t
 
 |Photo|Description|
 | ------------- | ------------- |
-|![Climate Sensor](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/climate_sensor.png) | **Climate Sensor**<br/> The DHT22 is a basic digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin, no analog input pins needed.|
-|![Moisture Probe](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/moisture_sensor.png)  | **Moisture Probe**<br/> The TE215 moisture probe is sensitive to ambient humidity and is used to detect the moisture content of the soil or growing medium. The module outputs a HIGH or LOW value when the the soil humidity exceeds a set threshold value. |
-|![Relay Module](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/relay.png)|**5V Relay Modules**<br/> 5V Relay Modules are a great way to control high current and high voltage devices directly from the Raspberry Pi.|
-|![Camera](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/camera.png)|**Raspberry Pi Camera**<br/> The Raspberry Pi Camera Module is the official camera product from the Raspberry Pi Foundation. The FruxePi has been tested using the 8MP Camera Module v2 (2016).|
+|![Climate Sensor](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/climate_sensor.png?raw=true) | **Climate Sensor**<br/> The DHT22 is a basic digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin, no analog input pins needed.|
+|![Moisture Probe](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/moisture_sensor.png?raw=true)  | **Moisture Probe**<br/> The TE215 moisture probe is sensitive to ambient humidity and is used to detect the moisture content of the soil or growing medium. The module outputs a HIGH or LOW value when the the soil humidity exceeds a set threshold value. |
+|![Relay Module](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/relay.png?raw=true)|**5V Relay Modules**<br/> 5V Relay Modules are a great way to control high current and high voltage devices directly from the Raspberry Pi.|
+|![Camera](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/camera.png?raw=true)|**Raspberry Pi Camera**<br/> The Raspberry Pi Camera Module is the official camera product from the Raspberry Pi Foundation. The FruxePi has been tested using the 8MP Camera Module v2 (2016).|
 
 ---
 
