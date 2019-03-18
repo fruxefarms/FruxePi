@@ -1,10 +1,13 @@
 <!-- _coverpage.md -->
 
-![logo](_media/icon.svg)
+![logo](img/fruxe_wordmark.svg)
 
-# FruxePi
+# **FruxePi** v0.2-beta
 
-> Indoor Farming software using the Raspberry Pi
+> Indoor farming software to grow delicious vegetables 
+<br/>and greens using automation and the Raspberry Pi.
 
-[GitHub](https://github.com/fruxefarms/FruxePi)
-[Get Started](#quick-install)
+An Agrotech Project by **Fruxe Farms**
+
+[<i class="fab fa-github"></i> Download v0.2-beta](https://github.com/fruxefarms/FruxePi)
+[<i class="fas fa-book"></i> Get Started](#quick-install)
