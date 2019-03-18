@@ -1,4 +1,4 @@
-Copyright 2018 - Jason Yeo, Fruxe Agrotech ("Fruxe"), http://fruxe.co
+Copyright 2016-2019 - Jason Yeo, Fruxe Agrotech ("Fruxe"), http://fruxe.co
 
 ## LICENSE
 This source code is released under GPL 3.0 with the following ammendments:

@@ -104,7 +104,6 @@
 		// Get 24-hr humidity chart data
 		public function get_humidity_chart_data()
 		{
-		
 			$this->db->select("*");
 			$this->db->from("climate_history");
 			$this->db->order_by("id","DESC");
@@ -130,7 +129,6 @@
 		// Get chart legend
 		public function get_chart_legend()
 		{
-		
 			$this->db->select("*");
 			$this->db->from("climate_history");
 			$this->db->order_by("id","DESC");
@@ -249,37 +247,36 @@
 		public function get_cropConditions()
 		{
 			
-		$sql = "SELECT * FROM grow_data WHERE DATE(date_time) = CURDATE() ORDER BY date_time DESC";
-		$query = $this->db->query($sql);
-		$tempData = $query->result_array();
+			$sql = "SELECT * FROM grow_data WHERE DATE(date_time) = CURDATE() ORDER BY date_time DESC";
+			$query = $this->db->query($sql);
+			$tempData = $query->result_array();
 
-		// Grow Room Thresholds
-		$climate_threshold = $this->Climate_model->getClimateThreshold();
-		$tempHigh = $climate_threshold['temp_MAX'];
-		$tempLow = $climate_threshold['temp_MIN'];
-		$humidHigh = $climate_threshold['humid_MAX'];
-		$humidLow = $climate_threshold['humid_MIN'];
+			// Grow Room Thresholds
+			$climate_threshold = $this->Climate_model->getClimateThreshold();
+			$tempHigh = $climate_threshold['temp_MAX'];
+			$tempLow = $climate_threshold['temp_MIN'];
+			$humidHigh = $climate_threshold['humid_MAX'];
+			$humidLow = $climate_threshold['humid_MIN'];
 
-		// Loop through tempData
-		$total_records = sizeof($tempData);
-		$positive_records = 0;
-		foreach ($tempData as $item) {
-			$temp = $item['temperature'];
-			$humid = $item['humidity'];
-			if (($temp >= $tempLow) && ($temp <= $tempHigh) && ($humid >= $humidLow) && ($humid <= $humidHigh)) {
-			$positive_records++;
-			}
-		}
-
-		// Calculate Ratio check for zero division
-		if ($positive_records != 0 && $total_records != 0) {
+			// Loop through tempData
+			$total_records = sizeof($tempData);
+			$positive_records = 0;
 			
-			$cropConditions = round(($positive_records / $total_records) * 100);
+			foreach ($tempData as $item) {
+				$temp = $item['temperature'];
+				$humid = $item['humidity'];
+				if (($temp >= $tempLow) && ($temp <= $tempHigh) && ($humid >= $humidLow) && ($humid <= $humidHigh)) {
+					$positive_records++;
+				}
+			}
 
-			return $cropConditions;
-		} else {
-			return $cropConditions = 0;
-		}
+			// Calculate Ratio check for zero division
+			if ($positive_records != 0 && $total_records != 0) {
+				$cropConditions = round(($positive_records / $total_records) * 100);
+				return $cropConditions;
+			} else {
+				return $cropConditions = 0;
+			}
 
 
 		

@@ -38,8 +38,6 @@
                   <!-- Card Body -->
                   <div id="sensor-settings" class="card-body">
 
-                        
-
                               <h3 class="card-title">Settings</h3>
                               <p class="card-text">Configure Sensor</p>
                               

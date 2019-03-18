@@ -33,7 +33,6 @@
 			$temperature = $query->result()[0]->temperature;
 
 			return $temperature;
-
 		}
 
 
@@ -120,8 +119,8 @@
 			);
 
 			$this->db->where('id', $this->sensorID);
+			
 			return $this->db->update('technical', $data);
-
 		}
 
 		/**
