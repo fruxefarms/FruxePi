@@ -11,3 +11,5 @@ An Agrotech Project by **Fruxe Farms**
 
 [<i class="fab fa-github"></i> Download v0.2-beta](https://github.com/fruxefarms/FruxePi)
 [<i class="fas fa-book"></i> Get Started](#quick-install)
+
+![color](#D43759)
