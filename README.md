@@ -78,7 +78,7 @@ sudo bash install.sh
 ```
 
 #### Manual Installation
-Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](#manual-installation).
+Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation).
 
 ### Launch App
 Visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
