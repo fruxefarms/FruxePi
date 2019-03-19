@@ -9,14 +9,14 @@ A browser-based dashboard to monitor and automate indoor agriculture using the R
 Quick Links
 =================
 
-   * [Overview](#FruxePi-Overview)
-   * [Features](#Features)
-   * [Requirements](#Requirements)
-   * [Easy Install](#Easy-Install)
+   * [Overview](https://docs.fruxe.co/#/?id=fruxepi-overview)
+   * [Features](https://docs.fruxe.co/#/?id=what-can-it-do)
+   * [Requirements](https://docs.fruxe.co/#/requirements)
+   * [Easy Install](https://docs.fruxe.co/#/install?id=easy-install)
    * [Documentation](https://docs.fruxe.co)
-   * [Help](https://docs.fruxe.co)
-   * [License](#License)
-   * [About](#About-Fruxe)
+   * [Help](https://docs.fruxe.co/#/help)
+   * [License](https://docs.fruxe.co/#/?id=latest-version)
+   * [About](https://docs.fruxe.co/#/about)
 
 ---
 
