@@ -46,6 +46,17 @@ The basic functionalies of the FruxePi include:
 - Watering pump control and daily automation.
 - User authentication and management.
 
+### What do I need?
+   - Raspberry Pi*
+   - Temperature \ Humidity Sensor (DHT22)*
+   - Relay Modules
+   - Moisture Sensor (TE215)
+   - Camera 
+
+Please see the [full list](https://docs.fruxe.co/#/requirements) of requirements and further information regarding each component.
+
+**Mandatory FruxePi components*
+
 ---
 
 ## Easy Install
