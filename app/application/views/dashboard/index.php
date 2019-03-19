@@ -8,8 +8,8 @@
     <?php $this->load->view('core/nav'); ?>
 
     <!-- Page Content -->
-    <!-- If Camera is active load latest imatge as background -->
-    <?php if ($sensor_state['camera_state'] == 1): ?>
+    <!-- If Camera is active load latest image as background -->
+    <?php if ($sensor_state['camera_state'] == "1"): ?>
     <div id="main" class="camera-bg">
     <?php else: ?>
     <div id="main" class="default-bg">
@@ -93,8 +93,8 @@
                                 <a href="#carouselExampleIndicators" role="button" data-slide="prev" class="btn btn-outline-secondary"><i class="fas fa-angle-double-left"></i></a>
                                 <a href="#carouselExampleIndicators" role="button" data-slide="next" class="btn btn-outline-secondary"><i class="fas fa-angle-double-right"></i></a>
                                 <?php endif; ?>
-                                <?php if ($sensor_state['camera_state'] == 1): ?>
-                                <a id="cameraView" href="<?php echo asset_url(); ?>img/camera_bg.jpg" class="btn btn-outline-secondary image-popup-vertical-fit" role="button" data-plugin="magnificPopup">VIEW <i class="fas fa-video pl-1"></i></a>
+                                <?php if ($sensor_state['camera_state'] == "1"): ?>
+                                <a id="cameraView" href="<?php echo asset_url(); ?>img/crop_bg.jpg" class="btn btn-outline-secondary image-popup-vertical-fit" role="button" data-plugin="magnificPopup">VIEW <i class="fas fa-video pl-1"></i></a>
                                 <?php endif; ?>
                               </div>
                             </div>

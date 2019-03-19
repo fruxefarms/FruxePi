@@ -110,7 +110,7 @@ body {
 /* Camera Background */
 .camera-bg { 
   /* The image used */
-  background: linear-gradient(0deg,rgba(212,55,89,1),rgba(244, 0, 93,0.5)), url("../img/camera_bg.jpg");
+  background: linear-gradient(0deg,rgba(212,55,89,1),rgba(244, 0, 93,0.5)), url("../img/crop_bg.jpg");
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
