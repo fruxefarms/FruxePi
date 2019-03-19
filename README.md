@@ -15,7 +15,7 @@ Quick Links
    * [Easy Install](https://docs.fruxe.co/#/install?id=easy-install)
    * [Documentation](https://docs.fruxe.co)
    * [Help](https://docs.fruxe.co/#/help)
-   * [License](https://docs.fruxe.co/#/?id=latest-version)
+   * [License](https://docs.fruxe.co/#/?id=license)
    * [About](https://docs.fruxe.co/#/about)
 
 ---
@@ -47,11 +47,11 @@ The basic functionalies of the FruxePi include:
 - User authentication and management.
 
 ### What parts will I need?
-   - Raspberry Pi*
-   - Temperature \ Humidity Sensor (DHT22)*
-   - Relay Modules
-   - Moisture Sensor (TE215)
-   - Camera 
+- Raspberry Pi*
+- Temperature \ Humidity Sensor (DHT22)*
+- Relay Modules
+- Moisture Sensor (TE215)
+- Camera 
 
 Please see the [full list](https://docs.fruxe.co/#/requirements) of requirements and further information regarding each component.
 
@@ -101,11 +101,11 @@ This project was built with the assistance of the following libraries and tools:
 * [Adafruit DHT Sensor Library](https://github.com/adafruit/Adafruit_Python_DHT) - Python library to read the DHT series of humidity and temperature sensors on the Raspberry Pi.
 * [Wiring Pi](http://wiringpi.com/download-and-install/) - GPIO Interface library for the Raspberry Pi.
 * [Pillow](https://github.com/python-pillow/Pillow) - The friendly Python Imaging Library fork.
+* [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
 
 ### Back-End
 * [Codeigniter](https://codeigniter.com/) - PHP web framework.
 * [Ion Auth](http://benedmunds.com/ion_auth/) - Ion Auth is a simple and lightweight authentication library for the CodeIgniter framework.
-* [PyMySQL](https://github.com/PyMySQL/PyMySQL) - A pure-Python MySQL client library.
 * [Docker](https://www.docker.com/) - Containerized LAMP stack.
 * [Docsify](https://docsify.js.org/#/) - A magical documentation site generator.
 
@@ -143,6 +143,6 @@ Read the [LICENSE](https://github.com/fruxefarms/FruxePi/blob/master/LICENSE.md)
 ---
 
 ## About Fruxe
-We are a collective of programmers and master growers. Our goal is to develop open-source software and hardware to automate indoor agriculture. 
+Our goal is to develop open-source software and hardware to automate indoor agriculture.
 
 [fruxe.co/about](https://fruxe.co/about)

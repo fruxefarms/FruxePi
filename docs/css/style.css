@@ -160,7 +160,7 @@ li input[type=checkbox]{
     right:0;
     text-decoration:none;
     top:0;
-    z-index:1
+    z-index:5
 }
 .github-corner:hover .octo-arm{
     animation:a .56s ease-in-out
@@ -476,7 +476,7 @@ section.cover.has-mask .mask{
 section.cover .cover-main{
     -ms-flex:1;
     flex:1;
-    margin:-20px 16px 0;
+    /* margin:-20px 16px 0; */
     text-align:center;
     z-index:1
 }
@@ -502,11 +502,11 @@ section.cover h1{
 section.cover h1 a{
     display:block;
 }
-section.cover h1 small{
+/* section.cover h1 small{
     bottom:-.4375rem;
     font-size:1rem;
     position:absolute
-}
+} */
 section.cover blockquote{
     font-size:1.5rem;
     text-align:center
@@ -537,10 +537,11 @@ section.cover .cover-main>p:last-child a:last-child{
 }
 section.cover .cover-main>p:last-child a:last-child:hover{
     color:inherit;
-    opacity:.8
+    opacity:.5
 }
 section.cover .cover-main>p:last-child a:hover{
-    color:inherit
+    color:inherit;
+    opacity:.5
 }
 section.cover blockquote>p>a{
     border-bottom:2px solid var(--theme-color,#42b983);
@@ -758,4 +759,105 @@ pre:after{
     right:0;
     text-align:right;
     top:0
+}
+
+.coverpage {
+    position: relative;
+    background-color:#e30569;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.coverpage .title {
+    position:relative;
+    z-index: 2;
+    padding-top: 25vh;
+}
+
+.coverpage .title h1 {
+    color: #34495e;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: .625rem 0 2.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.coverpage .title h1 small {
+    font-weight: 300;
+}
+
+.coverpage .title p {
+    color: #fff;
+    line-height: 1.5rem;
+    margin: 1em 0;
+    font-size: 1.5rem;
+}
+
+.coverpage .title p.author {
+    color: #fff;
+    line-height: 1.5rem;
+    margin: 1em 0;
+    font-size: 1.0rem;
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background-color: #e30569; */
+    background: linear-gradient(0deg,rgba(228, 45, 90,1),rgba(228, 45, 90,0.5));
+    /* opacity: 0.5; */
+    z-index: 1;
+  }
+
+  .video_bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0.5;
+  }
+
+  .btn {
+    border:1px solid var(--theme-color,#42b983);
+    border-radius:2rem;
+    box-sizing:border-box;
+    color:#fff;
+    display:inline-block;
+    font-size:1.05rem;
+    letter-spacing:.1rem;
+    margin:.5rem 1rem;
+    padding:.75em 2rem;
+    text-decoration:none;
+    transition:all .15s ease;
+}
+.btn-cover {
+    background-color:transparent;
+    color:#fff !important;
+}
+.btn-download:hover{
+    color:inherit;
+    opacity:.5
+}
+.btn-start {
+    background-color: var(--theme-color,#42b983);
+}
+.btn-start:hover{
+    color:inherit;
+    opacity:.5
 }
