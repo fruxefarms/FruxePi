@@ -203,6 +203,7 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
+				// Enable Lights
 				$this->Lights_model->enableLights();
 
 				// Edit CRON
@@ -222,6 +223,7 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
+				// Disable Lights
 				$this->Lights_model->disableLights();
 
 				// Edit CRON
@@ -376,7 +378,11 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
+				// Enable Fans
 				$this->Fan_model->enableFans();
+
+				// Enable CRON
+                $this->Scheduler_model->enableCRON("fan");
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			
@@ -392,7 +398,11 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
+				// Disable fans
 				$this->Fan_model->disableFans();
+
+				// Disable CRON
+                $this->Scheduler_model->disableCRON("fan");
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			
@@ -488,7 +498,11 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
+				// Enablle Camera
 				$this->Camera_model->enableCamera();
+
+				// Enable CRON
+                $this->Scheduler_model->enableCRON("camera");
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			
@@ -504,7 +518,11 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
+				// Disable Camera
 				$this->Camera_model->disableCamera();
+
+				// Disable CRON
+				$this->Scheduler_model->disableCRON("camera");
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			
@@ -618,6 +636,7 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
+				// Enable Pump
 				$this->Pump_model->enablePump();
 
 				// Edit CRON
@@ -637,6 +656,7 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
+				// Disable Pump
 				$this->Pump_model->disablePump();
 
 				// Edit CRON
