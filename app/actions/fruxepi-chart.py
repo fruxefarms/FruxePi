@@ -5,7 +5,7 @@
 
 # Packages
 import pymysql.cursors
-from time import gmtime, strftime
+from time import strftime
 
 
 # Functions

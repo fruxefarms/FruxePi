@@ -13,6 +13,8 @@ services:
    volumes:
      - db_data:/var/lib/mysql
      - ./db/:/docker-entrypoint-initdb.d/
+     - "/etc/timezone:/etc/timezone:ro"
+     - "/etc/localtime:/etc/localtime:ro"
    networks:
      - web
    ports:
@@ -32,6 +34,8 @@ services:
       - 80:80/tcp
     volumes:
       - ../app:/var/www/html
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
     networks:
      - web
     links:
