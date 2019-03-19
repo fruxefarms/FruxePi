@@ -46,7 +46,7 @@ The basic functionalies of the FruxePi include:
 - Watering pump control and daily automation.
 - User authentication and management.
 
-### What do I need?
+### What parts will I need?
    - Raspberry Pi*
    - Temperature \ Humidity Sensor (DHT22)*
    - Relay Modules
@@ -69,14 +69,6 @@ Clone the FruxePi repository to your Raspberry Pi.
 git clone https://github.com/fruxefarms/FruxePi.git
 cd FruxePi
 ```
-
-### Configure Timezone
-Edit the `docker/Dockerfile` using a text editor and change the timezone environment variable to reflect your region.
-
-```
-ENV TZ=Europe/Amsterdam
-```
-[List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
 ### Run Installation Script
 Run the `install.sh` script to quickly install Docker, Docker Compose and some other installation dependencies.
