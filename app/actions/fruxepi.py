@@ -140,10 +140,13 @@ def CLI_menu():
     
     # Fetch Grow Data
     elif action == "update":  
-        # Get Moisture
+        # Update grow data
         if action_option == "-growdata": 
             growData = getGrowData()
             growDataUpdate(growData)
+        # Update chart
+        elif action_option == "-chart": 
+            update_chart()
         else:
             print("Invalid Command!")
 
@@ -503,7 +506,64 @@ def cameraDiagnostics():
     status = os.popen('vcgencmd get_camera').read()
     print(status)
     
-    # print("Error! vcgencmd will not run inside the container. Run vcgencmd get_camera on your Raspberry Pi, not inside this Docker container.")
+
+# Chart
+# Fetch from sql based on string
+def fetchData(sql):
+
+    # Connect to the database
+    connection = pymysql.connect(host,user,password,database,charset='utf8mb4',cursorclass=pymysql.cursors.DictCursor)
+    try:
+        with connection.cursor() as cursor:
+            # Read a single record
+            cursor.execute(sql)
+            result = cursor.fetchone()
+            return result
+    finally:
+        connection.close()
+
+
+# update chart history function
+def update_history(data):
+
+    # Connect to the database
+    connection = pymysql.connect(host,user,password,database,charset='utf8mb4',cursorclass=pymysql.cursors.DictCursor)
+    
+    try:
+        with connection.cursor() as cursor:
+            # Create a new record
+            sql = "INSERT INTO climate_history (date_time, temperature, humidity) VALUES (%s, %s, %s)"
+            cursor.execute(sql, (data['date_time'], round(data['temperature']), round(data['humidity'])))
+
+        connection.commit()
+        print("Success!")
+    finally:
+        connection.close()
+
+
+def fetch_history():
+
+    tempQueryString = "SELECT AVG(temperature) as temperature, AVG(humidity) as humidity, date_time FROM grow_data WHERE date_time >= now() - interval 1 hour"
+    tempData = fetchData(tempQueryString)
+
+    return tempData
+
+
+# Update Chart
+def update_chart():
+    
+    try:
+        # fetch chart data
+        hourlyData = fetch_history()
+
+        #update chart
+        update_history(hourlyData)
+        
+        print("Chart Updated!")
+    except Exception as e: 
+        print("Chart Update Error!")
+        print(e)
+
 
 # RUN
 CLI_menu()

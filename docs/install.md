@@ -251,7 +251,7 @@ Copy the code below into the `www-data` crontab file. Remember to un-comment the
 ```
 # FruxePi
 * * * * * python /var/www/html/actions/fruxepi.py update -growdata
-0 * * * * python /var/www/html/actions/fruxepi-chart.py
+0 * * * * python /var/www/html/actions/fruxepi.py update -chart
 0 1 * * * python /var/www/html/actions/fruxepi.py maint -cleanup
 #* * * * * python /var/www/html/actions/fruxepi.py camera -crop
 #0 1 * * * python /var/www/html/actions/fruxepi.py lights -ON 15
