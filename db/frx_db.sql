@@ -83,11 +83,11 @@ INSERT INTO technical
     (module_type, description, gpio_pin, enabled)
 VALUES
     ('Sensor','Climate Sensor', 2, 1),
-    ('Sensor','Moisture Probe', 17, 1),
-    ('Relay','Light Controls', 17, 1),
-    ('Relay','Fan Controls', 18, 1),
-    ('Relay','Pump Controls', 19, 1),
-    ('Camera','Camera Module', 0, 1);
+    ('Sensor','Moisture Probe', 17, 0),
+    ('Relay','Light Controls', 15, 0),
+    ('Relay','Fan Controls', 18, 0),
+    ('Relay','Pump Controls', 19, 0),
+    ('Camera','Camera Module', 0, 0);
 
 
 -- TABLE: light_schedule
