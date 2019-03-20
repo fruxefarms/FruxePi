@@ -4,8 +4,7 @@ Run the following commands to update your FruxePi to the latest version. This is
 ### Remove old version
 ```
 sudo docker stop frxpi-APACHE frxpi-PHPMYADMIN frxpi-MYSQL
-sudo docker system prune -f
-sudo docker volume rm docker_db_data
+sudo docker system prune -f --volumes
 sudo rm -r FruxePi
 ```
 
