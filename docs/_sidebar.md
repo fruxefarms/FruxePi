@@ -5,6 +5,7 @@
 * [Requirements](requirements.md)
 * [Install Software](install.md)
 * [Connect Hardware](connect.md)
+* [Updating](update.md)
 * [Open Source](builtwith.md)
 * [Help](help.md)
 * [About](about.md)
