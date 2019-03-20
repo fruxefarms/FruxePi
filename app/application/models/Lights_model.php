@@ -274,9 +274,9 @@
 			$data['lightHours'] = $lightHours;
 	
 			if ($interval->format("%h") == "0"){
-			  $data['status'] = $interval->format("%i minutes until dark.");
+			  $data['status'] = $interval->format("%i minutes until lights off.");
 			} else {
-			  $data['status'] = $interval->format("%h hours, %i minutes until dark.");
+			  $data['status'] = $interval->format("%h hours, %i minutes until lights off.");
 			}
 	
 		  } else {
@@ -284,9 +284,9 @@
 			$data['lights'] = 'OFF';
 			$data['lightHours'] = 24 - $lightHours;
 			if ($interval->format("%h") == "0"){
-			  $data['status'] = $interval->format("%i minutes until light.");
+			  $data['status'] = $interval->format("%i minutes until lights on.");
 			} else {
-			  $data['status'] = $interval->format("%h hours, %i minutes until light.");
+			  $data['status'] = $interval->format("%h hours, %i minutes until lights on.");
 			}
 		  }
 	
