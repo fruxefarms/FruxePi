@@ -63,14 +63,14 @@
     var lineChartData = {
         labels: [<?php echo $chart_legend; ?>],
         datasets: [{
-            label: 'Temperature',
+            label: 'Temperature (°C)',
             borderColor: window.chartColors.red,
             backgroundColor: window.chartColors.red,
             fill: false,
             data: [<?php echo $temperature_chart; ?>],
             yAxisID: 'y-axis-1',
         }, {
-            label: 'Humidity',
+            label: 'Humidity (%)',
             borderColor: window.chartColors.blue,
             backgroundColor: window.chartColors.blue,
             fill: false,

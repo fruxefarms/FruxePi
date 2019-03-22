@@ -141,9 +141,9 @@
 			$count = 1;
 			foreach($results as $result) {
 				if ($count == count($results)) {
-					$output .= "\"" . $result["date_time"] . "\"";
+					$output .= "\"" . date_format(date_create($result["date_time"]), "M d H:i") . "\"";
 				} else {
-					$output .= "\"" . $result["date_time"] . "\"" . ", ";
+					$output .= "\"" . date_format(date_create($result["date_time"]), "M d H:i")  . "\"" . ", ";
 				}
 				$count++;
 			}
@@ -156,7 +156,7 @@
 		{
 			$this->db->select_max('temperature');
 			$this->db->from("grow_data");
-			$this->db->where('date_format(date_time,"d-m-Y H:i:s")', 'CURDATE()', FALSE);
+			$this->db->where('date_format(date_time,"d-m-Y H:i")', 'CURDATE()', FALSE);
 			$query = $this->db->get();
 
 			return $query->result();
@@ -167,7 +167,7 @@
 		{
 			$this->db->select_min('temperature');
 			$this->db->from("grow_data");
-			$this->db->where('date_format(date_time,"d-m-Y H:i:s")', 'CURDATE()', FALSE);
+			$this->db->where('date_format(date_time,"d-m-Y H:i")', 'CURDATE()', FALSE);
 			$query = $this->db->get();
 
 			return $query->result();
@@ -178,7 +178,7 @@
 		{
 			$this->db->select_max('humidity');
 			$this->db->from("grow_data");
-			$this->db->where('date_format(date_time,"d-m-Y H:i:s")', 'CURDATE()', FALSE);
+			$this->db->where('date_format(date_time,"d-m-Y H:i)', 'CURDATE()', FALSE);
 			$query = $this->db->get();
 
 			return $query->result();
@@ -278,8 +278,6 @@
 				return $cropConditions = 0;
 			}
 
-
-		
 		}
 	
 	}

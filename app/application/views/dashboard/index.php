@@ -561,18 +561,12 @@
                               <!-- Save Schedule -->
                               <div class="form-group row pb-3">
                                    <div class="col-md-12">
-                                          <button type="submit" class="btn btn-primary">Save Settings</button>
+                                          <button type="submit" class="btn btn-magenta">Save Settings</button>
                                    </div>
                               </div>
                               <?php echo form_close();?>
                       </div>
                     
-                      <div class="col-md-12 col-xs-6 text-left">
-                        <h4>Data Output </h4>
-                        <!-- Raw Data Output -->
-                        <p class="pt-1" style="font-family: monospace; font-size: 12px;">RAW OUTPUT FROM PI<br><?php echo print_r($grow_data); ?></p>
-                      </div>
-                      
                     </div>
 
                   </div>
