@@ -22,7 +22,7 @@
                                     <h1 class="card-header-title align-middle">Technical &#187; Camera</h1>
                               </div>
                               <div class="col-md-4 text-right">
-                                    <span class="pr-2 text-muted">Enable / Disable Probe</span>
+                                    <span class="pr-2 text-muted">Enable / Disable Camera</span>
                                     <!-- Toggle Switch -->
                                     <label class="switch align-middle" style="margin-top: 5px;">
                                           <?php if($activation_state == 0): ?>
