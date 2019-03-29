@@ -1,7 +1,5 @@
 # FRXPI Dockerfile
-FROM balenalib/raspberrypi3-python:3-jessie-build
-
-RUN sed -i '/jessie-updates/{s/^/#/}' /etc/apt/sources.list
+FROM balenalib/raspberrypi3-python:3.6-jessie-build
 
 LABEL maintainer="dev@fruxe.co"
 
