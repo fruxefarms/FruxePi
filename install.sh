@@ -32,7 +32,7 @@ if [ ! -x "$(command -v docker)" ]; then
 fi
 
 # Create FruxePi Docker containers
-echo 'Building Docker containers... This may take several minutes.'
+echo 'Building Docker containers... This will take several minutes.'
 
 cd docker/
 sudo docker-compose up -d
@@ -45,8 +45,17 @@ if [ "$(docker ps -q -f name=frxpi-APACHE)" ] && [ "$(docker ps -q -f name=frxpi
    sudo docker exec -it frxpi-MYSQL /bin/bash -c 'mysql -u root -pfruxefarms frx_db < /docker-entrypoint-initdb.d/frx_db.sql;'
    sudo docker exec -it frxpi-APACHE /bin/bash -c 'bash /tmp/cron_init.sh;'
 else
-   echo "Error!"
+   echo "Error! Unable to configure Docker images."
    exit 1
 fi
-echo "-----"
-echo 'Installation complete! Visit http://<your-raspi-ip-address>:80/ to view.'
+
+echo 'Checking installation...'
+if [ "$(docker ps -q -f name=frxpi-APACHE)" ] && [ "$(docker ps -q -f name=frxpi-MYSQL)" ]; then
+   echo "-----"
+   rpi_ip="$(ip addr | grep 'wlan0' | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1)"
+   msg="Installation complete! Visit http://${rpi_ip}/ on your local network to view."
+   echo $msg
+else
+   echo "Error! Installation process encountered errors and is incomplete."
+   exit 1
+fi
