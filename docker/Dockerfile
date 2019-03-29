@@ -1,6 +1,8 @@
 # FRXPI Dockerfile
 FROM balenalib/raspberrypi3-python:3-jessie-build
 
+RUN sed -i '/jessie-updates/{s/^/#/}' /etc/apt/sources.list
+
 LABEL maintainer="dev@fruxe.co"
 
 # Install Dependencies
