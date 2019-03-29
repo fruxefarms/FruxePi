@@ -39,7 +39,7 @@ sudo docker-compose up -d
 
 # Check if containers were created
 echo 'Configuring Docker containers...'
-if [ "$(docker ps -q -f name=frxpi-APACHE)" ] && [ "$(docker ps -q -f name=frxpi-MYSQL)" ] then
+if [ "$(docker ps -q -f name=frxpi-APACHE)" ] && [ "$(docker ps -q -f name=frxpi-MYSQL)" ]; then
    sudo docker exec -it frxpi-APACHE /bin/bash -c 'chmod +x /var/www/html/actions/fruxepi.py;'
    sudo docker exec -it frxpi-APACHE /bin/bash -c 'chmod 777 /var/www/html/assets/tmp/crontab.txt;'
    sudo docker exec -it frxpi-MYSQL /bin/bash -c 'mysql -u root -pfruxefarms frx_db < /docker-entrypoint-initdb.d/frx_db.sql;'
@@ -48,6 +48,5 @@ else
    echo "Error!"
    exit 1
 fi
-
 echo "-----"
 echo 'Installation complete! Visit http://<your-raspi-ip-address>:80/ to view.'
