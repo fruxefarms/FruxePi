@@ -11,7 +11,7 @@ import time
 import pymysql
 from PIL import Image
 import subprocess
-
+from time import strftime
 
 # Script Arguments
 action = None

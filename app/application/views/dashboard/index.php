@@ -43,10 +43,10 @@
             <?php if ($sensor_state['lights_state'] == 1): ?>
             <ul class="list-inline font-size-16 white">
               <li class="list-inline-item">
-                <?php if ( $grow_data['light_status'] == "1" ): ?>
+                <?php if ( $grow_data['light_status'] == 1 ): ?>
                   <i class="fas fa-sun" aria-hidden="true"></i>
                   <?php echo $grow_data['light_status_message']; ?>
-                <?php elseif ( $grow_data['light_status'] == "0" ): ?>
+                <?php elseif ( $grow_data['light_status'] == 0 ): ?>
                   <i class="fas fa-moon" aria-hidden="true"></i>
                   <?php echo $grow_data['light_status_message']; ?>
                 <?php endif; ?>
@@ -246,9 +246,9 @@
                           <span class="font-size-12 medium-grey"><?php echo $grow_data['light_hours']; ?> hrs</span>
 
                           <div class="font-size-40 medium-grey">
-                            <?php if ($grow_data['light_status'] == "1"): ?>
+                            <?php if ($grow_data['light_status'] == 1): ?>
                               <i class="fas fa-sun font-size-40"></i>
-                            <?php elseif ($grow_data['light_status'] == "0"): ?>
+                            <?php elseif ($grow_data['light_status'] == 0): ?>
                               <i class="fas fa-moon font-size-40"></i>
                             <?php endif; ?>
                           </div>

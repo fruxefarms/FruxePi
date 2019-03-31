@@ -54,7 +54,7 @@ if [ "$(docker ps -q -f name=frxpi-APACHE)" ] && [ "$(docker ps -q -f name=frxpi
    echo "-----"
    # Get Raspberry Pi local network IP address
    rpi_ip="$(ip addr | grep 'wlan0' | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1)"
-   msg="Visit http://${rpi_ip} on your local network to access the FruxePi Dashboard."
+   msg="Visit http://${rpi_ip}/ on your local network to access the FruxePi Dashboard."
    echo "Installation complete!"
    echo $msg
 else
