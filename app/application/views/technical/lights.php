@@ -42,7 +42,7 @@
                         <h3 class="card-title">Manual Controls</h3>
                               <div class="form-group row pt-3">
                                    <div class="col-md-6">
-                                          <h5>ON / OFF</h5>
+                                          <h5>OFF / ON</h5>
                                     </div>
 
                                    <div class="col-md-6">
