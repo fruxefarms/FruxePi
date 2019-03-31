@@ -7,7 +7,7 @@ import sys
 import Adafruit_DHT as dht
 import RPi.GPIO as GPIO
 from datetime import datetime, date
-from time import strftime
+import time
 import pymysql
 from PIL import Image
 import subprocess
@@ -93,7 +93,7 @@ def CLI_menu():
         elif action_option == "-s" and action_GPIO is not None:
             getGPIOState(action_GPIO)
         # Run Fan Program    
-        elif action_option == "-run" and action_GPIO is not None and action_interval is not None:
+        elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
             fanProgram(action_GPIO, action_interval)  
         # Diagnostics    
         elif action_option == "-d" and action_GPIO is not None:
@@ -113,7 +113,7 @@ def CLI_menu():
         elif action_option == "-s" and action_GPIO is not None:
             getGPIOState(action_GPIO)
         # Run Pump Program    
-        elif action_option == "-run" and action_GPIO is not None and action_interval is not None:
+        elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
             pumpProgram(action_GPIO, action_interval)
         # Diagnostics    
         elif action_option == "-d" and action_GPIO is not None:
@@ -326,7 +326,7 @@ def fanOFF(gpioPIN):
 # Fan run program
 def fanProgram(gpioPIN, timeInterval):
     fanON(gpioPIN)
-    time.sleep(timeInterval)
+    time.sleep(int(timeInterval))
     fanOFF(gpioPIN)
 
 # Lights ON
@@ -356,7 +356,7 @@ def pumpOFF(gpioPIN):
 # Pump run program
 def pumpProgram(gpioPIN, timeInterval):
     pumpON(gpioPIN)
-    time.sleep(timeInterval)
+    time.sleep(int(timeInterval))
     pumpOFF(gpioPIN)
 
 # Get GPIO state
