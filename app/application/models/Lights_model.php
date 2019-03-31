@@ -159,7 +159,7 @@
 			
 			// Return True or False based on $command_callback value
 			if (!empty($command_callback)){
-				if ($command_callback[0] == "1") {
+				if ($command_callback[0] == 1) {
 					return 1;
 				}
 			}
@@ -268,8 +268,10 @@
 		  $lightsON = new DateTime($this->Lights_model->getLightTimerON());
 		  $lightsOFF = new DateTime($this->Lights_model->getLightTimerOFF());
 		  $lightHours = $lightsON->diff($lightsOFF)->format("%h");
+
+		  $light_status = $this->Lights_model->getLightsStatus();
 	
-		  if (($timeNow > $lightsON) && ($timeNow < $lightsOFF))
+		  if ($light_status == 1)
 			{
 			$interval = $lightsOFF->diff($timeNow);
 			$data['lights'] = 'ON';

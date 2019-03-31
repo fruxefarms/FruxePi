@@ -74,7 +74,7 @@ def CLI_menu():
             lightsOFF(action_GPIO)
         # Light Relay State    
         elif action_option == "-s" and action_GPIO is not None:
-            getGPIOState(action_GPIO) 
+            print(getGPIOState(action_GPIO)) 
         # Diagnostics    
         elif action_option == "-d" and action_GPIO is not None:
             relayDiagnostics(action_GPIO)
@@ -91,7 +91,7 @@ def CLI_menu():
             fanOFF(action_GPIO)
         # Fan Relay State    
         elif action_option == "-s" and action_GPIO is not None:
-            getGPIOState(action_GPIO)
+            print(getGPIOState(action_GPIO))
         # Run Fan Program    
         elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
             fanProgram(action_GPIO, action_interval)  
@@ -111,7 +111,7 @@ def CLI_menu():
             pumpOFF(action_GPIO)
         # Pump Relay State    
         elif action_option == "-s" and action_GPIO is not None:
-            getGPIOState(action_GPIO)
+            print(getGPIOState(action_GPIO))
         # Run Pump Program    
         elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
             pumpProgram(action_GPIO, action_interval)
@@ -362,6 +362,7 @@ def pumpProgram(gpioPIN, timeInterval):
 # Get GPIO state
 def getGPIOState(gpioPIN):
     state = os.popen("gpio -g read " + str(gpioPIN)).read()
+    
     return state
 
 
