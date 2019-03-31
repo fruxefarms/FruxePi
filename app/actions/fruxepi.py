@@ -361,25 +361,19 @@ def pumpProgram(gpioPIN, timeInterval):
 
 # Get GPIO state
 def getGPIOState(gpioPIN):
-    state = os.system("gpio -g read " + str(gpioPIN))
+    state = os.popen("gpio -g read " + str(gpioPIN)).read()
     return state
 
+
+# Relay diagnostics
 def relayDiagnostics(gpioPIN):
-    # Set our GPIO numbering to BCM
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setwarnings(False)
+    # Get GPIO status
+    state = getGPIOState(int(gpioPIN))
 
-    # Set the GPIO pin to an input
-    GPIO.setup(int(gpioPIN), GPIO.IN)
+    print("Relay State: " + state)
 
-    # Get Data
-    state = GPIO.input(int(gpioPIN))
-    
-    if (state is True):
-        print("Relay Operational!")
-    else:
-        print("Relay Error! Check connections and try again.")
 
+# Get list all sensor GPIO pins stored in DB
 def fetchSensorGPIO():
 
     # SQL query
