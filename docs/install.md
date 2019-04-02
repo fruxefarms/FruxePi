@@ -1,30 +1,38 @@
 ## Easy Install
 Quickly deploy the FruxePi application using Docker and the installation script. 
 
-### Clone Project
-Clone the FruxePi repository to your Raspberry Pi.
+## Easy Install
+Quickly deploy the FruxePi application using Docker and the installation script.
+
+### Step 1: Clone Project
+Clone the FruxePi repository to your Raspberry Pi or download the [ZIP](https://github.com/fruxefarms/FruxePi/archive/master.zip) file.
 
 ```
 git clone https://github.com/fruxefarms/FruxePi.git
 cd FruxePi
 ```
+---
 
-### Run Installation Script
-Run the `install.sh` script to quickly install Docker, Docker Compose and some other installation dependencies.
+### Step 2: Run Installation Script
 
-```
-sudo bash install.sh
-```
+Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some other installation dependencies.
 
-### Launch App
-Visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard.
+![FruxePi Install](docs/img/fruxepi_install.gif?raw=true)
 
-**Default Login**
 
-```
-Username: hello@fruxe.co 
-Password: password
-``` 
+#### Manual Installation
+Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation).
+
+---
+
+### Step 3: Launch App
+![Launch FruxePi](/docs/img/fruxepi_login.gif)
+
+After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
+
+#### Default Login
+**User:** hello@fruxe.co 
+<br/>**Pass:** password 
 
 ---
 
