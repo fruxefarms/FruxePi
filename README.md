@@ -63,7 +63,7 @@ Please see the [full list](https://docs.fruxe.co/#/requirements) of requirements
 Quickly deploy the FruxePi application using Docker and the installation script.
 
 ### Step 1: Clone Project
-Clone the FruxePi repository to your Raspberry Pi.
+Clone the FruxePi repository to your Raspberry Pi or download the [Zip](https://github.com/fruxefarms/FruxePi/archive/master.zip) file.
 
 ```
 git clone https://github.com/fruxefarms/FruxePi.git
@@ -72,21 +72,15 @@ cd FruxePi
 
 ### Step 2: Run Installation Script
 
+Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some other installation dependencies.
+
 ![FruxePi Install](docs/img/fruxepi_install.gif?raw=true)
-
-Run the `install.sh` script to quickly install Docker, Docker Compose and some other installation dependencies.
-
-```
-sudo bash install.sh
-```
 
 
 #### Manual Installation
 Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation).
 
 ### Step 3: Launch App
-![Launch FruxePi](/docs/img/fruxepi_install_complete.png)
-
 After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
 
 **Default Login**
@@ -95,6 +89,8 @@ After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your 
 Username: hello@fruxe.co 
 Password: password
 ``` 
+
+![Launch FruxePi](/docs/img/fruxepi_login.gif)
 
 >[**How do I find my Raspberry Pi's IP address?**](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/finding-your-pis-ip-address)
 
