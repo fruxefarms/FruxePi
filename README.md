@@ -85,10 +85,9 @@ Besides the Docker container installation, the FruxePi can also be manually inst
 
 After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
 
-|Default Login | | 
-|----------|-------------|
-| **User** | hello@fruxe.co |
-| **Pass** | password |
+#### Default Login
+**User:** hello@fruxe.co 
+<br/>**Pass:** password 
 
 
 ---
