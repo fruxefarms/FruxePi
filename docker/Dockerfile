@@ -6,9 +6,9 @@ LABEL maintainer="dev@fruxe.co"
 # Install Dependencies
 RUN apt-get update && \
     apt-get install -y apache2 libapache2-mod-php5 mysql-server php5-mysql pwgen php-apc php5-mcrypt cron nano git unzip && \
-    apt-get install -y python python-pip && \
+    apt-get install -y python python-dev python-pip && \
 	pip install --upgrade pip setuptools wheel && \
-    pip install Adafruit_DHT pymysql RPi.GPIO Pillow==2.2.1
+    pip install Adafruit_DHT pymysql RPi.GPIO Pillow
 
 # Configure Apache
 RUN a2enmod rewrite

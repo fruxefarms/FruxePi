@@ -54,8 +54,9 @@ else
    exit 1
 fi
 
+# Check if Docker containers deployed
 echo 'Checking installation...'
-if [ "$(docker ps -q -f name=frxpi-APACHE)" ] && [ "$(docker ps -q -f name=frxpi-MYSQL)" ]; then
+if docker inspect -f '{{.State.Running}}' 'frxpi-APACHE' | grep -q 'true' && docker inspect -f '{{.State.Running}}' 'frxpi-MYSQL' | grep -q 'true' ; then
    echo "-----"
    # Get Raspberry Pi local network IP address
    rpi_ip="$(ip addr | grep 'wlan0' | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | head -1)"
