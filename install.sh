@@ -18,16 +18,21 @@ sudo apt-get install -y python python-pip
 # Install Docker and Docker Compose
 if [ ! -x "$(command -v docker)" ]; then
    echo "Installing docker"
+   sudo apt-get -y install \
+      apt-transport-https \
+      ca-certificates \
+      curl \
+      gnupg2 \
+      software-properties-common
+
    # Get the Docker signing key for packages
-   curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
+   curl -fsSL https://download.docker.com/linux/raspbian/gpg | sudo apt-key add -
 
    # Add the Docker official repos
-   echo "deb [arch=armhf] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
-      $(lsb_release -cs) stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list
+   echo "deb [arch=armhf] https://download.docker.com/linux/raspbian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
    sudo apt-get update
-   sudo apt-get -y install docker-ce
+   sudo apt-get -y install docker-ce=18.06.2~ce~3-0~raspbian containerd.io
    pip install docker-compose
 fi
 
