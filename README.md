@@ -60,7 +60,9 @@ Please see the [full list](https://docs.fruxe.co/#/requirements) of requirements
 ---
 
 ## Easy Install
-Quickly deploy the FruxePi application using Docker and the installation script. 
+Quickly deploy the FruxePi application using Docker and the installation script.
+
+![FruxePi Install](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/fruxepi_install.gif?raw=true)
 
 ### Clone Project
 Clone the FruxePi repository to your Raspberry Pi.
