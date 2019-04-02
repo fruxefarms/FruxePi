@@ -17,7 +17,7 @@ cd FruxePi
 
 Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some other installation dependencies.
 
-![FruxePi Install](docs/img/fruxepi_install.gif?raw=true)
+![FruxePi Install](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/fruxepi_install.gif?raw=true)
 
 
 #### Manual Installation
@@ -26,7 +26,7 @@ Besides the Docker container installation, the FruxePi can also be manually inst
 ---
 
 ### Step 3: Launch App
-![Launch FruxePi](/docs/img/fruxepi_login.gif)
+![Launch FruxePi](https://github.com/fruxefarms/FruxePi/blob/master//docs/img/fruxepi_login.gif)
 
 After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
 
