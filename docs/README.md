@@ -11,35 +11,37 @@ A browser-based dashboard to monitor and automate indoor agriculture using the R
 ## Quick Install
 Quickly deploy the FruxePi application using Docker and the installation script. 
 
-### Clone Project
-Clone the FruxePi repository to your Raspberry Pi.
+### Step 1: Clone Project
+Clone the FruxePi repository to your Raspberry Pi or download the [ZIP](https://github.com/fruxefarms/FruxePi/archive/master.zip) file.
 
 ```
 git clone https://github.com/fruxefarms/FruxePi.git
 cd FruxePi
 ```
+---
 
-### Run Installation Script
-Run the `install.sh` script to quickly install Docker, Docker Compose and some other installation dependencies.
+### Step 2: Run Installation Script
 
-```
-sudo bash install.sh
-```
+Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some other installation dependencies.
 
->**Manual Installation:** Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](#manual-installation).
+![FruxePi Install](docs/img/fruxepi_install.gif?raw=true)
 
-### Launch App
-Visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard.
 
-> **How do I find my Pi's IP address?**
-<br>[Check out the following link](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/finding-your-pis-ip-address)
+#### Manual Installation
+Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation).
 
-**Default Login**
+---
 
-```
-Username: hello@fruxe.co 
-Password: password
-``` 
+### Step 3: Launch App
+![Launch FruxePi](/docs/img/fruxepi_login.gif)
+
+After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
+
+#### Default Login
+**User:** hello@fruxe.co 
+<br/>**Pass:** password 
+
+
 ---
 
 ## FruxePi Overview
