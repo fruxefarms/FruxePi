@@ -81,18 +81,15 @@ Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some ot
 Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation).
 
 ### Step 3: Launch App
-After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
-
-**Default Login**
-
-```
-Username: hello@fruxe.co 
-Password: password
-``` 
-
 ![Launch FruxePi](/docs/img/fruxepi_login.gif)
 
->[**How do I find my Raspberry Pi's IP address?**](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/finding-your-pis-ip-address)
+After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
+
+|Default Login | | 
+|----------|-------------|
+| **User** | hello@fruxe.co |
+| **Pass** | password |
+
 
 ---
 
