@@ -69,6 +69,7 @@ Clone the FruxePi repository to your Raspberry Pi or download the [Zip](https://
 git clone https://github.com/fruxefarms/FruxePi.git
 cd FruxePi
 ```
+---
 
 ### Step 2: Run Installation Script
 
@@ -79,6 +80,8 @@ Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some ot
 
 #### Manual Installation
 Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation).
+
+---
 
 ### Step 3: Launch App
 ![Launch FruxePi](/docs/img/fruxepi_login.gif)
