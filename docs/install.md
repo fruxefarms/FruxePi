@@ -26,7 +26,7 @@ Besides the Docker container installation, the FruxePi can also be manually inst
 ---
 
 ### Step 3: Launch App
-![Launch FruxePi](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/fruxepi_login.gif)
+![Launch FruxePi](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/fruxepi_login.gif?raw=true)
 
 After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
 
