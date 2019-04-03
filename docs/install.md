@@ -1,9 +1,6 @@
 ## Easy Install
 Quickly deploy the FruxePi application using Docker and the installation script. 
 
-## Easy Install
-Quickly deploy the FruxePi application using Docker and the installation script.
-
 ### Step 1: Clone Project
 Clone the FruxePi repository to your Raspberry Pi or download the [ZIP](https://github.com/fruxefarms/FruxePi/archive/master.zip) file.
 
