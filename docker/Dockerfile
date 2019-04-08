@@ -1,5 +1,5 @@
 # FRXPI Dockerfile
-FROM balenalib/raspberry-pi-debian:jessie-build
+FROM balenalib/raspberrypi3-python:3.6-jessie-build
 
 LABEL maintainer="dev@fruxe.co"
 
@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y apache2 libapache2-mod-php5 mysql-server php5-mysql pwgen php-apc php5-mcrypt cron nano git unzip && \
     apt-get install -y python python-dev python-pip && \
     pip install --upgrade pip setuptools wheel && \
-    pip install Adafruit_DHT pymysql RPi.GPIO Pillow==2.3.0
+    pip install Adafruit_DHT pymysql RPi.GPIO
 
 # Configure Apache
 RUN a2enmod rewrite

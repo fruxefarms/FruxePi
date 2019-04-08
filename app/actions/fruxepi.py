@@ -9,7 +9,6 @@ import RPi.GPIO as GPIO
 from datetime import datetime, date
 import time
 import pymysql
-from PIL import Image
 import subprocess
 from time import strftime
 
