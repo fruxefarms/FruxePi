@@ -41,10 +41,44 @@
                         <!-- Configure Sensor Settings -->
                         <h3 class="card-title">Settings</h3>
                         <p class="card-text">Configure Sensor</p>
+
+                        <!-- Set Temperature Format -->
+                        <?php echo form_open("technical/climate/edit/format"); ?>
+                        <div class="form-group row">
+                              <div class="col-md-6">
+                                    <h5>Temperature Format</h5>
+                              </div>
+
+                              <div class="col-md-6">
+                                    <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="tempFormat" value="C" <?php echo $temperature_format == "C" ? "checked" : "";?>>
+                                          <label class="form-check-label">
+                                          Celsius <span class="text-muted">(&#176C)</span>
+                                          </label>
+                                    </div>
+                                    <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="tempFormat" value="F" <?php echo $temperature_format == "F" ? "checked" : "";?>>
+                                          <label class="form-check-label">
+                                          Fahrenheit <span class="text-muted">(&#176F)</span>
+                                          </label>
+                                    </div>
+                                    <small class="form-text text-muted">Set to display temperature in Celsius or Fahrenheit</small>
+                              </div>
+                        </div>
+
+                        <!-- Save Temperature Format -->
+                        <div class="form-group row pb-3">
+                              <div class="col-md-12">
+                                    <button type="submit" class="btn btn-magenta">Save Format</button>
+                              </div>
+                        </div>
+                        <?php echo form_close();?>
+
+                        <hr>
                         
                         <!-- Set GPIO Pin -->
                         <?php echo form_open("technical/climate/edit/GPIO"); ?>
-                        <div class="form-group row">
+                        <div class="form-group row pt-3">
                               <div class="col-md-6">
                                     <h5>GPIO Pin</h5>
                               </div>

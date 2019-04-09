@@ -12,7 +12,8 @@
 		public function __construct()
 		{
 			$this->load->database();
-        	$this->load->helper(array('form', 'url'));
+			$this->load->helper(array('form', 'url', 'utility'));
+			$this->load->model('Climate_model');
         	$this->load->library('ion_auth');
 		}
 
@@ -95,11 +96,22 @@
 		public function setFanSchedule()
 		{
 			// Set fan program values and update database
-			$data = array(
-				"fan_temp_threshold" => $this->input->post('fan_temp_threshold'),
-				"fan_humid_threshold" => $this->input->post('fan_humid_threshold'),
-				"fan_duration" => $this->input->post('fan_duration') 
-			);
+
+			$tempFormat = $this->Climate_model->getTemperatureFormat();
+
+			if ($tempFormat == "F") {
+				$data = array(
+					"fan_temp_threshold" => fahrenheitToCelsius($this->input->post('fan_temp_threshold')),
+					"fan_humid_threshold" => $this->input->post('fan_humid_threshold'),
+					"fan_duration" => $this->input->post('fan_duration') 
+				);
+			} else {
+				$data = array(
+					"fan_temp_threshold" => $this->input->post('fan_temp_threshold'),
+					"fan_humid_threshold" => $this->input->post('fan_humid_threshold'),
+					"fan_duration" => $this->input->post('fan_duration') 
+				);
+			}
 
 			$this->db->where("process_id", "fan");
 			return $this->db->update("fan_schedule", $data);

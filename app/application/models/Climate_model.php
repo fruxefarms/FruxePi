@@ -183,12 +183,23 @@
 		*/
 		public function setClimateThreshold()
 		{
-			$data = array(
-				"temp_MIN" => $this->input->post('temperatureLOW'),
-				"temp_MAX" => $this->input->post('temperatureHIGH'),
-				"humid_MIN" => $this->input->post('humidityLOW'),
-				"humid_MAX" => $this->input->post('humidityHIGH')
-			);
+			$tempFormat = $this->Climate_model->getTemperatureFormat();
+
+			if ($tempFormat == "F") {
+				$data = array(
+					"temp_MIN" => fahrenheitToCelsius($this->input->post('temperatureLOW')),
+					"temp_MAX" => fahrenheitToCelsius($this->input->post('temperatureHIGH')),
+					"humid_MIN" => $this->input->post('humidityLOW'),
+					"humid_MAX" => $this->input->post('humidityHIGH')
+				);
+			} else {
+				$data = array(
+					"temp_MIN" => $this->input->post('temperatureLOW'),
+					"temp_MAX" => $this->input->post('temperatureHIGH'),
+					"humid_MIN" => $this->input->post('humidityLOW'),
+					"humid_MAX" => $this->input->post('humidityHIGH')
+				);
+			}
 
 			$this->db->where('id', 1);
 			return $this->db->update('climate_threshold', $data);
@@ -229,6 +240,23 @@
 			$result = $query->result();
 
 			return $result[0]->format;
+		}
+
+
+		/**
+		* Set Temperature Format
+		* Set the desired temperature format (Celsius or Fahrenheit).
+		* @return void
+		*/
+		public function setTemperatureFormat()
+		{
+			// Set format value and update database
+			$data = array(
+				"format" => $this->input->post('tempFormat') 
+			);
+
+			$this->db->where('id', $this->sensorID);
+			return $this->db->update('climate_settings', $data);
 		}
 
 	}

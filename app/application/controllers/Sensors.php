@@ -72,6 +72,7 @@
 				$data['user_info'] = $this->Dashboard_model->get_user_info();
 				$data['GPIO'] = $this->Climate_model->getGPIO();
 				$data['activation_state'] = $this->Climate_model->climateActivationState();
+				$data['temperature_format'] = $this->Climate_model->getTemperatureFormat();
 
 				// Page View
 				$this->load->view('technical/climate', $data);
@@ -89,6 +90,22 @@
 			if ($this->ion_auth->logged_in())
 			{
 				$this->Climate_model->setGPIO();
+		
+				redirect($_SERVER['HTTP_REFERER']);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
+		// Set Temperature Format
+		public function editTemperatureFormat()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				$this->Climate_model->setTemperatureFormat();
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			
@@ -330,6 +347,7 @@
 				$data['activation_state'] = $this->Fan_model->fanActivationState();
 				$data['fan_schedule'] = $this->Fan_model->getFanSchedule();
 				$data['fan_status'] = $this->Fan_model->getFanStatus();
+				$data['temperature_format'] = $this->Climate_model->getTemperatureFormat();
 
 				// Page View
 				$this->load->view('technical/fans', $data);

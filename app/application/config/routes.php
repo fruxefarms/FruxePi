@@ -85,6 +85,7 @@ $route['technical/climate'] = 'sensors/climateSettings';
 $route['technical/climate/enable'] = 'sensors/enableClimateSensor';
 $route['technical/climate/disable'] = 'sensors/disableClimateSensor';
 $route['technical/climate/edit/GPIO'] = 'sensors/editClimateGPIO';
+$route['technical/climate/edit/format'] = 'sensors/editTemperatureFormat';
 $route['technical/climate/diagnostics'] = 'sensors/climateDiagnostics';
 
 // Lights
