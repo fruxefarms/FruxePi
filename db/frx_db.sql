@@ -42,6 +42,21 @@ VALUES
     ('15', '40','20','99');
 
 
+-- TABLE: climate_settings
+DROP TABLE IF EXISTS climate_settings;
+
+CREATE TABLE climate_settings (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    sensor INT(10) NOT NULL,
+    format VARCHAR(1) NOT NULL
+);
+
+-- TEST DATA: climate_settings
+INSERT INTO climate_settings 
+    ('id', 'sensor_id', 'format') 
+VALUES
+    (1, 1, 'C');
+
 
 -- TABLE: crops
 DROP TABLE IF EXISTS crops;
