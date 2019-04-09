@@ -2,5 +2,6 @@
 
 # CRON Initialization Script
 sudo crontab -u www-data /tmp/crontab
-/etc/init.d/cron start
-#sudo service cron start
+# sudo /etc/init.d/cron restart
+# update-rc.d cron enable
+sudo service cron start

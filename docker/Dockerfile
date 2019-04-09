@@ -33,4 +33,6 @@ ADD crontab /tmp/crontab
 ADD cron_init.sh /tmp/cron_init.sh
 
 # Start Apache
-CMD ["apachectl", "-D", "FOREGROUND"]
+# CMD ["apachectl", "-D", "FOREGROUND"]
+COPY start.sh /start.sh
+CMD ["./start.sh"]
