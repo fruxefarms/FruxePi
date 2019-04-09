@@ -56,8 +56,6 @@ The basic functionalies of the FruxePi include:
 
 Please see the [full list](https://docs.fruxe.co/#/requirements) of requirements and further information regarding each component.
 
-**Mandatory FruxePi components*
-
 ---
 
 ## Easy Install
