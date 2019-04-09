@@ -46,18 +46,36 @@ echo -e "\e[35mBuilding Docker containers...\e[0m \e[5mThis will take several mi
 # Build Docker function
 build_docker()
 {
-   cd docker/
+   cd docker/$1/
    sudo docker-compose up -d
 }
 
-# Show terminal log
-if [ "$1" == "-log" ]; then
-   build_docker   
-else
-   {
-   build_docker
-   } &> /dev/null
-fi
+# Determine RaspberryPi build architecture
+get_rpi_version()
+{
+   if cat /proc/cpuinfo | grep -q '9000c1' || cat /proc/cpuinfo | grep -q '900092' || cat /proc/cpuinfo | grep -q '900093'; then
+      echo "Deploying Raspberry Pi Zero (ARMv6) compatible containers..."
+      # Enable Logging
+      if [ "$1" == "-log" ]; then
+         build_docker "armv6"   
+      else
+         {
+         build_docker "armv6"
+         } &> /dev/null
+      fi
+   else
+      echo "Deploying Raspberry Pi Zero (ARMv7) compatible containers..."
+      # Enable Logging
+      if [ "$1" == "-log" ]; then
+         build_docker "armv7"   
+      else
+         {
+         build_docker "armv7"
+         } &> /dev/null
+      fi
+   fi
+}
+
 
 # Configure Docker Function
 configure_docker()
