@@ -7,6 +7,9 @@ echo -e "\e[1mversion:\e[0m \e[37mfrx-pi-v0.2-BETA\e[0m"
 echo -e "\e[1mweb:\e[0m \e[37mdocs.fruxe.co\e[0m"
 echo ""
 
+# Logging Parameter
+logging=$1
+
 # To get the latest package lists
 echo -e "\e[35mGetting Latest Updates...\e[0m"
 {
@@ -51,12 +54,12 @@ build_docker()
 }
 
 # Determine RaspberryPi build architecture
-get_rpi_version()
+build_containers()
 {
    if cat /proc/cpuinfo | grep -q '9000c1' || cat /proc/cpuinfo | grep -q '900092' || cat /proc/cpuinfo | grep -q '900093'; then
       echo "Deploying Raspberry Pi Zero (ARMv6) compatible containers..."
       # Enable Logging
-      if [ "$1" == "-log" ]; then
+      if [ "$logging" == "-log" ]; then
          build_docker "armv6"   
       else
          {
@@ -66,7 +69,7 @@ get_rpi_version()
    else
       echo "Deploying Raspberry Pi Zero (ARMv7) compatible containers..."
       # Enable Logging
-      if [ "$1" == "-log" ]; then
+      if [ "$logging" == "-log" ]; then
          build_docker "armv7"   
       else
          {
@@ -76,6 +79,8 @@ get_rpi_version()
    fi
 }
 
+# Build Containers
+build_containers
 
 # Configure Docker Function
 configure_docker()
@@ -90,7 +95,7 @@ configure_docker()
 echo -e "\e[35mConfiguring Docker containers...\e[0m"
 if [ "$(docker ps -q -f name=frxpi-APACHE)" ] && [ "$(docker ps -q -f name=frxpi-MYSQL)" ]; then
    # Show terminal log
-   if [ "$1" == "-log" ]; then
+   if [ "$logging" == "-log" ]; then
       configure_docker
    else
       {
