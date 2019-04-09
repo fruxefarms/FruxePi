@@ -67,7 +67,7 @@ build_containers()
          } &> /dev/null
       fi
    else
-      echo "Deploying Raspberry Pi Zero (ARMv7) compatible containers..."
+      echo "Deploying Raspberry Pi 3 (ARMv7) compatible containers..."
       # Enable Logging
       if [ "$logging" == "-log" ]; then
          build_docker "armv7"   
