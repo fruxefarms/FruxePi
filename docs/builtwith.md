@@ -11,6 +11,7 @@ This project was built with the assistance of the following libraries and tools:
 * [Codeigniter](https://codeigniter.com/) - PHP web framework.
 * [Ion Auth](http://benedmunds.com/ion_auth/) - Ion Auth is a simple and lightweight authentication library for the CodeIgniter framework.
 * [Docker](https://www.docker.com/) - Containerized LAMP stack.
+* [Balena](https://github.com/balena-io-library/base-images) - Raspberry Pi compatible Docker base images.
 * [Docsify](https://docsify.js.org/#/) - A magical documentation site generator.
 
 ### Front-End
