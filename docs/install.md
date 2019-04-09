@@ -19,7 +19,7 @@ Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some ot
 To view the install process in the Terminal use `sudo bash install.sh -log`.
 
 #### Manual Installation
-Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation).
+Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation-1).
 
 ---
 
