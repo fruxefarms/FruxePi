@@ -53,7 +53,7 @@ CREATE TABLE climate_settings (
 
 -- TEST DATA: climate_settings
 INSERT INTO climate_settings 
-    (id, sensor_id, format) 
+    (id, sensor, format) 
 VALUES
     (1, 1, 'C');
 
