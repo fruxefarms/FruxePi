@@ -146,6 +146,6 @@ Read the [LICENSE](https://github.com/fruxefarms/FruxePi/blob/master/LICENSE.md)
 ---
 
 ## About Fruxe
-Our goal is to develop open-source software and hardware to automate indoor agriculture.
+We are a collective of programmers and master growers. Our goal is to develop open-source software and low-cost hardware to automate indoor agriculture.
 
 [fruxe.co/about](https://fruxe.co/about)
