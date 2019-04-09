@@ -115,6 +115,7 @@ This project was built with the assistance of the following libraries and tools:
 * [Bootstrap Datepicker](https://github.com/uxsolutions/bootstrap-datepicker) - A flexible datepicker widget in the Bootstrap style.
 * [jQuery Timepicker](https://jonthornton.github.com/jquery-timepicker/) - A lightweight, customizable javascript timepicker plugin.
 * [Chart.js](http://www.chartjs.org/) - Simple yet flexible JavaScript charting for designers & developers.
+* [Font Awesome](https://fontawesome.com/) - The world's most popular and easiest to use icon set.
 
 ---
 
