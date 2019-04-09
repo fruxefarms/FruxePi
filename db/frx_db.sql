@@ -1,5 +1,5 @@
--- FruxePi OPEN-PROTOTYPE DEVELOPMENT v0.1
--- DB: frx_DEV 
+-- FruxePi OPEN-PROTOTYPE DEVELOPMENT v0.2
+-- DB: frx_DEV
 
 -- TABLE: activity
 DROP TABLE IF EXISTS activity;
