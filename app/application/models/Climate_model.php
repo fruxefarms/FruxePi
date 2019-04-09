@@ -214,5 +214,22 @@
 			return $command_callback;
 		}
 
+		/**
+		* Get Climate Temperature Format
+		* Return the desired temperature format.
+		* @return string
+		*/
+		public function getTemperatureFormat()
+		{
+			$this->db->select("format");
+			$this->db->from("climate_settings");
+			$this->db->where('id', $this->sensorID);
+
+			$query = $this->db->get();
+			$result = $query->result();
+
+			return $result[0]->format;
+		}
+
 	}
 

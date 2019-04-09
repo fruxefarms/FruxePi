@@ -63,7 +63,7 @@
     var lineChartData = {
         labels: [<?php echo $chart_legend; ?>],
         datasets: [{
-            label: 'Temperature (°C)',
+            label: 'Temperature (°<?php echo $temperature_format; ?>)',
             borderColor: window.chartColors.red,
             backgroundColor: window.chartColors.red,
             fill: false,

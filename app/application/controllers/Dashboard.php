@@ -48,6 +48,7 @@
 				$data['crop_activity'] = $this->Crop_model->get_cropActivity();
 
 				$data['temperature_chart'] = $this->Dashboard_model->get_temperature_chart_data();
+				$data['temperature_format'] = $this->Climate_model->getTemperatureFormat();
 				$data['humidity_chart'] = $this->Dashboard_model->get_humidity_chart_data();
 				$data['chart_legend'] = $this->Dashboard_model->get_chart_legend();
 				

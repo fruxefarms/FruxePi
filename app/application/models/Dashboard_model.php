@@ -9,7 +9,7 @@
 		public function __construct()
 		{
 			$this->load->database();
-        	$this->load->helper(array('form', 'url'));
+        	$this->load->helper(array('form', 'url', 'utility'));
 			$this->load->library('ion_auth');
 			$this->load->model('Climate_model');
 			$this->load->model('Lights_model');
@@ -79,6 +79,8 @@
 		// Get 24-hr temperature chart data
 		public function get_temperature_chart_data()
 		{
+			$tempFormat = $this->Climate_model->getTemperatureFormat();
+
 			$this->db->select("*");
 			$this->db->from("climate_history");
 			$this->db->order_by("id","DESC");
@@ -91,9 +93,17 @@
 			$count = 1;
 			foreach($results as $result) {
 				if ($count == count($results)) {
-					$output .= $result["temperature"];
+					if ($tempFormat == "F") {
+						$output .= celsiusToFahrenheit($result["temperature"]);
+					} else {
+						$output .= $result["temperature"];
+					}
 				} else {
-					$output .= $result["temperature"] . ", ";
+					if ($tempFormat == "F") {
+						$output .= celsiusToFahrenheit($result["temperature"]) . ", ";
+					} else {
+						$output .= $result["temperature"] . ", ";
+					}
 				}
 				$count++;
 			}

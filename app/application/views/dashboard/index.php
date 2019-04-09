@@ -30,8 +30,14 @@
             <?php if ($sensor_state['climate_state'] == 1): ?>
             <div class="row">
               <div class="col-lg-6 col-6 font-size-50 mb-5 white text-center">
-                <?php echo $grow_data['temperature']; ?>&#176;
-                <span class="font-size-30">C</span>
+                <!-- Temperature: Convert Celsius or Fahrenheit -->
+                <?php if ($temperature_format == "F"): ?>
+                  <?php echo celsiusToFahrenheit($grow_data['temperature']); ?>&#176;
+                  <span class="font-size-30">F</span>
+                <?php else: ?>
+                  <?php echo $grow_data['temperature']; ?>&#176;
+                  <span class="font-size-30">C</span>
+                <?php endif; ?>
               </div>
               <div class="col-lg-6 col-6 font-size-50 mb-5 white text-center">
                 <?php echo $grow_data['humidity']; ?>
@@ -178,9 +184,15 @@
                             <?php endif; ?>
                           <?php endif; ?>
 
+                          <!-- Temperature: Convert Celsius or Fahrenheit -->
                           <div class="font-size-40 medium-grey">
-                            <?php echo round($grow_data['temperature'], 1); ?>°
-                            <span class="font-size-30">C</span>
+                            <?php if ($temperature_format == "F"): ?>
+                              <?php echo round(celsiusToFahrenheit($grow_data['temperature']), 1); ?>°
+                              <span class="font-size-30">F</span>
+                            <?php else: ?>
+                              <?php echo round($grow_data['temperature'], 1); ?>°
+                              <span class="font-size-30">C</span>
+                            <?php endif; ?>
                           </div>
                         </div>
 
@@ -384,12 +396,22 @@
                                         <div class="col-6">
                                           <div class="input-group mb-2">
                                                 <?php if(!empty($climate_threshold['temp_MIN'])): ?>
-                                                <input type="text" class="form-control" name="temperatureLOW" value="<?php echo $climate_threshold['temp_MIN']; ?>">
+                                                  <!-- Format Temperature -->
+                                                  <?php if ($temperature_format == "F"): ?>
+                                                    <input type="text" class="form-control" name="temperatureLOW" value="<?php echo celsiusToFahrenheit($climate_threshold['temp_MIN']); ?>">
+                                                  <?php else: ?>
+                                                    <input type="text" class="form-control" name="temperatureLOW" value="<?php echo $climate_threshold['temp_MIN']; ?>">
+                                                  <?php endif; ?>
                                                 <?php else: ?>
-                                                <input type="text" class="form-control" name="temperatureLOW" value="" placeholder="Min Temperature">
+                                                  <input type="text" class="form-control" name="temperatureLOW" value="" placeholder="Min Temperature">
                                                 <?php endif; ?>
                                                 <div class="input-group-append">
-                                                      <div class="input-group-text">&#176C</div>
+                                                  <!-- Format Temperature -->
+                                                  <?php if ($temperature_format == "F"): ?>
+                                                    <div class="input-group-text">&#176F</div>
+                                                  <?php else: ?>
+                                                    <div class="input-group-text">&#176C</div>
+                                                  <?php endif; ?>
                                                 </div>
                                           </div>
                                           <small class="form-text text-muted">Set minimum temperature</small>
@@ -397,12 +419,22 @@
                                         <div class="col-6">
                                           <div class="input-group mb-2">
                                                 <?php if(!empty($climate_threshold['temp_MAX'])): ?>
-                                                <input type="text" class="form-control" name="temperatureHIGH" value="<?php echo $climate_threshold['temp_MAX']; ?>">
+                                                  <!-- Format Temperature -->
+                                                  <?php if ($temperature_format == "F"): ?>
+                                                    <input type="text" class="form-control" name="temperatureHIGH" value="<?php echo celsiusToFahrenheit($climate_threshold['temp_MAX']); ?>">
+                                                  <?php else: ?>
+                                                    <input type="text" class="form-control" name="temperatureHIGH" value="<?php echo $climate_threshold['temp_MAX']; ?>">
+                                                  <?php endif; ?>
                                                 <?php else: ?>
-                                                <input type="text" class="form-control" name="temperatureHIGH" value="" placeholder="Max Temperature">
+                                                  <input type="text" class="form-control" name="temperatureHIGH" value="" placeholder="Max Temperature">
                                                 <?php endif; ?>
                                                 <div class="input-group-append">
-                                                      <div class="input-group-text">&#176C</div>
+                                                  <!-- Format Temperature -->
+                                                  <?php if ($temperature_format == "F"): ?>
+                                                    <div class="input-group-text">&#176F</div>
+                                                  <?php else: ?>
+                                                    <div class="input-group-text">&#176C</div>
+                                                  <?php endif; ?>
                                                 </div>
                                           </div>
                                           <small class="form-text text-muted">Set maximum temperature</small>
@@ -492,12 +524,21 @@
                                         <div class="col-6">
                                           <div class="input-group mb-2">
                                                 <?php if(!empty($fan_schedule[0]->fan_temp_threshold)): ?>
-                                                <input type="text" name="fan_temp_threshold" class="form-control" value="<?php echo $fan_schedule[0]->fan_temp_threshold; ?>">
+                                                  <?php if ($temperature_format == "F"): ?>
+                                                    <input type="text" name="fan_temp_threshold" class="form-control" value="<?php echo celsiusToFahrenheit($fan_schedule[0]->fan_temp_threshold); ?>">
+                                                  <?php else: ?>
+                                                    <input type="text" name="fan_temp_threshold" class="form-control" value="<?php echo $fan_schedule[0]->fan_temp_threshold; ?>">
+                                                  <?php endif; ?>
                                                 <?php else: ?>
                                                 <input type="text" name="fan_temp_threshold" class="form-control" placeholder="Max Temperature">
                                                 <?php endif; ?>
                                                 <div class="input-group-append">
-                                                      <div class="input-group-text">&#176C</div>
+                                                  <!-- Format Temperature -->
+                                                  <?php if ($temperature_format == "F"): ?>
+                                                    <div class="input-group-text">&#176F</div>
+                                                  <?php else: ?>
+                                                    <div class="input-group-text">&#176C</div>
+                                                  <?php endif; ?>
                                                 </div>
                                           </div>
                                           <small class="form-text text-muted">Set maximum temperature</small>
@@ -531,7 +572,7 @@
                               <hr>
                               <?php endif; ?>
 
-                              <!-- Fan Settings -->
+                              <!-- Pump Settings -->
                               <?php if ($sensor_state['pump_state'] == 1): ?>
                               <h4>Pump</h4>
                               <div class="form-group row">
