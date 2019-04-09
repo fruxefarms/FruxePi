@@ -1,5 +1,5 @@
 # Updating
-Run the following commands to update your FruxePi to the latest version. This is a sure fire way to get a fresh update!  
+Run the following commands to update your FruxePi to the latest version. This is a sure way to get a fresh update!  
 
 ### Remove old version
 ```
