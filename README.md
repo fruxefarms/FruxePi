@@ -34,7 +34,7 @@ The FruxePi is a web application running on a LAMP stack (Linux, Apache, MySQL, 
 
 Using the browser-based dashboard, users can easily monitor the status of their growing environment and automate certain tasks. 
 
-The basic functionalies of the FruxePi include:
+**The basic functionalies of the FruxePi include:**
 
 - Monitor your growing climate (temperature and humidity).
 - Chart visualizations for historical temperature and humidity data.
@@ -79,20 +79,23 @@ cd FruxePi
 
 ### Step 2: Run Installation Script
 
-Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some other installation dependencies.
+Run `sudo bash install.sh` to quickly install the application as well as Docker, Docker Compose and some other installation dependencies.
 
 ![FruxePi Install](docs/img/fruxepi_install.gif?raw=true)
 
 
 #### Manual Installation
-Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation-1).
+Besides the Docker installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation-1). Good luck! 
 
 ---
 
 ### Step 3: Launch App
+
+Launch the application from your browser and login!
+
 ![Launch FruxePi](/docs/img/fruxepi_login.gif)
 
-After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials.
+After successful deployment, visit `http://<your-raspi-ip-address>:80/` in your browser to launch the FruxePi dashboard and login with the default credentials below:
 
 #### Default Login
 **User:** hello@fruxe.co 
