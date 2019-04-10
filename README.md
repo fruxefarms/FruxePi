@@ -24,7 +24,7 @@ Quick Links
 
 The FruxePi is a web application running on a LAMP stack (Linux, Apache, MySQL, PHP) which can be accessed from the browser on your local network. The application collects grow data from a variety of sensors and controls various operations such as lighting, ventilation and watering, using relay modules.
 
-### Demo
+### Dashboard (Demo)
 **URL:**  https://demo.fruxe.co/
 </br>**User:**  demo@fruxe.co
 </br>**Pass:**  password
@@ -36,17 +36,18 @@ Using the browser-based dashboard, users can easily monitor the status of their 
 
 The basic functionalies of the FruxePi include:
 
-- Monitoring growing climate (Temperature and Humidity).
+- Monitor your growing climate (temperature and humidity).
 - Chart visualizations for historical temperature and humidity data.
 - Manage crops by tracking progress and time to harvest.
 - Monitor soil moisture.
 - Camera monitoring with periodic and manual photo capture.
 - Manual and scheduled lighting control.
-- Fan control both manually and exception based (Temperature or Humidity thresholds).
+- Fan control both manually and exception based (temperature or humidity thresholds).
 - Watering pump control and daily automation.
 - User authentication and management.
+- Track daily activity using blog-like journal.
 
-### What parts will I need?
+## What parts will I need?
 |Part|Description|
 | ------------- | ------------- |
 |![Climate Sensor](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/climate_sensor.png?raw=true) | **Climate Sensor**<br/> The DHT22 is a basic digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin, no analog input pins needed.|
