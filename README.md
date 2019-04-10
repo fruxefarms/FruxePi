@@ -24,7 +24,7 @@ Quick Links
 
 The FruxePi is a web application running on a LAMP stack (Linux, Apache, MySQL, PHP) which can be accessed from the browser on your local network. The application collects grow data from a variety of sensors and controls various operations such as lighting, ventilation and watering, using relay modules.
 
-### Dashboard (Demo)
+### Dashboard Demo
 **URL:**  https://demo.fruxe.co/
 </br>**User:**  demo@fruxe.co
 </br>**Pass:**  password
