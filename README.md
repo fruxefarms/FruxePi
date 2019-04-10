@@ -47,9 +47,15 @@ The basic functionalies of the FruxePi include:
 - User authentication and management.
 - Track daily activity using blog-like journal.
 
+---
+
 ## What parts will I need?
+
+The FruxePi runs on the RaspberryPi using several sensors and relays:
+
 |Part|Description|
 | ------------- | ------------- |
+|![Raspberry Pi](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/raspberrypi.png?raw=true) | **Raspberry Pi**<br/> The FruxePi has been tested and runs well on the following models running Raspian:<br/>- Raspberry Pi 3 Model B <br/>- Raspberry Pi Model Zero W |
 |![Climate Sensor](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/climate_sensor.png?raw=true) | **Climate Sensor**<br/> The DHT22 is a basic digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin, no analog input pins needed.|
 |![Moisture Probe](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/moisture_sensor.png?raw=true)  | **Moisture Probe**<br/> The TE215 moisture probe is sensitive to ambient humidity and is used to detect the moisture content of the soil or growing medium. The module outputs a HIGH or LOW value when the the soil humidity exceeds a set threshold value. |
 |![Relay Module](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/relay.png?raw=true)|**5V Relay Modules**<br/> 5V Relay Modules are a great way to control high current and high voltage devices directly from the Raspberry Pi.|
