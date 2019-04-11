@@ -5,10 +5,9 @@ You may connect the peripherals using any configuration you wish, however, the F
 
 #### Climate Sensor
 
-Connect the DHT22 sensor using the following GPIO pin configuration.
-- 3v3 Power (Physical pin 1)
-- Ground (Physical pin 6)
-- Data (Physical pin 3)  
+|GPIO|Directions|
+| ------------- | ------------- |
+|![Climate Sensor](img/climate_pinout.png?raw=true) | **Climate Sensor**<br/> Connect the DHT22 sensor using the following GPIO pin configuration:<br/>- VCC / + (3v3 Power - Physical pin 1)<br/>- Ground / - (Physical pin 6)<br/>- Out (Physical pin 3)|
 
 #### Moisture Probe
 
