@@ -33,4 +33,8 @@ For many, this is step arguably the trickiest part of setting up the FruxePi. A 
 
 #### Enable Sensors & Relays
 
-Enabling and disabling sensors is easy from the dashboard using the slide toggle. You may also run the diagnostics function to test if the peripherals are connected properly.
+Enabling and disabling sensors is easy from the dashboard using the slide toggle.
+
+![Enable Sensor](img/fruxepi_enablesensor.gif?raw=true)
+
+You may also run the diagnostics function to test if the peripherals are connected properly.
