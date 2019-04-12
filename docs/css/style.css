@@ -326,7 +326,8 @@ body.sticky .sidebar,body.sticky .sidebar-toggle{
 }
 .markdown-section td,.markdown-section th{
     border:1px solid #ddd;
-    padding:6px 13px
+    padding:6px 13px;
+    vertical-align: top;
 }
 .markdown-section tr{
     border-top:1px solid #ccc
