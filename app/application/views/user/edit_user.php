@@ -41,6 +41,13 @@
                         </div>
                         <hr>
 
+                        <p class="card-text">Profile Photo</p>
+                        <div class="form-group">
+                              <input type="file" id="profile_photo" name="profile_photo" class="form-control-file">
+                        </div>
+                        <hr>
+
+                        <!-- User Groups -->
                         <?php if ($this->ion_auth->is_admin()): ?>
                         <p class="card-text">Member Groups</p>
                         <div class="form-group">

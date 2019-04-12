@@ -46,6 +46,40 @@
                                     </div>
                               </div>
 
+                               <!-- Crop Thumbnail -->
+                               <div class="form-group row pb-3">
+                                    <div class="col-md-6">
+                                          <h5>Thumbnail</h5>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                          <div class="row">
+                                                <div class="col-12">
+                                                      <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="img_thumb" value="C">
+                                                            <label class="form-check-label">
+                                                            Use Camera
+                                                            </label>
+                                                      </div>
+                                                      <div class="form-check">
+                                                            <input class="form-check-input" type="radio" name="img_thumb" value="F">
+                                                            <label class="form-check-label">
+                                                            Upload Image
+                                                            </label>
+                                                      </div>
+                                                      <small class="form-text text-muted">Give your crop a profile pic.</small>
+                                                </div>
+                                                
+                                          </div>
+                                          <div class="row pt-3">
+                                                <div class="col-12">
+                                                      <input type="file" id="crop_thumbnail" name="crop_thumbnail" class="form-control-file">
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              
+
                               <!-- Plant Type -->
                               <div class="form-group row pb-3">
                                    <div class="col-md-6">

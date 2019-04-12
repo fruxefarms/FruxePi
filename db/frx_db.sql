@@ -16,12 +16,10 @@ CREATE TABLE activity (
 INSERT INTO activity
     (cropID, date_time, activity_type, msg) 
 VALUES
-    ('FRX-CR0001', '2019-03-20 11:11:00','Alert','Temperature is too hot!'),
-    ('FRX-CR0001', '2019-03-20 12:11:00','Update','Lights turned ON!'),
-    ('FRX-CR0001', '2019-03-20 20:11:00','Update','Lights turned OFF!'),
-    ('FRX-CR0001', '2019-03-20 20:11:00','Journal','Watch for pests'),
-    ('FRX-CR0001', '2019-03-20 20:11:00','Journal','Transplanted some plants'),
-    ('FRX-CR0001', '2019-03-20 20:11:00','Journal','Added nutrition to plants');
+    ('FRX-CR0001', '2019-03-20 11:11:00','Trimming','Cleared yellow leaves'),
+    ('FRX-CR0001', '2019-03-20 20:11:00','Pest Control','Watch for pests'),
+    ('FRX-CR0001', '2019-03-20 20:11:00','Notes','Transplanted some plants'),
+    ('FRX-CR0001', '2019-03-20 20:11:00','Spraying','Sprayed plants with water');
 
 
 -- TABLE: climate_threshold
