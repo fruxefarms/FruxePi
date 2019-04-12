@@ -11,14 +11,13 @@ You may connect the peripherals using any configuration you wish, however, the F
 
 #### Moisture Probe
 
-Connect the TE215 moisture probe using the following GPIO pin configuration.
-- 3v3 Power (Physical pin 1)
-- Ground (Physical pin 6)
-- Data (Physical pin 13)
+|GPIO|Directions|
+| ------------- | ------------- |
+|![Moistrure Probe](img/moisture_pinout.png?raw=true) | **Moisture Probe**<br/> Connect the TE215 moisture probe using the following GPIO pin configuration:<br/>- VCC / + (3v3 Power - Physical pin 17)<br/>- Ground / - (Physical pin 20)<br/>- Out (Physical pin 18)|
 
 #### Relays
 
-The FruxePi uses a 5V 3-channel relay to control the lights, fans and water pump, which are connected to their respective AC power plug. Relays can be connected in any configuration (1/2/3 channel).    
+The FruxePi uses a 5V 3-channel relay to control the lights, fans and water pump, which are connected to their respective AC power plug. Relays can be connected in any configuration (1/2/3 channel.    
 
 For many, this is step arguably the trickiest part of setting up the FruxePi. A power strip controlled by the Raspberry Pi is a common project found online and many tutorials are available which can offer guidance on how to wire a relay power outlet appropriately. A few tutorials we found particularly helpful were:
 
@@ -26,23 +25,9 @@ For many, this is step arguably the trickiest part of setting up the FruxePi. A 
 
 > It goes without saying, but for some reason we still have it say it. Please be careful and exercise the utmost caution when working with high voltage electricity. Err on the side of caution and get some help if you're confused or lost in the process. Let's all be safe people! 
 
-**Lights**
-</br>Connect the fan relay using the following GPIO pin configuration.
-- 3v3 Power (Physical pin 1)
-- Ground (Physical pin 6)
-- Data (Physical pin 13)
-
-**Fans**
-</br>Connect the fan relay using the following GPIO pin configuration.
-- 3v3 Power (Physical pin 1)
-- Ground (Physical pin 6)
-- Data (Physical pin 13)
-
-**Pump**
-</br>Connect the pump relay using the following GPIO pin configuration.
-- 3v3 Power (Physical pin 1)
-- Ground (Physical pin 6)
-- Data (Physical pin 13)
+|GPIO|Directions|
+| ------------- | ------------- |
+|![Relay Modules](img/relay_pinout.png?raw=true) | **Relay Modules**<br/> Connect the relay module using the following GPIO pin configuration:<br/>- VCC / + (5v Power - Physical pin 4)<br/>- Ground / - (Physical pin 6)<br/>- CH1 (Lights) (Physical pin 8) <br/>- CH2 (Fans) (Physical pin 10) <br/>- CH3 (Pumps) (Physical pin 12)|
 
 ---
 
