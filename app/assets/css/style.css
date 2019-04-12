@@ -446,10 +446,10 @@ background: #007b5e;
   max-height:150px;
 }
 
-.card-img-bottom {
+.card-img-bottom-camera {
   color: #fff;
   height: 20rem;
-  background: url(../img/camera_bg.jpg) center no-repeat;
+  background: url(../img/crop_bg.jpg) center no-repeat;
   background-size: cover;
 }
 

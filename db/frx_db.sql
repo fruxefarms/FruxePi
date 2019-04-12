@@ -16,12 +16,12 @@ CREATE TABLE activity (
 INSERT INTO activity
     (cropID, date_time, activity_type, msg) 
 VALUES
-    ('FRX-CR0001', '21-11-2017 11:11:00','Alert','Temperature is too hot!'),
-    ('FRX-CR0001', '21-11-2017 12:11:00','Update','Lights turned ON!'),
-    ('FRX-CR0001', '21-11-2017 20:11:00','Update','Lights turned OFF!'),
-    ('FRX-CR0001', '21-11-2017 20:11:00','Journal','Watch for pests'),
-    ('FRX-CR0001', '21-11-2017 20:11:00','Journal','Transplanted some plants'),
-    ('FRX-CR0001', '21-11-2017 20:11:00','Journal','Added nutrition to plants');
+    ('FRX-CR0001', '2019-03-20 11:11:00','Alert','Temperature is too hot!'),
+    ('FRX-CR0001', '2019-03-20 12:11:00','Update','Lights turned ON!'),
+    ('FRX-CR0001', '2019-03-20 20:11:00','Update','Lights turned OFF!'),
+    ('FRX-CR0001', '2019-03-20 20:11:00','Journal','Watch for pests'),
+    ('FRX-CR0001', '2019-03-20 20:11:00','Journal','Transplanted some plants'),
+    ('FRX-CR0001', '2019-03-20 20:11:00','Journal','Added nutrition to plants');
 
 
 -- TABLE: climate_threshold
@@ -79,7 +79,7 @@ CREATE TABLE crops (
 INSERT INTO crops 
     (cropID, users, nickname, plant_qty, plant_type, crop_start, crop_end, date_created, date_modified)
 VALUES
-    ('FRX-CR0001', 1,'Big Harvest', 5, 'Italian Basil', '05-09-2018', '21-11-2018', '05-09-2018 11:11:11', '05-09-2018 11:11:11');
+    ('FRX-CR0001', 1,'Spring Harvest', 5, 'Spanish Cilantro', '20-03-2019', '21-06-2019', '20-03-2019 11:11:11', '20-03-2019 11:11:11');
 
 
 -- TABLE: technical
@@ -182,30 +182,30 @@ CREATE TABLE grow_data (
 INSERT INTO grow_data
     (date_time, temperature, humidity, light_status, moisture_status, fan_status, pump_status)
 VALUES
-    ('2018-10-18 00:00:00', 25, 75, True, True, True, False),
-    ('2018-10-18 01:00:00', 27, 88, True, True, True, False),
-    ('2018-10-18 02:00:00', 26, 84, True, True, True, False),
-    ('2018-10-18 03:00:00', 26, 80, True, True, True, False),
-    ('2018-10-18 04:00:00', 25, 77, True, True, True, False),
-    ('2018-10-18 05:00:00', 26, 78, True, True, True, False),
-    ('2018-10-18 06:00:00', 25, 75, True, True, True, False),
-    ('2018-10-18 07:00:00', 27, 76, True, True, True, False),
-    ('2018-10-18 08:00:00', 28, 80, True, True, True, False),
-    ('2018-10-18 09:00:00', 25, 75, True, True, True, False),
-    ('2018-10-18 10:00:00', 27, 81, True, True, True, False),
-    ('2018-10-18 11:00:00', 28, 84, True, True, True, False),
-    ('2018-10-18 12:00:00', 28, 83, True, True, True, False),
-    ('2018-10-18 13:00:00', 28, 82, True, True, True, False),
-    ('2018-10-18 14:00:00', 29, 88, True, True, True, False),
-    ('2018-10-18 15:00:00', 30, 90, True, True, True, False),
-    ('2018-10-18 16:00:00', 25, 75, True, True, True, False),
-    ('2018-10-18 17:00:00', 25, 80, True, True, True, False),
-    ('2018-10-18 18:00:00', 25, 79, True, True, True, False),
-    ('2018-10-18 19:00:00', 25, 78, True, True, True, False),
-    ('2018-10-18 20:00:00', 24, 77, True, True, True, False),
-    ('2018-10-18 21:00:00', 24, 74, True, True, True, False),
-    ('2018-10-18 22:00:00', 22, 73, True, True, True, False),
-    ('2018-10-18 23:00:00', 23, 72, True, True, True, False);
+    ('2019-03-20 00:00:00', 25, 75, True, True, True, False),
+    ('2019-03-20 01:00:00', 27, 88, True, True, True, False),
+    ('2019-03-20 02:00:00', 26, 84, True, True, True, False),
+    ('2019-03-20 03:00:00', 26, 80, True, True, True, False),
+    ('2019-03-20 04:00:00', 25, 77, True, True, True, False),
+    ('2019-03-20 05:00:00', 26, 78, True, True, True, False),
+    ('2019-03-20 06:00:00', 25, 75, True, True, True, False),
+    ('2019-03-20 07:00:00', 27, 76, True, True, True, False),
+    ('2019-03-20 08:00:00', 28, 80, True, True, True, False),
+    ('2019-03-20 09:00:00', 25, 75, True, True, True, False),
+    ('2019-03-20 10:00:00', 27, 81, True, True, True, False),
+    ('2019-03-20 11:00:00', 28, 84, True, True, True, False),
+    ('2019-03-20 12:00:00', 28, 83, True, True, True, False),
+    ('2019-03-20 13:00:00', 28, 82, True, True, True, False),
+    ('2019-03-20 14:00:00', 29, 88, True, True, True, False),
+    ('2019-03-20 15:00:00', 30, 90, True, True, True, False),
+    ('2019-03-20 16:00:00', 25, 75, True, True, True, False),
+    ('2019-03-20 17:00:00', 25, 80, True, True, True, False),
+    ('2019-03-20 18:00:00', 25, 79, True, True, True, False),
+    ('2019-03-20 19:00:00', 25, 78, True, True, True, False),
+    ('2019-03-20 20:00:00', 24, 77, True, True, True, False),
+    ('2019-03-20 21:00:00', 24, 74, True, True, True, False),
+    ('2019-03-20 22:00:00', 22, 73, True, True, True, False),
+    ('2019-03-20 23:00:00', 23, 72, True, True, True, False);
 
 
 -- TABLE: climate_history
@@ -223,30 +223,30 @@ CREATE TABLE climate_history (
 INSERT INTO climate_history
     (date_time, temperature, humidity)
 VALUES
-    ('2018-10-18 00:00:00', 25, 75),
-    ('2018-10-18 01:00:00', 27, 88),
-    ('2018-10-18 02:00:00', 26, 84),
-    ('2018-10-18 03:00:00', 26, 80),
-    ('2018-10-18 04:00:00', 25, 77),
-    ('2018-10-18 05:00:00', 26, 78),
-    ('2018-10-18 06:00:00', 25, 75),
-    ('2018-10-18 07:00:00', 27, 76),
-    ('2018-10-18 08:00:00', 28, 80),
-    ('2018-10-18 09:00:00', 25, 75),
-    ('2018-10-18 10:00:00', 27, 81),
-    ('2018-10-18 11:00:00', 28, 84),
-    ('2018-10-18 12:00:00', 28, 83),
-    ('2018-10-18 13:00:00', 28, 82),
-    ('2018-10-18 14:00:00', 29, 88),
-    ('2018-10-18 15:00:00', 30, 90),
-    ('2018-10-18 16:00:00', 25, 75),
-    ('2018-10-18 17:00:00', 25, 80),
-    ('2018-10-18 18:00:00', 25, 79),
-    ('2018-10-18 19:00:00', 25, 78),
-    ('2018-10-18 20:00:00', 24, 77),
-    ('2018-10-18 21:00:00', 24, 74),
-    ('2018-10-18 22:00:00', 22, 73),
-    ('2018-10-18 23:00:00', 23, 72);
+    ('2019-03-20 00:00:00', 25, 75),
+    ('2019-03-20 01:00:00', 27, 88),
+    ('2019-03-20 02:00:00', 26, 84),
+    ('2019-03-20 03:00:00', 26, 80),
+    ('2019-03-20 04:00:00', 25, 77),
+    ('2019-03-20 05:00:00', 26, 78),
+    ('2019-03-20 06:00:00', 25, 75),
+    ('2019-03-20 07:00:00', 27, 76),
+    ('2019-03-20 08:00:00', 28, 80),
+    ('2019-03-20 09:00:00', 25, 75),
+    ('2019-03-20 10:00:00', 27, 81),
+    ('2019-03-20 11:00:00', 28, 84),
+    ('2019-03-20 12:00:00', 28, 83),
+    ('2019-03-20 13:00:00', 28, 82),
+    ('2019-03-20 14:00:00', 29, 88),
+    ('2019-03-20 15:00:00', 30, 90),
+    ('2019-03-20 16:00:00', 25, 75),
+    ('2019-03-20 17:00:00', 25, 80),
+    ('2019-03-20 18:00:00', 25, 79),
+    ('2019-03-20 19:00:00', 25, 78),
+    ('2019-03-20 20:00:00', 24, 77),
+    ('2019-03-20 21:00:00', 24, 74),
+    ('2019-03-20 22:00:00', 22, 73),
+    ('2019-03-20 23:00:00', 23, 72);
 
 
 -- TABLE: groups
@@ -293,7 +293,7 @@ CREATE TABLE users (
 INSERT INTO users 
     (id, ip_address, username, password, salt, email, activation_code, forgotten_password_code, created_on, last_login, active, first_name,last_name)
 VALUES
-    ('1','127.0.0.1','administrator','$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36','','hello@fruxe.co','',NULL,'1268889823','1268889823','1', 'Admin','istrator');
+    ('1','127.0.0.1','administrator','$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36','','hello@fruxe.co','',NULL,'1268889823','1268889823','1', 'Master','Grower');
 
 
 -- TABLE: users_groups

@@ -28,8 +28,8 @@
                   
                   <!-- Crop Image -->
                   <div class="col-2">
-                    <?php if ($sensor_state['camera_state'] == 1): ?>
-                    <div class="card-img-bottom crop-item-img">
+                    <?php if ($sensor_state['camera_state'] == "1"): ?>
+                    <div class="card-img-bottom-camera crop-item-img">
                     </div>
                     <?php else: ?>
                     <div class="card-img-bottom-default crop-item-img">

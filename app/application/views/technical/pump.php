@@ -126,7 +126,7 @@
                         <h3 class="card-title pt-3 pb-3">Diagnostics</h3>
                         <div class="form-group row">
                               <div class="col-md-6">
-                                    <button type="button" class="btn btn-magenta" onclick="runDiagnostics()">Test Sensor</button>
+                                    <button type="button" class="btn btn-magenta" onclick="runDiagnostics()">Test Relay</button>
                               </div>
 
                               <div class="col-md-6">
