@@ -13,6 +13,7 @@ Quick Links
    * [Features](https://docs.fruxe.co/#/?id=what-can-it-do)
    * [Requirements](https://docs.fruxe.co/#/requirements)
    * [Easy Install](https://docs.fruxe.co/#/install?id=easy-install)
+   * [Connect Hardware](https://docs.fruxe.co/#/connect)
    * [Documentation](https://docs.fruxe.co)
    * [Help](https://docs.fruxe.co/#/help)
    * [License](https://docs.fruxe.co/#/?id=license)
