@@ -456,7 +456,7 @@ background: #007b5e;
 .card-img-bottom-default {
   color: #fff;
   height: 20rem;
-  background: url(../img/default_bg.jpg) center no-repeat;
+  /* background: url(../img/default_bg.jpg) center no-repeat; */
   background-size: cover;
 }
 
@@ -664,4 +664,12 @@ background: #007b5e;
 .btn-magenta:not(:disabled):not(.disabled):active:focus, .btn-magenta:not(:disabled):not(.disabled).active:focus,
 .show > .btn-magenta.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(119, 37, 55, 0.5);
+}
+
+#uploadForm {
+  visibility: hidden;
+}
+
+#img-container {
+  visibility: hidden;
 }

@@ -56,6 +56,7 @@
 				"growdays_complete" => $crop_progress['daysComplete'],
 				"growdays_remaining" => $crop_progress['daysLeft'],
 				"crop_progress" => $crop_progress['progress'],
+				"crop_thumbnail" => $crop_info['crop_thumbnail'],
 			);
 
 			return $data;
@@ -126,6 +127,7 @@
 				"plant_type" => $this->input->post('plant_type'),
 				"crop_start" => $this->input->post('crop_start'),
 				"crop_end" => $this->input->post('crop_end'),
+				"crop_thumbnail" => $this->input->post('crop_thumbnail'),
 				"date_created" => date("d-m-Y H:i:s"),
 				"date_modified" => date("d-m-Y H:i:s")
 			);
