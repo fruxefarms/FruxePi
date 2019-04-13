@@ -11,10 +11,8 @@ echo -e "\e[35mRemoving Previous Version...\e[0m"
 # Remove old Docker containers
 if [ "$(docker ps -q -f name=frxpi-APACHE)" ] && [ "$(docker ps -q -f name=frxpi-MYSQL)" ]; then
     sudo docker rm -f frxpi-APACHE frxpi-PHPMYADMIN frxpi-MYSQL
+    sudo docker system prune -a --volumes
 fi
-
-# Remove old Docker containers
-sudo docker system prune -a --volumes -f
 
 # Fetch updates
 sudo git pull
