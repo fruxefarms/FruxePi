@@ -1,6 +1,8 @@
 -- FruxePi OPEN-PROTOTYPE DEVELOPMENT v0.2
 -- DB: frx_DEV
 
+SET FOREIGN_KEY_CHECKS = 0;
+
 -- TABLE: activity
 DROP TABLE IF EXISTS activity;
 
