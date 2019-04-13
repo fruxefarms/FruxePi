@@ -80,7 +80,7 @@ CREATE TABLE crops (
 INSERT INTO crops 
     (cropID, users, nickname, plant_qty, plant_type, crop_start, crop_end, crop_thumbnail, date_created, date_modified)
 VALUES
-    ('FRX-CR0001', 1,'Spring Harvest', 5, 'Spanish Cilantro', '20-03-2019', '21-06-2019', 'img/crop_bg.jpg', '20-03-2019 11:11:11', '20-03-2019 11:11:11');
+    ('FRX-CR0001', 1,'Spring Harvest', 5, 'Spanish Cilantro', '20-03-2019', '21-06-2019', 'assets/img/crop_bg.jpg', '20-03-2019 11:11:11', '20-03-2019 11:11:11');
 
 
 -- TABLE: technical
