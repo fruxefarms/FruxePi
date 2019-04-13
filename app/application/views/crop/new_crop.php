@@ -106,7 +106,7 @@
                         </div>
 
                         <!-- Image Thumbnail -->
-                        <input type="hidden" id="crop_thumbnail" name="crop_thumbnail" value="img/camera_bg.jpg">
+                        <input type="hidden" id="crop_thumbnail" name="crop_thumbnail" value="assets/img/camera_bg.jpg">
 
                         <?php echo form_close();?>
 

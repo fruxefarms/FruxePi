@@ -149,6 +149,7 @@
 				"plant_type" => $this->input->post('plant_type'),
 				"crop_start" => $this->input->post('crop_start'),
 				"crop_end" => $this->input->post('crop_end'),
+				"crop_thumbnail" => $this->input->post('crop_thumbnail'),
 				"date_modified" => date("d-m-Y H:i:s")
 			);
 

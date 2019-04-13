@@ -22,8 +22,9 @@
                   <!-- Card Body -->
                   <div class="card-body">
                         
-                              <!-- Add New Crop Form -->
-                              <?php echo form_open("crop/edit/" . $crop_info['cropID']); ?>
+                              <!-- Edit Crop Form -->
+                              <?php $cropFormAttr = array('id' => 'crop_form'); ?>
+                              <?php echo form_open("crop/edit/" . $crop_info['cropID'], $cropFormAttr); ?>
 
                               <!-- Validation Errors -->
                               <?php if (validation_errors()): ?>
@@ -104,16 +105,68 @@
                                     </div>
                               </div>
 
-                              <hr>
-
-                              <!-- Save Button -->
-                              <div class="form-group row pt-3 pb-3">
-                                   <div class="col-md-12">
-                                          <button type="submit" class="btn btn-magenta"><i class="fas fa-save pr-1"></i> Save Crop</button>
-                                   </div>
-                              </div>
+                              <!-- Image Thumbnail -->
+                              <input type="hidden" id="crop_thumbnail" name="crop_thumbnail" value="<?php echo $crop_info['crop_thumbnail']; ?>">
 
                               <?php echo form_close();?>
+
+                              <hr>
+
+                              <!-- Crop Thumbnail -->
+                              <h4 class="card-title">Thumbnail</h4>
+
+                              <div class="form-group row pb-3">
+                                    <div class="col-md-6">
+                                          <h5>Image Source</h5>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                          <div id="crop-thumb-div" class="row">
+                                                <div class="col-12">
+                                                      <img id="crop-thumb-img" class="img-thumbnail" src="../../<?php echo $crop_info['crop_thumbnail']; ?>">
+                                                </div>
+                                          </div>
+                                          <div class="row pt-3">
+                                                <div class="col-12">
+                                                      <div class="form-check">
+                                                            <input class="form-check-input" type="radio" id="cameraRadio" name="img_thumb" value="img/crop_bg.jpg">
+                                                            <label class="form-check-label">
+                                                            Use Camera
+                                                            </label>
+                                                      </div>
+                                                      <div class="form-check">
+                                                            <input class="form-check-input" type="radio" id="uploadRadio" name="img_thumb" value="">
+                                                            <label class="form-check-label">
+                                                            Upload New Image
+                                                            </label>
+                                                      </div>
+                                                      <small class="form-text text-muted">Give your crop a profile pic, otherwise the default will be displayed.</small>
+                                                </div>
+                                          </div>
+                                          <div class="row pt-3">
+                                                <!-- Upload Image  -->
+                                                <?php $attributes = array('id' => 'crop_image'); ?>
+                                                <?php echo form_open("media/upload_image", $attributes); ?>
+                                                      <div id="img-container" class="col-12 px-3 pb-3"></div>
+                                                      <div id="uploadForm" class="col-12">
+                                                            <input type="file" id="image_upload" name="image_upload" class="form-control-file">
+                                                            <button id="crop_submit" type="submit" class="btn btn-magenta mt-3">Upload</button>
+                                                      </div>
+                                                <?php echo form_close();?>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <hr>
+
+                              <!-- Save Crop Button -->
+                              <div class="form-group row pt-3 pb-3">
+                                    <div class="col-md-12">
+                                          <button type="button" class="btn btn-magenta" onclick="saveCrop()"><i class="fas fa-save pr-1"></i> Save Crop</button>
+                                          <a class="btn btn-secondary" href="<?php echo base_url("crop"); ?>"><i class="fas fa-chevron-left pr-1"></i> Cancel</a>
+                                    </div>
+                              </div>
+
   
                   </div>
                   <!-- Card Footer -->
@@ -133,10 +186,68 @@
     <script src="<?php echo asset_url(); ?>js/bootstrap-datepicker.min.js"></script>
  
 
-    <!-- Page Scripts -->
-    <script>
-        $('#cropStart').datepicker();
-        $('#cropEnd').datepicker();  
+        <!-- Page Scripts -->
+        <script>
+      $('#cropStart').datepicker();
+      $('#cropEnd').datepicker();
+
+      function saveCrop(){
+            $('#crop_form').submit();
+      }
+
+      $(document).ready(function(){
+
+            // Set Crop Thumbnail to Camera
+            $('#cameraRadio').click(function(){
+                  $('#crop-thumb-img').attr("src","../../assets/img/crop_bg.jpg");
+                  $("#crop_thumbnail").val('assets/img/crop_bg.jpg');
+            });
+            
+
+            // Toggle Photo Upload
+            $('input[type=radio][name=img_thumb]').change(function(){
+                  var radioValue = $(this).val(); 
+                  
+                  if (radioValue == 'img/crop_bg.jpg') {
+                        $('#uploadForm').css('visibility','hidden');
+                  } else {
+                        $('#uploadForm').css('visibility','visible');
+                  }
+            });
+
+            // Upload Photo
+            $("#crop_submit").click(function(){
+
+                  $('#crop_image').submit(function(event) {
+
+                        event.preventDefault();
+                        var formData = new FormData($('#crop_image')[0]);
+
+                        var image_file = $("#image_upload")[0].files[0]; 
+
+                        $.ajax({
+                              type: "POST",
+                              url: "<?php echo base_url('media/upload_image'); ?>",
+                              data: formData,
+                              processData: false,
+                              contentType: false,
+                              success: function(data) {
+                                    var imgSrc = 'assets/tmp/' + image_file.name;
+                                    var imgTag = '<img class="img-fluid img-thumbnail" src="../' + imgSrc + '"/>';
+                                    $("#crop_thumbnail").val(imgSrc);
+                                    $('#crop-thumb-img').attr("src","../../" + imgSrc);
+                                    console.log("Uploaded!");
+                              },
+                              error: function() { 
+                                    alert("Error uploading"); 
+                              }
+                        });
+
+                  });
+            });
+
+      });
+  
     </script>
 
   </body>
