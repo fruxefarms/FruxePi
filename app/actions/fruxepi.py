@@ -269,7 +269,7 @@ def fetchHumidity(gpioPIN):
     try:
         humidity,temperature = dht.read_retry(dht.DHT22, int(gpioPIN))
 
-        if humidity is not None:
+        if humidity is not None and humidity <= 100:
             data_output = str(round(humidity, 2)) + "%"
             print(data_output)
             return data_output
@@ -283,7 +283,7 @@ def fetchRawHumidity(gpioPIN):
     try:
         humidity,temperature = dht.read_retry(dht.DHT22, int(gpioPIN))
 
-        if humidity is not None:
+        if humidity is not None and humidity <= 100:
             data_output = round(humidity, 2)
             print(data_output)
             return data_output
