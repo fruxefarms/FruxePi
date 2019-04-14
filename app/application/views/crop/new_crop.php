@@ -145,7 +145,7 @@
                                                 <div id="img-container" class="col-12 px-3 pb-3"></div>
                                                 <div id="uploadForm" class="col-12">
                                                       <input type="file" id="image_upload" name="image_upload" class="form-control-file">
-                                                      <button id="crop_submit" type="submit" class="btn btn-magenta mt-3">Upload</button>
+                                                      <button id="upload_button" type="submit" class="btn btn-magenta mt-3">Upload</button>
                                                 </div>
                                           <?php echo form_close();?>
                                     </div>
@@ -209,7 +209,7 @@
             });
 
             // Upload Photo
-            $("#crop_submit").click(function(){
+            $("#upload_button").click(function(){
 
                   $('#crop_image').submit(function(event) {
 

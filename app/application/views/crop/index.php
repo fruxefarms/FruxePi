@@ -14,7 +14,7 @@
 
         <!-- Page Sections -->
         <section class="pt-5">
-            <h1 class="pb-3">Crop
+            <h1 class="pb-3"><?php echo sizeof($crops) > 1 ? "Crops" : "Crop"; ?>
             <a class="btn btn-activity float-right" href="<?php echo base_url("crop/new"); ?>" role="button"><i class="fas fa-plus pr-1"></i> Add Crop</a>
             </h1>
 
