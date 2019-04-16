@@ -382,12 +382,13 @@
                       <!-- Grow Room Settings -->
                       <div class="col-md-12 col-xs-6 text-left">
                         <h3>Grow Room Settings </h3>
-                        <p>Adjust the light, fan and pump settings.</p>
+                        <h5 class="pb-3">Adjust the light, fan and pump settings.</h5>
                               <?php echo form_open("dashboard/settings"); ?>
                               
                               <!-- Climate Settings -->
                               <?php if ($sensor_state['climate_state'] == 1): ?>
                               <h4>Climate Threshold </h4>
+                              <p class="text-muted">These values determine the conditions metric on the dashboard. If conditions fall within these values, everything is 100%!</p>
                               <div class="form-group row">
                                     <!-- Temperature Threshold -->
                                     <div class="col-sm-6 pt-1">
@@ -515,6 +516,7 @@
                               <!-- Fan Settings -->
                               <?php if ($sensor_state['fan_state'] == 1): ?>
                               <h4>Fans</h4>
+                              <p class="text-muted">The fans will run if the temperature or humidity rises above these values:</p>
                               <div class="form-group row">
                                     
                                     <!-- Fan Climate Thresholds -->
