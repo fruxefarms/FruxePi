@@ -108,6 +108,16 @@ $route['technical/fans/edit/GPIO'] = 'sensors/editFanGPIO';
 $route['technical/fans/edit/schedule'] = 'sensors/editFanSchedule';
 $route['technical/fans/diagnostics'] = 'sensors/fanDiagnostics';
 
+// Heater
+$route['technical/heater'] = 'sensors/heaterSettings';
+$route['technical/heater/ON'] = 'sensors/heaterON';
+$route['technical/heater/OFF'] = 'sensors/heaterOFF';
+$route['technical/heater/enable'] = 'sensors/heaterFan';
+$route['technical/heater/disable'] = 'sensors/heaterFan';
+$route['technical/heater/edit/GPIO'] = 'sensors/editHeaterGPIO';
+$route['technical/heater/edit/schedule'] = 'sensors/editHeaterSchedule';
+$route['technical/heater/diagnostics'] = 'sensors/heaterDiagnostics';
+
 // Camera
 $route['technical/camera'] = 'sensors/cameraSettings';
 $route['technical/camera/enable'] = 'sensors/enableCamera';

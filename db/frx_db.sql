@@ -99,10 +99,11 @@ INSERT INTO technical
     (module_type, description, gpio_pin, enabled)
 VALUES
     ('Sensor','Climate Sensor', 2, 1),
-    ('Sensor','Moisture Probe', 17, 0),
-    ('Relay','Light Controls', 15, 0),
-    ('Relay','Fan Controls', 18, 0),
-    ('Relay','Pump Controls', 19, 0),
+    ('Sensor','Moisture Probe', 24, 0),
+    ('Relay','Light Controls', 14, 0),
+    ('Relay','Fan Controls', 15, 0),
+    ('Relay','Pump Controls', 18, 0),
+    ('Relay','Heater Controls', 25, 0),
     ('Camera','Camera Module', 0, 0);
 
 

@@ -137,6 +137,26 @@ def CLI_menu():
         else:
             print("Invalid Command!")
     
+    # Heater
+    elif action == "heater":  
+        # Heater ON
+        if action_option == "-ON" and action_GPIO is not None: 
+            heaterON(action_GPIO)
+        # Heater OFF
+        elif action_option == "-OFF" and action_GPIO is not None:
+            heaterOFF(action_GPIO)
+        # Heater Relay State    
+        elif action_option == "-s" and action_GPIO is not None:
+            print(getGPIOState(action_GPIO))
+        # Run Heater Program    
+        elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
+            heaterProgram(action_GPIO, action_interval)  
+        # Diagnostics    
+        elif action_option == "-d" and action_GPIO is not None:
+            relayDiagnostics(action_GPIO)
+        else:
+            print("Invalid Command!")
+    
     # Fetch Grow Data
     elif action == "update":  
         # Update grow data
@@ -327,6 +347,24 @@ def fanProgram(gpioPIN, timeInterval):
     fanON(gpioPIN)
     time.sleep(int(timeInterval))
     fanOFF(gpioPIN)
+
+# Heater ON
+def heaterON(gpioPIN):
+    print("Fan ON")
+    os.system("gpio -g mode " + str(gpioPIN) + " out")
+    os.system("gpio -g write " + str(gpioPIN) + " 1")
+
+# Heater OFF
+def heaterOFF(gpioPIN):
+    print("Fan OFF")
+    os.system("gpio -g mode " + str(gpioPIN) + " out")
+    os.system("gpio -g write " + str(gpioPIN) + " 0")
+
+# Heater run program
+def heaterProgram(gpioPIN, timeInterval):
+    heaterON(gpioPIN)
+    time.sleep(int(timeInterval))
+    heaterOFF(gpioPIN)
 
 # Lights ON
 def lightsON(gpioPIN):

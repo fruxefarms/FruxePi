@@ -831,5 +831,160 @@
 			}
 		}
 
+		/**
+		* Heater Settings
+		* Set and modify the heater settings.
+		* 
+		* Functions: 
+		* - Enable\Disable heater relay
+		* - Set/Modify the heater GPIO pin
+		* - Relay dignostics 
+		* 
+		* @url /technical/heater
+		*/
+		public function heaterSettings()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				// Page Meta
+				$data['title'] = 'Heater Settings';
+
+				// Data Fetch
+				$data['user_info'] = $this->Dashboard_model->get_user_info();
+				$data['GPIO'] = $this->Fan_model->getGPIO();
+				$data['activation_state'] = $this->Fan_model->fanActivationState();
+				$data['fan_schedule'] = $this->Fan_model->getFanSchedule();
+				$data['fan_status'] = $this->Fan_model->getFanStatus();
+				$data['temperature_format'] = $this->Climate_model->getTemperatureFormat();
+
+				// Page View
+				$this->load->view('technical/heater', $data);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
+		// Edit Heater GPIO
+		public function editHeaterGPIO()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				$this->Fan_model->setGPIO();
+		
+				redirect($_SERVER['HTTP_REFERER']);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
+		// Edit Heater Schedule
+		public function editHeaterSchedule()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				$this->Fan_model->setFanSchedule();
+		
+				redirect($_SERVER['HTTP_REFERER']);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
+		// Enable Heater
+		public function enableHeater()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				// Enable Fans
+				$this->Fan_model->enableFans();
+
+				// Enable CRON
+                $this->Scheduler_model->enableCRON("fan");
+		
+				redirect($_SERVER['HTTP_REFERER']);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
+		// Disable Heater
+		public function disableHeater()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				// Disable fans
+				$this->Fan_model->disableFans();
+
+				// Disable CRON
+                $this->Scheduler_model->disableCRON("fan");
+		
+				redirect($_SERVER['HTTP_REFERER']);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
+		// Heater Diagnostics
+		public function heaterDiagnostics()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				$diagnostic_callback = $this->Fan_model->fanDiagnostics();
+				print_r($diagnostic_callback); 
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
+		// Heater ON
+		public function heaterON()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				$this->Fan_model->fanON();
+		
+				redirect($_SERVER['HTTP_REFERER']);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
+		// Heater OFF
+		public function heaterOFF()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				$this->Fan_model->fanOFF();
+		
+				redirect($_SERVER['HTTP_REFERER']);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
 }
 
