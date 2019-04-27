@@ -1,4 +1,4 @@
-# Headless Raspberry Pi + FruxePi Setup
+# Headless Raspberry Pi setup + FruxePi install
 A short guide on how to set up a headless Raspberry Pi to run the FruxePi application.
 
 ## Download latest Raspian release
