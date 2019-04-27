@@ -58,13 +58,13 @@ network={
 ```
 Save and exit the file using CTRL-X, Y, and Enter.
 
-During the initial boot Raspbian will replace this file on the OS partition. The Raspberry Pi with then use these settings to connect to the specified WiFi network.
+During the initial boot Raspbian will replace this file on the OS partition. The Raspberry Pi will then use these settings to connect to the specified WiFi network.
 
 ## Enable SSH
 
-SSH (Secure Shell) allows you to access the command line of a Raspberry Pi remotely from another computer or device on the same network using SSH. 
+SSH (Secure Shell) allows you to access the command line of a Raspberry Pi remotely from another computer or device on the same network using SSH.
 
-A simple way to accomplish this is to add a file named SSH to the root of the boot partition on your SD card. 
+A simple way to accomplish this is to add a file named SSH to the root of the `boot` partition on your SD card. 
 
 ```
 touch SSH
@@ -72,7 +72,7 @@ touch SSH
 
 ## Boot up Raspberry Pi and connect over SSH
 
-Now you can insert the SD card into your Raspberry Pi and power the device on. After the device has booted up, connect over SSH using the default Raspberry Pi user credentials.
+Now you can insert the SD card into your Raspberry Pi and power the device on. After the device has booted up, connect over SSH using the default Raspberry Pi user credentials below:
 
 - **User** pi
 - **Default Password** raspberry
@@ -82,11 +82,11 @@ Connect using the following command in the Terminal and amend the IP address. If
 ```
 ssh pi@192.168.X.X
 ```
-Afterward you will be prompted for the default password.
+Afterward you will be prompted for the default password, `raspberry`.
 
 ## Change Default Password
 
-After successfully connecting over SSH, lets change the default password for the pi user.
+After successfully connecting over SSH, change the default password for the `pi` user.
 
 ```
 pi@raspberrypi:~ $ passwd
@@ -101,7 +101,7 @@ passwd: password updated successfully
 
 ## Install Docker
 
-The FruxePi uses Docker as a means of standardization and allows us to deliver a predictable build across a broad range of devices.
+The FruxePi uses Docker as a means of standardization and allows us to deliver a predictable build across a broad range of devices, with minimal configuration headaches.
 
 Installing Docker on the Raspberry Pi is very simple:
 
@@ -109,7 +109,7 @@ Installing Docker on the Raspberry Pi is very simple:
 curl -ssl https://get.docker.com | sh
 ```
 
-Once the install is complete, we will next add the current user (pi) into the docker user group.
+Once the install is complete, next add the current user to the docker user group.
 
 ```
 sudo usermod -a -G docker $USER
@@ -117,7 +117,7 @@ sudo usermod -a -G docker $USER
 
 ## Install docker-compose
 
-Lastly, we will install docker-compose which is a tool for defining and running multi-container Docker applications.
+Install docker-compose which is a tool for defining and running multi-container Docker applications.
 
 Install the python-pip repository:
 
@@ -131,18 +131,27 @@ Using pip, now install docker-compose:
 sudo pip install docker-compose
 ```
 
-## Clone FruxePi repository
-Clone the FruxePi repository to your Raspberry Pi or download the [ZIP](https://github.com/fruxefarms/FruxePi/archive/master.zip) file.
+## Download FruxePi
+Clone the FruxePi repository to your Raspberry Pi or download the ZIP file.
 
+#### Clone Github repository
 ```
 git clone https://github.com/fruxefarms/FruxePi.git
 cd FruxePi
 ```
+
+#### Download ZIP
+```
+wget https://github.com/fruxefarms/FruxePi/archive/master.zip
+unzip master.zip
+cd FruxePi-master
+```
+
 ---
 
 ## Run Installation Script
 
-Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some other installation dependencies.
+Run `sudo bash install.sh` to quickly install the FruxePi application.
 
 ![FruxePi Install](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/fruxepi_install.gif?raw=true)
 
