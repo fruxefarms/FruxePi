@@ -106,6 +106,24 @@ VALUES
     ('Relay','Heater Controls', 25, 0),
     ('Camera','Camera Module', 0, 0);
 
+-- TABLE: relay_settings
+DROP TABLE IF EXISTS relay_settings;
+
+CREATE TABLE relay_settings (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    technical_id int(11) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(255)
+);
+
+-- TEST DATA: relay_settings
+INSERT INTO relay_settings 
+    (technical_id, name, type)
+VALUES
+    (3, 'Lights', ''),
+    (4, 'Fans', ''),
+    (5, 'Pump', '');
+
 
 -- TABLE: light_schedule
 DROP TABLE IF EXISTS light_schedule;

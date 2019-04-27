@@ -28,8 +28,11 @@
 			// GPIO pin
 			$gpioPIN = $this->Fan_model->getGPIO();
 
+			// Relay Type
+			$relayType = $this->Fan_model->getRelayType();
+
 			// Command string
-			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -ON " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -ON " . $gpioPIN . " " . $relayType;
 
 			// Execute command
 			exec($command_string);
@@ -46,8 +49,11 @@
 			// GPIO pin
 			$gpioPIN = $this->Fan_model->getGPIO();
 
+			// Relay Type
+			$relayType = $this->Fan_model->getRelayType();
+
 			// Command string
-			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -OFF " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -OFF " . $gpioPIN . " " . $relayType;
 
 			// Execute command
 			exec($command_string);
@@ -185,6 +191,22 @@
 			return $this->db->update('technical', $data);
 		}
 
+		/**
+		* Get Fan Relay Type
+		* @return String
+		*/
+		public function getRelayType()
+		{
+			$this->db->select("type");
+			$this->db->from("relay_settings");
+			$this->db->where('technical_id', $this->sensorID);
+
+			$query = $this->db->get();
+			$result = $query->result();
+
+			return $result[0]->type;
+		}
+
 
 		/**
 		 * Get Fan Status
@@ -196,8 +218,11 @@
 			// GPIO pin
 			$gpioPIN = $this->Fan_model->getGPIO();
 
+			// Relay Type
+			$relayType = $this->Fan_model->getRelayType();
+
 			// Command string
-			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -s " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py fan -s " . $gpioPIN . " " . $relayType;
 			
 			// Execute command
 			exec($command_string, $command_callback);

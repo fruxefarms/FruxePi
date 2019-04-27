@@ -27,8 +27,11 @@
 			// GPIO pin
 			$gpioPIN = $this->Lights_model->getGPIO();
 
+			// Relay Type
+			$relayType = $this->Lights_model->getRelayType();
+
 			// Command string
-			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -ON " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -ON " . $gpioPIN . " " . $relayType;
 
 			// Execute command
 			exec($command_string);
@@ -45,8 +48,11 @@
 			// GPIO pin
 			$gpioPIN = $this->Lights_model->getGPIO();
 
+			// Relay Type
+			$relayType = $this->Lights_model->getRelayType();
+
 			// Command string
-			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -OFF " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -OFF " . $gpioPIN . " " . $relayType;
 
 			// Execute command
 			exec($command_string);
@@ -140,6 +146,22 @@
 			return $this->db->update('technical', $data);
 		}
 
+		/**
+		* Get Lights Relay Type
+		* @return String
+		*/
+		public function getRelayType()
+		{
+			$this->db->select("type");
+			$this->db->from("relay_settings");
+			$this->db->where('technical_id', $this->sensorID);
+
+			$query = $this->db->get();
+			$result = $query->result();
+
+			return $result[0]->type;
+		}
+
 
 		/**
 		 * Get Light Status
@@ -150,9 +172,12 @@
 		{
 			// GPIO pin
 			$gpioPIN = $this->Lights_model->getGPIO();
+			
+			// Relay Type
+			$relayType = $this->Lights_model->getRelayType();
 
 			// Command string
-			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -s " . $gpioPIN;
+			$command_string = "sudo /var/www/html/actions/fruxepi.py lights -s " . $gpioPIN . " " . $relayType;
 			
 			// Execute command
 			exec($command_string, $command_callback);

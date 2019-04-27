@@ -121,6 +121,27 @@
                                     </div>
                               </div>
 
+                              <div class="form-group row">
+                                    <div class="col-md-6">
+                                          <h5>Relay Type</h5>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                          <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="relayType" value="high">
+                                                <label class="form-check-label">
+                                                Active High
+                                                </label>
+                                          </div>
+                                          <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="relayType" value="low" checked>
+                                                <label class="form-check-label">
+                                                Active Low <span class="text-muted">(Default)</span>
+                                                </label>
+                                          </div>
+                                    </div>
+                              </div>
+
                               <!-- Save GPIO Pin -->
                               <div class="form-group row pb-3">
                                    <div class="col-md-12">

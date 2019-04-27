@@ -67,16 +67,16 @@ def CLI_menu():
     elif action == "lights":  
         # Lights ON
         if action_option == "-ON" and action_GPIO is not None: 
-            lightsON(action_GPIO)
+            lightsON(action_GPIO, action_interval)
         # Lights OFF
         elif action_option == "-OFF" and action_GPIO is not None:
-            lightsOFF(action_GPIO)
+            lightsOFF(action_GPIO, action_interval)
         # Light Relay State    
         elif action_option == "-s" and action_GPIO is not None:
-            print(getGPIOState(action_GPIO)) 
+            print(getRelayGPIOState(action_GPIO, action_interval)) 
         # Diagnostics    
         elif action_option == "-d" and action_GPIO is not None:
-            relayDiagnostics(action_GPIO)
+            relayDiagnostics(action_GPIO, True)
         else:
             print("Invalid Command!")
 
@@ -84,19 +84,19 @@ def CLI_menu():
     elif action == "fan":  
         # Fan ON
         if action_option == "-ON" and action_GPIO is not None: 
-            fanON(action_GPIO)
+            fanON(action_GPIO, action_interval)
         # Fan OFF
         elif action_option == "-OFF" and action_GPIO is not None:
-            fanOFF(action_GPIO)
+            fanOFF(action_GPIO, action_interval)
         # Fan Relay State    
         elif action_option == "-s" and action_GPIO is not None:
-            print(getGPIOState(action_GPIO))
+            print(getRelayGPIOState(action_GPIO, action_interval))
         # Run Fan Program    
         elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
             fanProgram(action_GPIO, action_interval)  
         # Diagnostics    
         elif action_option == "-d" and action_GPIO is not None:
-            relayDiagnostics(action_GPIO)
+            relayDiagnostics(action_GPIO, True)
         else:
             print("Invalid Command!")
 
@@ -104,19 +104,19 @@ def CLI_menu():
     elif action == "pump":  
         # Pump ON
         if action_option == "-ON" and action_GPIO is not None: 
-            pumpON(action_GPIO)
+            pumpON(action_GPIO, action_interval)
         # Pump OFF
         elif action_option == "-OFF" and action_GPIO is not None:
-            pumpOFF(action_GPIO)
+            pumpOFF(action_GPIO, action_interval)
         # Pump Relay State    
         elif action_option == "-s" and action_GPIO is not None:
-            print(getGPIOState(action_GPIO))
+            print(getRelayGPIOState(action_GPIO, action_interval))
         # Run Pump Program    
         elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
             pumpProgram(action_GPIO, action_interval)
         # Diagnostics    
         elif action_option == "-d" and action_GPIO is not None:
-            relayDiagnostics(action_GPIO)
+            relayDiagnostics(action_GPIO, True)
         else:
             print("Invalid Command!")
 
@@ -312,6 +312,7 @@ def fetchRawHumidity(gpioPIN):
     except:
         print("Sensor Error!")
 
+
 def diagnosticsClimate(gpioPIN):
 
     try:
@@ -329,18 +330,25 @@ def diagnosticsClimate(gpioPIN):
         print("Sensor Error!")
 
 
-
 # Fan ON
-def fanON(gpioPIN):
+def fanON(gpioPIN, reverseRelay):
     print("Fan ON")
-    os.system("gpio -g mode " + str(gpioPIN) + " out")
-    os.system("gpio -g write " + str(gpioPIN) + " 1")
+    if reverseRelay:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 0")
+    else:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 1")
 
 # Fan OFF
-def fanOFF(gpioPIN):
+def fanOFF(gpioPIN, reverseRelay):
     print("Fan OFF")
-    os.system("gpio -g mode " + str(gpioPIN) + " out")
-    os.system("gpio -g write " + str(gpioPIN) + " 0")
+    if reverseRelay:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 1")
+    else:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 0")
 
 # Fan run program
 def fanProgram(gpioPIN, timeInterval):
@@ -350,13 +358,13 @@ def fanProgram(gpioPIN, timeInterval):
 
 # Heater ON
 def heaterON(gpioPIN):
-    print("Fan ON")
+    print("Heater ON")
     os.system("gpio -g mode " + str(gpioPIN) + " out")
     os.system("gpio -g write " + str(gpioPIN) + " 1")
 
 # Heater OFF
 def heaterOFF(gpioPIN):
-    print("Fan OFF")
+    print("Heater OFF")
     os.system("gpio -g mode " + str(gpioPIN) + " out")
     os.system("gpio -g write " + str(gpioPIN) + " 0")
 
@@ -367,28 +375,44 @@ def heaterProgram(gpioPIN, timeInterval):
     heaterOFF(gpioPIN)
 
 # Lights ON
-def lightsON(gpioPIN):
+def lightsON(gpioPIN, reverseRelay):
     print("Lights ON")
-    os.system("gpio -g mode " + str(gpioPIN) + " out")
-    os.system("gpio -g write " + str(gpioPIN) + " 1")
+    if reverseRelay:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 0")
+    else:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 1")
 
 # Lights OFF
-def lightsOFF(gpioPIN):
+def lightsOFF(gpioPIN, reverseRelay):
     print("Lights OFF")
-    os.system("gpio -g mode " + str(gpioPIN) + " out")
-    os.system("gpio -g write " + str(gpioPIN) + " 0")
+    if reverseRelay:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 1")
+    else:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 0")
 
 # Pump ON
-def pumpON(gpioPIN):
+def pumpON(gpioPIN, reverseRelay):
     print("Pump ON")
-    os.system("gpio -g mode " + str(gpioPIN) + " out")
-    os.system("gpio -g write " + str(gpioPIN) + " 1")
+    if reverseRelay:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 0")
+    else:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 1")
 
-# Pump OFF
-def pumpOFF(gpioPIN):
+# Pummp OFF
+def pumpOFF(gpioPIN, reverseRelay):
     print("Pump OFF")
-    os.system("gpio -g mode " + str(gpioPIN) + " out")
-    os.system("gpio -g write " + str(gpioPIN) + " 0")
+    if reverseRelay:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 1")
+    else:
+        os.system("gpio -g mode " + str(gpioPIN) + " out")
+        os.system("gpio -g write " + str(gpioPIN) + " 0")
 
 # Pump run program
 def pumpProgram(gpioPIN, timeInterval):
@@ -403,12 +427,31 @@ def getGPIOState(gpioPIN):
     return state
 
 
+# Get Relay GPIO state
+def getRelayGPIOState(gpioPIN, reverseRelay):
+    state = os.popen("gpio -g read " + str(gpioPIN)).read()
+
+    if reverseRelay:
+        if str(state[0]) == "1":
+            return 0
+        elif str(state[0]) == "0":
+            return 1
+    else:
+        return state[0]
+
 # Relay diagnostics
-def relayDiagnostics(gpioPIN):
+def relayDiagnostics(gpioPIN, reverseRelay):
     # Get GPIO status
     state = getGPIOState(int(gpioPIN))
 
-    print("Relay State: " + state)
+    if reverseRelay == True:
+        if str(state[0]) == "1":
+            print("Relay State: 0")
+        elif str(state[0]) == "0":
+            print("Relay State: 1")
+    else:
+        print("Relay State: " + state)
+
 
 
 # Get list all sensor GPIO pins stored in DB
