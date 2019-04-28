@@ -100,9 +100,9 @@ INSERT INTO technical
 VALUES
     ('Sensor','Climate Sensor', 2, 1),
     ('Sensor','Moisture Probe', 24, 0),
-    ('Relay','Light Controls', 14, 0),
+    ('Relay','Light Controls', 18, 0),
     ('Relay','Fan Controls', 15, 0),
-    ('Relay','Pump Controls', 18, 0),
+    ('Relay','Pump Controls', 14, 0),
     ('Relay','Heater Controls', 25, 0),
     ('Camera','Camera Module', 0, 0);
 
