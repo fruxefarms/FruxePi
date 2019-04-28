@@ -220,17 +220,17 @@
                         <?php if ($sensor_state['moisture_state'] == 1): ?>
                         <div class="roomStats col-6 col-md-2 col-sm-6 text-left p-0">
                           SOIL
-                          <?php if ($grow_data['moisture_status'] == "0"): ?>
+                          <?php if ($soil_status == 0): ?>
                           <i class="fas fa-check-circle light-green mr-2"></i>
-                          <?php elseif ($grow_data['moisture_status'] == "1"): ?>
+                          <?php elseif ($soil_status == 1): ?>
                           <i class="fas fa-minus-circle light-red mr-2"></i>
                           <?php endif; ?>
                           
 
                           <div class="font-size-40 medium-grey">
-                            <?php if ($grow_data['moisture_status'] == "0"): ?>
+                            <?php if ($soil_status == 0): ?>
                               <i class="fas fa-tint font-size-40"></i>
-                            <?php elseif ($grow_data['moisture_status'] == "1"): ?>
+                            <?php elseif ($soil_status == 1): ?>
                               <i class="fas fa-tint-slash font-size-40"></i>
                             <?php endif; ?>
                           </div>
@@ -258,9 +258,9 @@
                           <span class="font-size-12 medium-grey"><?php echo $grow_data['light_hours']; ?> hrs</span>
 
                           <div class="font-size-40 medium-grey">
-                            <?php if ($grow_data['light_status'] == 1): ?>
+                            <?php if ($lights_status == 1): ?>
                               <i class="fas fa-sun font-size-40"></i>
-                            <?php elseif ($grow_data['light_status'] == 0): ?>
+                            <?php elseif ($lights_status == 0): ?>
                               <i class="fas fa-moon font-size-40"></i>
                             <?php endif; ?>
                           </div>
@@ -271,15 +271,15 @@
                         <?php if ($sensor_state['fan_state'] == 1): ?>
                         <div class="roomStats col-6 col-md-2 col-xs-6 text-left p-0">
                           FANS
-                          <?php if($grow_data['fan_status'] == 1): ?>
+                          <?php if($fan_status == 1): ?>
                             <i class="fas fa-check-circle light-green mr-2"></i>
-                          <?php elseif($grow_data['fan_status'] == 0): ?>
+                          <?php elseif($fan_status == 0): ?>
                             <i class="fas fa-minus-circle light-red mr-2"></i>
                           <?php endif; ?>
                           <div class="font-size-40 medium-grey">
-                            <?php if($grow_data['fan_status'] == 1): ?>
+                            <?php if($fan_status == 1): ?>
                               <i class="fas fa-wind font-size-40"></i>
-                            <?php elseif($grow_data['fan_status'] == 0): ?>
+                            <?php elseif($fan_status == 0): ?>
                               <i class="fas fa-ban font-size-40"></i>
                             <?php endif; ?>
                           </div>

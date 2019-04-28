@@ -129,13 +129,16 @@
 		*/
 		public function readMoistureSensor()
 		{
+			// GPIO pin
+			$gpioPIN = $this->Moisture_model->getGPIO();
+
 			// Command string
-			$command_string = "";
+			$command_string = "sudo /var/www/html/actions/fruxepi.py moisture -mr " . $gpioPIN;
 
 			// Execute command
 			exec($command_string, $moisture_callback);
 
-			return $moisture_callback;
+			return $moisture_callback[0];
 
 		}
 
@@ -148,7 +151,7 @@
 		public function moistureDiagnostics()
 		{
 			// GPIO pin
-			$gpioPIN = $this->Pump_model->getGPIO();
+			$gpioPIN = $this->Moisture_model->getGPIO();
 
 			// Command string
 			$command_string = "sudo /var/www/html/actions/fruxepi.py moisture -d " . $gpioPIN;

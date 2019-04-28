@@ -54,13 +54,16 @@
 				
 				$data['pump_schedule'] = $this->Pump_model->getPumpSchedule();
 				$data['fan_schedule'] = $this->Fan_model->getFanSchedule();
+				$data['fan_status'] = $this->Fan_model->getFanStatus();
 				$data['lights_ON'] = $this->Lights_model->getLightTimerON();
 				$data['lights_OFF'] = $this->Lights_model->getLightTimerOFF();
+				$data['lights_status'] = $this->Lights_model->getLightsStatus();
 				$data['climate_threshold'] = $this->Climate_model->getClimateThreshold();
 
 				$data['sensor_state'] = $this->Dashboard_model->get_sensor_activation_state();
 				$data['cropThresholds'] = $this->Dashboard_model->get_cropThresholds();
 				$data['cropConditions'] = $this->Dashboard_model->get_cropConditions();
+				$data['soil_status'] = $this->Moisture_model->readMoistureSensor();
 
 				// Page View
 				$this->load->view('dashboard/index', $data);
