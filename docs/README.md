@@ -1,4 +1,4 @@
-# FruxePi OPEN-PROTOTYPE v0.2-BETA
+# FruxePi OPEN-PROTOTYPE v0.3-BETA
 A browser-based dashboard to monitor and automate indoor agriculture using the Raspberry Pi.
 
 ![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/screenshot-frame.png?raw=true)
@@ -75,7 +75,7 @@ The basic functionalies of the FruxePi include:
 
 ## Latest Version 
 
-### frx-pi-v0.2-BETA
+### frx-pi-v0.3-BETA
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/fruxefarms/FruxePi/tags). 
 
 ---

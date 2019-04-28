@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/**
-	* FruxePi (frx-dev-v0.2)
+	* FruxePi (frx-dev-v0.3)
 	* Crop Model
 	*/
 	class Crop_model extends CI_Model

@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
     ob_start();
 	/**
-	* FruxePi (frx-dev-v0.2)
+	* FruxePi (frx-dev-v0.3)
 	* Media Controller
 	*/
 	class Media extends CI_Controller 

@@ -41,7 +41,7 @@
       
       <button class="btn btn-magenta btn-lg btn-block" type="submit">Login</button>
       
-      <p class="mt-5 mb-3 text-muted">&copy; <?php echo date('Y'); ?> frx-dev-v0.1</p>
+      <p class="mt-5 mb-3 text-muted">&copy; <?php echo date('Y'); ?> frx-dev-v0.3</p>
 
     <?php echo form_close();?>
   </body>

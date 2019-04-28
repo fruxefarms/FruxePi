@@ -2,7 +2,7 @@
 	if (!defined('BASEPATH')) exit('No direct script access allowed');
     ob_start();
 	/**
-	* FruxePi (frx-dev-v0.2)
+	* FruxePi (frx-dev-v0.3)
 	* Dashboard Controller
 	*/
 	class Dashboard extends CI_Controller 

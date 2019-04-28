@@ -2,8 +2,8 @@
 
 # FRUXEPI DOCKER installation
 echo ""
-echo -e "\e[1m\e[45mFruxePi v0.2-BETA Install\e[0m"
-echo -e "\e[1mversion:\e[0m \e[37mfrx-pi-v0.2-BETA\e[0m"
+echo -e "\e[1m\e[45mFruxePi v0.3-BETA Install\e[0m"
+echo -e "\e[1mversion:\e[0m \e[37mfrx-pi-v0.3-BETA\e[0m"
 echo -e "\e[1mweb:\e[0m \e[37mdocs.fruxe.co\e[0m"
 echo ""
 
