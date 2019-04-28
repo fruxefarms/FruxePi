@@ -218,11 +218,12 @@
 				$cronStringArray = explode(" ", $output[$i]);
 				
 				if (array_key_exists(7, $cronStringArray) == True && $cronStringArray[7] == "fan" && $cronStringArray[8] == "-RUN") {
-					$cronStringArray[0] = $minuteON;
+					$cronStringArray[0] = "*/" . $minuteON;
 					$cronStringArray[1] = "*";
 					$cronStringArray[9] = $fanGPIO;
-					$cronStringArray[10] = $fanDuration;
-					// $relayType == "high" ? array_push($cronStringArray, "True") : false; 				
+					$cronStringArray[10] = (int)$fanDuration * 60;
+					$relayType == "high" && !array_key_exists(11, $cronStringArray) ? array_push($cronStringArray, "True") : false ;
+					$relayType == "" && array_key_exists(11, $cronStringArray) ? $cronStringArray[11] = "" : false ;				
 
 					$cronString = implode(" ", $cronStringArray);
 					$output[$i] = $cronString;
