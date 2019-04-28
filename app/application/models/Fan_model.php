@@ -192,6 +192,23 @@
 		}
 
 		/**
+		* Set Relay type
+		* Set the relay type - active high ("high") or active low ("").
+		* @return void
+		*/
+		public function setRelayType()
+		{
+			// Set relay type value and update database
+			$data = array(
+				"type" => $this->input->post('relayType') 
+			);
+
+			$this->db->where('technical_id', $this->sensorID);
+			return $this->db->update('relay_settings', $data);
+		}
+
+
+		/**
 		* Get Fan Relay Type
 		* @return String
 		*/

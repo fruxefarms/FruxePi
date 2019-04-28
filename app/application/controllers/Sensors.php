@@ -184,6 +184,7 @@
 				// Data Fetch
 				$data['user_info'] = $this->Dashboard_model->get_user_info();
 				$data['GPIO'] = $this->Lights_model->getGPIO();
+				$data['relay_type'] = $this->Lights_model->getRelayType();
 				$data['activation_state'] = $this->Lights_model->lightsActivationState();
 				$data['lights_status'] = $this->Lights_model->getLightsStatus();
 				$data['lights_ON'] = $this->Lights_model->getLightTimerON();
@@ -198,13 +199,14 @@
 			}
 		}
 
-		// Edit Lights GPIO
-		public function editLightsGPIO()
+		// Edit Lights Settings
+		public function editLightsSettings()
 		{
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
 				$this->Lights_model->setGPIO();
+				$this->Lights_model->setRelayType();
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			
@@ -344,6 +346,7 @@
 				// Data Fetch
 				$data['user_info'] = $this->Dashboard_model->get_user_info();
 				$data['GPIO'] = $this->Fan_model->getGPIO();
+				$data['relay_type'] = $this->Fan_model->getRelayType();
 				$data['activation_state'] = $this->Fan_model->fanActivationState();
 				$data['fan_schedule'] = $this->Fan_model->getFanSchedule();
 				$data['fan_status'] = $this->Fan_model->getFanStatus();
@@ -358,13 +361,14 @@
 			}
 		}
 
-		// Edit Fan GPIO
-		public function editFanGPIO()
+		// Edit Fan Settings
+		public function editFanSettings()
 		{
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
 				$this->Fan_model->setGPIO();
+				$this->Fan_model->setRelayType();
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			
@@ -603,6 +607,7 @@
 				// Data Fetch
 				$data['user_info'] = $this->Dashboard_model->get_user_info();
 				$data['GPIO'] = $this->Pump_model->getGPIO();
+				$data['relay_type'] = $this->Pump_model->getRelayType();
 				$data['activation_state'] = $this->Pump_model->pumpActivationState();
 				$data['pump_schedule'] = $this->Pump_model->getPumpSchedule();
 				$data['pump_status'] = $this->Pump_model->getPumpStatus();
@@ -616,13 +621,14 @@
 			}
 		}
 
-		// Edit Moisture GPIO
-		public function editPumpGPIO()
+		// Edit Moisture Settings
+		public function editPumpSettings()
 		{
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
 				$this->Pump_model->setGPIO();
+				$this->Pump_model->setRelayType();
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			

@@ -104,8 +104,9 @@
                               <!-- Configure Relay -->
                               <h3 class="card-title">Settings</h3>
                               <p class="card-text">Configure Relay</p>
+                              
                               <!-- Set GPIO Pin -->
-                              <?php echo form_open("technical/lights/edit/GPIO"); ?>
+                              <?php echo form_open("technical/lights/edit/settings"); ?>
                               <div class="form-group row">
                                    <div class="col-md-6">
                                           <h5>GPIO Pin</h5>
@@ -121,6 +122,7 @@
                                     </div>
                               </div>
 
+                              <!-- Set Relay type -->
                               <div class="form-group row">
                                     <div class="col-md-6">
                                           <h5>Relay Type</h5>
@@ -128,13 +130,13 @@
 
                                     <div class="col-md-6">
                                           <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="relayType" value="high">
+                                                <input class="form-check-input" type="radio" name="relayType" value="high" <?php echo $relay_type == "high" ? "checked" : "";?>>
                                                 <label class="form-check-label">
                                                 Active High
                                                 </label>
                                           </div>
                                           <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="relayType" value="low" checked>
+                                                <input class="form-check-input" type="radio" name="relayType" value="" <?php echo $relay_type == "" ? "checked" : "";?>>
                                                 <label class="form-check-label">
                                                 Active Low <span class="text-muted">(Default)</span>
                                                 </label>
@@ -142,7 +144,7 @@
                                     </div>
                               </div>
 
-                              <!-- Save GPIO Pin -->
+                              <!-- Save Settings Button -->
                               <div class="form-group row pb-3">
                                    <div class="col-md-12">
                                           <button type="submit" class="btn btn-magenta">Save Settings</button>

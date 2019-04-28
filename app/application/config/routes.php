@@ -94,7 +94,7 @@ $route['technical/lights/ON'] = 'sensors/lightsON';
 $route['technical/lights/OFF'] = 'sensors/lightsOFF';
 $route['technical/lights/enable'] = 'sensors/enableLights';
 $route['technical/lights/disable'] = 'sensors/disableLights';
-$route['technical/lights/edit/GPIO'] = 'sensors/editLightsGPIO';
+$route['technical/lights/edit/settings'] = 'sensors/editLightsSettings';
 $route['technical/lights/edit/schedule'] = 'sensors/editLightSchedule';
 $route['technical/lights/diagnostics'] = 'sensors/lightsDiagnostics';
 
@@ -104,7 +104,7 @@ $route['technical/fans/ON'] = 'sensors/fanON';
 $route['technical/fans/OFF'] = 'sensors/fanOFF';
 $route['technical/fans/enable'] = 'sensors/enableFan';
 $route['technical/fans/disable'] = 'sensors/disableFan';
-$route['technical/fans/edit/GPIO'] = 'sensors/editFanGPIO';
+$route['technical/fans/edit/settings'] = 'sensors/editFanSettings';
 $route['technical/fans/edit/schedule'] = 'sensors/editFanSchedule';
 $route['technical/fans/diagnostics'] = 'sensors/fanDiagnostics';
 
@@ -131,7 +131,7 @@ $route['technical/pump/ON'] = 'sensors/pumpON';
 $route['technical/pump/OFF'] = 'sensors/pumpOFF';
 $route['technical/pump/enable'] = 'sensors/enablePump';
 $route['technical/pump/disable'] = 'sensors/disablePump';
-$route['technical/pump/edit/GPIO'] = 'sensors/editPumpGPIO';
+$route['technical/pump/edit/settings'] = 'sensors/editPumpSettings';
 $route['technical/pump/edit/schedule'] = 'sensors/editPumpSchedule';
 $route['technical/pump/diagnostics'] = 'sensors/pumpDiagnostics';
 
