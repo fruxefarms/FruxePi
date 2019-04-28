@@ -103,6 +103,22 @@
 			}
 		}
 
+		// Capture current photo
+		public function latestPhoto()
+		{
+			// Redirect if user not logged in, otherwise display the page.
+			if ($this->ion_auth->logged_in())
+			{
+				$filename = $this->Camera_model->takePhoto();
+
+				redirect(asset_url() . "tmp/". $filename);
+			
+			} else {
+				// Redirect to login.
+				redirect('/login');
+			}
+		}
+
 		// Reset Admin Default
 		public function reset()
 		{

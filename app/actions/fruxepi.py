@@ -603,9 +603,12 @@ def capturePhoto(usage):
             # Image Details
             imgName = "crop_bg.jpg"
             imgPath = "/var/www/html/assets/img/"
+
+            # Filepath
+            filePath = imgPath + imgName
             
             # Take photo
-            print(takePhoto(imgPath, imgName))
+            os.system("raspistill -w 800 -h 600 -o " + filePath)
 
         elif usage == "candid":
             # Image Details
@@ -621,8 +624,11 @@ def capturePhoto(usage):
             imgName = "crop_bg.jpg"
             imgPath = "/var/www/html/assets/img/"
 
+            # Filepath
+            filePath = imgPath + imgName
+            
             # Take photo
-            print(takePhoto(imgPath, imgName))
+            os.system("raspistill -w 800 -h 600 -o " + filePath)
 
     except:
         print("Camera Error!")

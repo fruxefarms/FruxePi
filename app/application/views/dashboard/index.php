@@ -100,7 +100,16 @@
                                 <a href="#carouselExampleIndicators" role="button" data-slide="next" class="btn btn-outline-secondary"><i class="fas fa-angle-double-right"></i></a>
                                 <?php endif; ?>
                                 <?php if ($sensor_state['camera_state'] == "1"): ?>
-                                <a id="cameraView" href="<?php echo asset_url(); ?>img/crop_bg.jpg" class="btn btn-outline-secondary image-popup-vertical-fit" role="button" data-plugin="magnificPopup">VIEW <i class="fas fa-video pl-1"></i></a>
+                                  <!-- Camera View Functions -->
+                                  <div class="btn-group">
+                                    <a id="cameraView" href="<?php echo asset_url(); ?>img/crop_bg.jpg" role="button" class="btn  btn-outline-secondary image-popup-vertical-fit" data-plugin="magnificPopup">VIEW <i class="fas fa-video pl-1"></i></a>
+                                    <button type="button" class="btn  btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                      <a class="dropdown-item" href="<?php echo base_url("dashboard/latestPhoto"); ?>">Take Photo</a>
+                                    </div>
+                                  </div>
                                 <?php endif; ?>
                               </div>
                             </div>
