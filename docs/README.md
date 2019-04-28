@@ -11,13 +11,22 @@ A browser-based dashboard to monitor and automate indoor agriculture using the R
 ## Quick Install
 Quickly deploy the FruxePi application using Docker and the installation script. 
 
-### Step 1: Clone Project
-Clone the FruxePi repository to your Raspberry Pi or download the [ZIP](https://github.com/fruxefarms/FruxePi/archive/master.zip) file.
+### Step 1: Download FruxePi Project
+Clone the FruxePi repository to your Raspberry Pi or download the ZIP file.
 
+#### Clone Github repository
 ```
 git clone https://github.com/fruxefarms/FruxePi.git
 cd FruxePi
 ```
+
+#### Download ZIP
+```
+wget https://github.com/fruxefarms/FruxePi/archive/master.zip
+unzip master.zip
+cd FruxePi-master
+```
+
 ---
 
 ### Step 2: Run Installation Script
@@ -28,7 +37,7 @@ Run `sudo bash install.sh` to quickly install Docker, Docker Compose and some ot
 
 
 #### Manual Installation
-Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation-1).
+Besides the Docker container installation, the FruxePi can also be manually installed and configured by following these [instructions](manual_install.md).
 
 ---
 
