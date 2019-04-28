@@ -69,7 +69,7 @@
                                         <div class="input-group mb-2">
                                             <?php if(!empty($fan_schedule[0]->fan_temp_threshold)): ?>
                                               <?php if ($temperature_format == "F"): ?> 
-                                                <input type="text" name="fan_temp_threshold" class="form-control" value="<?php echo celsiusToFahrenheit($fan_schedule[0]->fan_temp_threshold); ?>">
+                                                <input type="text" name="fan_temp_threshold" class="form-control" value="<?php echo celsiusToFahrenheit(round($fan_schedule[0]->fan_temp_threshold, 0)); ?>">
                                               <?php else: ?>
                                                 <input type="text" name="fan_temp_threshold" class="form-control" value="<?php echo $fan_schedule[0]->fan_temp_threshold; ?>">
                                               <?php endif; ?>
