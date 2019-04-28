@@ -35,12 +35,12 @@ function get_timeago( $ptime )
 }
 
 function celsiusToFahrenheit($degrees) {
-    return (float)$degrees * 1.8 + 32;
+    return round((float)$degrees * 1.8 + 32, 2);
 }
 
 function fahrenheitToCelsius($degrees)
 {
-    return ((float)$degrees - 32) / 1.8;
+    return round(((float)$degrees - 32) / 1.8, 2);
 }
 
 ?>

@@ -32,7 +32,7 @@
               <div class="col-lg-6 col-6 font-size-50 mb-5 white text-center">
                 <!-- Temperature: Convert Celsius or Fahrenheit -->
                 <?php if ($temperature_format == "F"): ?>
-                  <?php echo celsiusToFahrenheit(round($grow_data['temperature'], 0)); ?>&#176;
+                  <?php echo round(celsiusToFahrenheit($grow_data['temperature']), 0); ?>&#176;
                   <span class="font-size-30">F</span>
                 <?php else: ?>
                   <?php echo $grow_data['temperature']; ?>&#176;
