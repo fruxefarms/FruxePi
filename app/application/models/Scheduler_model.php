@@ -13,6 +13,7 @@
 			$this->load->helper(array('form', 'url', 'file'));
 			$this->load->model('Pump_model');
 			$this->load->model('Lights_model');
+			$this->load->model('Fan_model');
         	$this->load->library('ion_auth');
 		}
 
@@ -179,6 +180,49 @@
 					$cronStringArray[1] = $hourON;
 					$cronStringArray[9] = $pumpGPIO;
 					$cronStringArray[10] = $pumpDuration;
+
+					$cronString = implode(" ", $cronStringArray);
+					$output[$i] = $cronString;
+				}
+			}
+
+			// Update CRON File
+			
+			// Clear File
+			file_put_contents('/var/www/html/assets/tmp/crontab.txt', "");
+			
+			// Update temporary text file contents
+			foreach($output as $row) {
+				file_put_contents('/var/www/html/assets/tmp/crontab.txt', $row . PHP_EOL, FILE_APPEND);
+			}
+
+			// Save crontab to file
+			echo exec('crontab /var/www/html/assets/tmp/crontab.txt');
+			
+		}
+
+		/**
+		 * Edit Fan Cronjob
+		 * Edit the fan program and schedule 
+		 * @return void
+		 */
+		public function editFanCRON($fanDuration, $relayType)
+		{
+			$fanGPIO = $this->Fan_model->getGPIO();
+
+			$minuteON = $fanDuration;
+
+			exec('crontab -l', $output);
+
+			for($i = 0; $i < count($output); $i++) {
+				$cronStringArray = explode(" ", $output[$i]);
+				
+				if (array_key_exists(7, $cronStringArray) == True && $cronStringArray[7] == "fan" && $cronStringArray[8] == "-RUN") {
+					$cronStringArray[0] = $minuteON;
+					$cronStringArray[1] = "*";
+					$cronStringArray[9] = $fanGPIO;
+					$cronStringArray[10] = $fanDuration;
+					// $relayType == "high" ? array_push($cronStringArray, "True") : false; 				
 
 					$cronString = implode(" ", $cronStringArray);
 					$output[$i] = $cronString;

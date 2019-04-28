@@ -384,7 +384,13 @@
 			// Redirect if user not logged in, otherwise display the page.
 			if ($this->ion_auth->logged_in())
 			{
-				$this->Fan_model->setFanSchedule();
+				$fan_duration = $this->Fan_model->setFanSchedule();
+
+				// Relay Type
+				$relayType = $this->Fan_model->getRelayType();
+
+				// Edit CRON
+                $this->Scheduler_model->editFanCRON($fan_duration, $relayType);
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			

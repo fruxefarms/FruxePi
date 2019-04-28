@@ -120,7 +120,9 @@
 			}
 
 			$this->db->where("process_id", "fan");
-			return $this->db->update("fan_schedule", $data);
+			$this->db->update("fan_schedule", $data);
+
+			return $this->input->post('fan_duration');
 		}
 
 		/**

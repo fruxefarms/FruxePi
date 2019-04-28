@@ -27,7 +27,13 @@ database="frx_db"
 
 
 # Script Argument Checker
-if len(sys.argv) == 5:
+if len(sys.argv) == 6:
+    action = sys.argv[1]
+    action_option = sys.argv[2]
+    action_GPIO = sys.argv[3]
+    action_interval = sys.argv[4]
+    relay_type = sys.argv[5]
+elif len(sys.argv) == 5:
     action = sys.argv[1]
     action_option = sys.argv[2]
     action_GPIO = sys.argv[3]
@@ -92,8 +98,8 @@ def CLI_menu():
         elif action_option == "-s" and action_GPIO is not None:
             print(getRelayGPIOState(action_GPIO, action_interval))
         # Run Fan Program    
-        elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
-            fanProgram(action_GPIO, action_interval)  
+        elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None and relay_type is not None:
+            fanProgram(action_GPIO, action_interval, relay_type)  
         # Diagnostics    
         elif action_option == "-d" and action_GPIO is not None:
             relayDiagnostics(action_GPIO, True)
@@ -112,8 +118,8 @@ def CLI_menu():
         elif action_option == "-s" and action_GPIO is not None:
             print(getRelayGPIOState(action_GPIO, action_interval))
         # Run Pump Program    
-        elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None:
-            pumpProgram(action_GPIO, action_interval)
+        elif action_option == "-RUN" and action_GPIO is not None and action_interval is not None and relay_type is not None:
+            pumpProgram(action_GPIO, action_interval, relay_type)
         # Diagnostics    
         elif action_option == "-d" and action_GPIO is not None:
             relayDiagnostics(action_GPIO, True)
@@ -350,11 +356,56 @@ def fanOFF(gpioPIN, reverseRelay):
         os.system("gpio -g mode " + str(gpioPIN) + " out")
         os.system("gpio -g write " + str(gpioPIN) + " 0")
 
+# Fetch fan threshold DB data
+def fetchFanThresholdDBData():
+
+    # SQL query
+    sql = "SELECT * FROM fan_schedule"
+
+    # Connect to the database
+    connection = pymysql.connect(host, user, password, database, charset='utf8mb4', cursorclass=pymysql.cursors.DictCursor)
+    
+    try:
+        with connection.cursor() as cursor:
+            # Fetch DB Query
+            cursor.execute(sql)
+            result = cursor.fetchall() 
+    finally:
+        connection.close()
+
+    # Output data
+    data = {}
+    data['temp'] = result[0]['fan_temp_threshold']
+    data['humid'] = result[0]['fan_humid_threshold']
+    
+    return data
+
+
+# Check thresholds
+def checkThresholds(curTemperature, curHumidity):
+
+    # get temperature Thresholds
+    threshold_data = fetchFanThresholdDBData()
+
+    # if curTemp or curHumidity exceed threshold
+    if curTemperature > float(threshold_data['temp']) or curHumidity > float(threshold_data['humid']):
+        return True
+    else: 
+        return False
+
+
+
 # Fan run program
-def fanProgram(gpioPIN, timeInterval):
-    fanON(gpioPIN)
-    time.sleep(int(timeInterval))
-    fanOFF(gpioPIN)
+def fanProgram(gpioPIN, timeInterval, reverseRelay):
+
+    grow_room = getGrowData()
+
+    if checkThresholds(float(grow_room['temperature']), float(grow_room['humidity'])):
+        fanON(gpioPIN, reverseRelay)
+        time.sleep(int(timeInterval))
+        fanOFF(gpioPIN, reverseRelay)
+
+
 
 # Heater ON
 def heaterON(gpioPIN):
@@ -415,10 +466,10 @@ def pumpOFF(gpioPIN, reverseRelay):
         os.system("gpio -g write " + str(gpioPIN) + " 0")
 
 # Pump run program
-def pumpProgram(gpioPIN, timeInterval):
-    pumpON(gpioPIN)
+def pumpProgram(gpioPIN, timeInterval, reverseRelay):
+    pumpON(gpioPIN, reverseRelay)
     time.sleep(int(timeInterval))
-    pumpOFF(gpioPIN)
+    pumpOFF(gpioPIN, reverseRelay)
 
 # Get GPIO state
 def getGPIOState(gpioPIN):
