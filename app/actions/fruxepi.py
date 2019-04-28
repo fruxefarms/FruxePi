@@ -590,7 +590,7 @@ def takePhoto(imgPath, imgName):
     filePath = str(imgPath) + str(imgName)
 
     # Take Photo
-    os.system("raspistill -w 800 -h 600 -o " + filePath)
+    os.system("raspistill -w 1920 -h 1720 -o " + filePath)
 
     return imgName
 
