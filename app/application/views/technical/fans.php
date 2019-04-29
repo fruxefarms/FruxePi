@@ -104,7 +104,7 @@
                                       </div>
                                     </div>
                                     <div class="col-sm-6 pt-1">
-                                          <h5>Duration <small class="text-muted">minutes</small></h5>
+                                          <h5>Run Duration <small class="text-muted">minutes</small></h5>
                                           <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                       <div class="input-group-text"><i class="far fa-clock"></i></div>
