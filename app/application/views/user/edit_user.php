@@ -41,11 +41,11 @@
                         </div>
                         <hr>
 
-                        <p class="card-text">Profile Photo</p>
+                        <!-- <p class="card-text">Profile Photo</p>
                         <div class="form-group">
                               <input type="file" id="profile_photo" name="profile_photo" class="form-control-file">
                         </div>
-                        <hr>
+                        <hr> -->
 
                         <!-- User Groups -->
                         <?php if ($this->ion_auth->is_admin()): ?>
