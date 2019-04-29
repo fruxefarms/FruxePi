@@ -59,6 +59,7 @@
                               </div>
                               <hr>
                               <h3 class="card-title">Scheduling</h3>
+                              <p class="text-muted">The fans will run if the temperature or humidity rises above these values:</p>
                               <?php echo form_open("technical/fans/edit/schedule"); ?>
                               <div class="form-group row">
                                     <!-- Fan Climate Thresholds -->
@@ -103,13 +104,14 @@
                                       </div>
                                     </div>
                                     <div class="col-sm-6 pt-1">
-                                          <h5>Run Duration</h5>
+                                          <h5>Duration <small class="text-muted">minutes</small></h5>
                                           <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                       <div class="input-group-text"><i class="far fa-clock"></i></div>
                                                 </div>
                                                 <input type="text" name="fan_duration" class="form-control" value="<?php echo $fan_schedule[0]->fan_duration; ?>">
                                           </div>
+                                          <small class="form-text text-muted">Fan will run for <?php echo $fan_schedule[0]->fan_duration != "" ? $fan_schedule[0]->fan_duration : " this many " ?> minutes.</small>
                                     </div>
                               </div>
 

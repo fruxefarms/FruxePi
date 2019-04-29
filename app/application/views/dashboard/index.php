@@ -72,6 +72,26 @@
                 <!-- Crop Info -->
                 <div class="card-body">
 
+                  <!-- If no Crops still display camera -->
+                  <?php if (empty($crops)): ?>
+                    <div class="row">
+                      <div class="col-12 text-right">
+                        <?php if ($sensor_state['camera_state'] == "1"): ?>
+                          <!-- Camera View Functions -->
+                          <div class="btn-group btn-group-sm">
+                            <a id="cameraView" href="<?php echo asset_url(); ?>img/crop_bg.jpg" role="button" class="btn btn-outline-secondary image-popup-vertical-fit" data-plugin="magnificPopup">VIEW <i class="fas fa-video pl-1"></i></a>
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item fruxe-grey" href="<?php echo base_url("dashboard/latestPhoto"); ?>">Take Photo <i class="fas fa-camera pl-1"></i></a>
+                            </div>
+                          </div>
+                        <?php endif; ?>
+                      </div>
+                    </div>
+
+                  <!-- Show Crops -->
+                  <?php else: ?>
+
                   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     
                     <!-- Crops Carousel -->
@@ -133,6 +153,7 @@
                     </div>
 
                   </div>
+                  <?php endif; ?>
 
                 </div>
 
