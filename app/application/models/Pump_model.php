@@ -156,6 +156,7 @@
 			// Data
 			$pumpON = $this->input->post('pump_ON'); 
 			$pumpDuration = $this->input->post('pump_duration');
+			$relayType = $this->Pump_model->getRelayType();
 
 			$data = array(
 				"pump_ON" => $pumpON,
@@ -165,7 +166,7 @@
 			$this->db->where("process_id", "pump");
 			$this->db->update("pump_schedule", $data);
 
-			$this->Scheduler_model->editPumpCRON($pumpON, $pumpDuration);
+			$this->Scheduler_model->editPumpCRON($pumpON, $pumpDuration, $relayType);
 		}
 
 		/**

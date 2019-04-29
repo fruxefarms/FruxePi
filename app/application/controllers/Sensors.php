@@ -265,9 +265,12 @@
 				// Change lighting schedule in DB
 				$lightsON = $this->Lights_model->setLightTimerON();
 				$lightsOFF = $this->Lights_model->setLightTimerOFF();
+
+				// Relay Type
+				$relayType = $this->Lights_model->getRelayType();
 				
 				// Edit CRON
-                $this->Scheduler_model->editLightsCRON($lightsON, $lightsOFF);
+                $this->Scheduler_model->editLightsCRON($lightsON, $lightsOFF, $relayType);
 		
 				redirect($_SERVER['HTTP_REFERER']);
 			

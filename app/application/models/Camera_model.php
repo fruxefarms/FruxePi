@@ -6,7 +6,7 @@
 	class Camera_model extends CI_Model
 	{	
 		// Fields
-		private $sensorID = 6;
+		private $sensorID = 7;
 
 		// Constructor
 		public function __construct()

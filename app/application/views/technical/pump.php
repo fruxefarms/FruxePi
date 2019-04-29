@@ -72,13 +72,14 @@
                                           <small class="form-text text-muted">Pump will run each day at the prescribed time.</small>
                                     </div>
                                     <div class="col-sm-6 pt-3">
-                                          <h5>Duration</h5>
+                                          <h5>Duration <small class="text-muted">minutes</small></h5>
                                           <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                       <div class="input-group-text"><i class="far fa-clock"></i></div>
                                                 </div>
                                                 <input type="text" class="form-control" id="pumpDuration" name="pump_duration" value="<?php echo $pump_schedule[0]->pump_duration; ?>">
                                           </div>
+                                          <small class="form-text text-muted">Pump will run for <?php echo $pump_schedule[0]->pump_duration != "" ? $pump_schedule[0]->pump_duration : " this many " ?> minutes.</small>
                                     </div>
                               </div>
 

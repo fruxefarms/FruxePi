@@ -101,13 +101,11 @@
                                 <?php endif; ?>
                                 <?php if ($sensor_state['camera_state'] == "1"): ?>
                                   <!-- Camera View Functions -->
-                                  <div class="btn-group">
-                                    <a id="cameraView" href="<?php echo asset_url(); ?>img/crop_bg.jpg" role="button" class="btn  btn-outline-secondary image-popup-vertical-fit" data-plugin="magnificPopup">VIEW <i class="fas fa-video pl-1"></i></a>
-                                    <button type="button" class="btn  btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
+                                  <div class="btn-group btn-group-sm">
+                                    <a id="cameraView" href="<?php echo asset_url(); ?>img/crop_bg.jpg" role="button" class="btn btn-outline-secondary image-popup-vertical-fit" data-plugin="magnificPopup">VIEW <i class="fas fa-video pl-1"></i></a>
+                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                      <a class="dropdown-item" href="<?php echo base_url("dashboard/latestPhoto"); ?>">Take Photo</a>
+                                      <a class="dropdown-item fruxe-grey" href="<?php echo base_url("dashboard/latestPhoto"); ?>">Take Photo <i class="fas fa-camera pl-1"></i></a>
                                     </div>
                                   </div>
                                 <?php endif; ?>

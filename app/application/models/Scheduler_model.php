@@ -23,7 +23,7 @@
 		 * Edit the lighting schedule 
 		 * @return void
 		 */
-		public function editLightsCRON($lightsON, $lightsOFF)
+		public function editLightsCRON($lightsON, $lightsOFF, $relayType)
 		{
 			// GPIO pin
 			$gpioPIN = $this->Lights_model->getGPIO();
@@ -49,6 +49,8 @@
 					$cronStringArray[0] = $minuteON;
 					$cronStringArray[1] = $hourON;
 					$cronStringArray[9] = $gpioPIN;
+					$relayType == "high" && !array_key_exists(10, $cronStringArray) ? array_push($cronStringArray, "True") : false ;
+					$relayType == "" && array_key_exists(10, $cronStringArray) ? $cronStringArray[10] = "" : false ;
 
 					$cronString = implode(" ", $cronStringArray);
 					$output[$i] = $cronString;
@@ -56,6 +58,8 @@
 					$cronStringArray[0] = $minuteOFF;
 					$cronStringArray[1] = $hourOFF;
 					$cronStringArray[9] = $gpioPIN;
+					$relayType == "high" && !array_key_exists(10, $cronStringArray) ? array_push($cronStringArray, "True") : false ;
+					$relayType == "" && array_key_exists(10, $cronStringArray) ? $cronStringArray[10] = "" : false ;
 
 					$cronString = implode(" ", $cronStringArray);
 					$output[$i] = $cronString;
@@ -162,7 +166,7 @@
 		 * Edit the pump schedule 
 		 * @return void
 		 */
-		public function editPumpCRON($pumpON, $pumpDuration)
+		public function editPumpCRON($pumpON, $pumpDuration, $relayType)
 		{
 			$pumpGPIO = $this->Pump_model->getGPIO();
 			$pumpONArray = explode(":", $pumpON);
@@ -179,7 +183,9 @@
 					$cronStringArray[0] = $minuteON;
 					$cronStringArray[1] = $hourON;
 					$cronStringArray[9] = $pumpGPIO;
-					$cronStringArray[10] = $pumpDuration;
+					$cronStringArray[10] = (int)$pumpDuration * 60;
+					$relayType == "high" && !array_key_exists(11, $cronStringArray) ? array_push($cronStringArray, "True") : false ;
+					$relayType == "" && array_key_exists(11, $cronStringArray) ? $cronStringArray[10] = "" : false ;
 
 					$cronString = implode(" ", $cronStringArray);
 					$output[$i] = $cronString;
