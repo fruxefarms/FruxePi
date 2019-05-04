@@ -10,20 +10,21 @@ echo ""
 # Arguments
 args=$1
 
-# To get the latest package lists
+//# To get the latest package lists
 echo -e "\e[35mGetting Latest Updates...\e[0m"
-{
-   sudo apt-get update
-} &> /dev/null
+# {
+#    sudo apt-get update
+# } &> /dev/null
 
 # Install required packages
 echo -e "\e[35mInstalling required packages..\e[0m"
-{
-sudo apt-get install -y python python-pip
-} &> /dev/null
+# {
+# sudo apt-get install -y python python-pip
+# } &> /dev/null
 
-# Install Docker and Docker Compose
-if [ ! -x "$(command -v docker)" ]; then
+# Install Docker Function
+install_docker()
+{
    echo "Installing docker"
    sudo apt-get -y install \
       apt-transport-https \
@@ -39,8 +40,39 @@ if [ ! -x "$(command -v docker)" ]; then
    echo "deb [arch=armhf] https://download.docker.com/linux/raspbian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
    sudo apt-get update
-   sudo apt-get -y install docker-ce=18.06.2~ce~3-0~raspbian containerd.io
+   sudo apt-get -y install docker-ce containerd.io
+   
+   sudo usermod -a -G docker $USER
+   
    pip install docker-compose
+
+   if [ ! -x "$(command -v docker)" ]; then
+      echo "Docker Successful!"
+   else
+      echo -e "\e[91mDocker install failed! Please try and install Docker manually and try again.\e[0m"
+      exit 1
+   fi
+
+}
+
+# Install Docker and Docker Compose if missing
+if [ ! -x "$(command -v docker)" ]; then
+   echo -e "\e[91mDocker is missing!\e[0m"
+   
+   while true; do
+      read -p "Would you also like to install Docker and Docker-Compose (y/n): "  answer
+
+      if [ $answer == "y" ]; then
+            echo "Install Docker"
+            install_docker
+            break
+      elif [ $answer == "n" ]; then
+            echo "Docker and Docker-Compose are required. Please manually install and run this script again."
+            exit 1
+      else
+            echo "Invalid response!"
+      fi
+   done
 fi
 
 # Create FruxePi Docker containers
