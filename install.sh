@@ -47,7 +47,7 @@ install_docker()
    pip install docker-compose
 
    if [ ! -x "$(command -v docker)" ]; then
-      echo "Docker Successful!"
+      echo "Docker install successful!"
    else
       echo -e "\e[91mDocker install failed! Please try and install Docker manually and try again.\e[0m"
       exit 1
