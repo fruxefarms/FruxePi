@@ -12,15 +12,15 @@ args=$1
 
 //# To get the latest package lists
 echo -e "\e[35mGetting Latest Updates...\e[0m"
-# {
-#    sudo apt-get update
-# } &> /dev/null
+{
+   sudo apt-get update
+} &> /dev/null
 
 # Install required packages
 echo -e "\e[35mInstalling required packages..\e[0m"
-# {
-# sudo apt-get install -y python python-pip
-# } &> /dev/null
+{
+sudo apt-get install -y python python-pip
+} &> /dev/null
 
 # Install Docker Function
 install_docker()
@@ -56,18 +56,17 @@ install_docker()
 }
 
 # Install Docker and Docker Compose if missing
-if [ ! -x "$(command -v docker)" ]; then
+if [  -x "$(command -v docker)" ]; then
    echo -e "\e[91mDocker is missing!\e[0m"
    
    while true; do
       read -p "Would you also like to install Docker and Docker-Compose (y/n): "  answer
 
       if [ $answer == "y" ]; then
-            echo "Install Docker"
             install_docker
             break
       elif [ $answer == "n" ]; then
-            echo "Docker and Docker-Compose are required. Please manually install and run this script again."
+            echo -e "\e[91mDocker and Docker-Compose are required. Please manually install and run this script again.\e[0m"
             exit 1
       else
             echo "Invalid response!"
