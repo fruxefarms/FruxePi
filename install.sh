@@ -7,8 +7,20 @@ echo -e "\e[1mversion:\e[0m \e[37mfrx-pi-v0.3-BETA\e[0m"
 echo -e "\e[1mweb:\e[0m \e[37mdocs.fruxe.co\e[0m"
 echo ""
 
-# Arguments
+# Script Arguments
 args=$1
+
+# Detech RPi model
+detect_rpi_model()
+{
+   if cat /proc/cpuinfo | grep -q '9000c1' || cat /proc/cpuinfo | grep -q '900092' || cat /proc/cpuinfo | grep -q '900093'; then
+      rpi_model="armv6"
+   else
+      rpi_model="armv7"
+   fi
+}
+
+detect_rpi_model
 
 # To get the latest package lists
 echo -e "\e[35mGetting Latest Updates...\e[0m"
@@ -27,6 +39,7 @@ install_docker()
 {
    echo "Installing docker"
    sudo apt-get -y install \
+      libffi-dev \
       apt-transport-https \
       ca-certificates \
       curl \
@@ -40,13 +53,21 @@ install_docker()
    echo "deb [arch=armhf] https://download.docker.com/linux/raspbian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 
    sudo apt-get update
-   sudo apt-get -y install docker-ce containerd.io
+
+   # Install Docker version based on RPi model
+   if [ $rpi_model == "armv6" ]; then
+      # Install RPi ZeroW (armv6 arch)
+      sudo apt-get -y install docker-ce=18.06.2~ce~3-0~raspbian
+   else
+      # Install RPi 3 B/B+ (armv7 arch)
+      sudo apt-get -y install docker-ce
+   fi
    
    sudo usermod -a -G docker $USER
    
    pip install docker-compose
 
-   if [ ! -x "$(command -v docker)" ]; then
+   if [ -x "$(command -v docker)" ]; then
       echo "Docker install successful!"
    else
       echo -e "\e[91mDocker install failed! Please try and install Docker manually and try again.\e[0m"
@@ -55,8 +76,13 @@ install_docker()
 
 }
 
+install_docker_armv6()
+{
+   sudo apt-get -y --allowdowngrade install docker-ce=18.06.2~ce~3-0~raspbian containerd.io
+}
+
 # Install Docker and Docker Compose if missing
-if [  -x "$(command -v docker)" ]; then
+if [ ! -x "$(command -v docker)" ]; then
    echo -e "\e[91mDocker is missing!\e[0m"
    
    while true; do
@@ -91,20 +117,20 @@ build_containers()
       echo "Deploying Raspberry Pi Zero (ARMv6) compatible containers..."
       # Enable Logging
       if [ "$args" == "-log" ]; then
-         build_docker "armv6"   
+         build_docker $rpi_model   
       else
          {
-         build_docker "armv6"
+         build_docker $rpi_model
          } &> /dev/null
       fi
    else
       echo "Deploying Raspberry Pi 3 (ARMv7) compatible containers..."
       # Enable Logging
       if [ "$args" == "-log" ]; then
-         build_docker "armv7"   
+         build_docker $rpi_model   
       else
          {
-         build_docker "armv7"
+         build_docker $rpi_model
          } &> /dev/null
       fi
    fi
