@@ -27,6 +27,7 @@ install_docker()
 {
    echo "Installing docker"
    sudo apt-get -y install \
+      libffi-dev \
       apt-transport-https \
       ca-certificates \
       curl \
@@ -46,7 +47,7 @@ install_docker()
    
    pip install docker-compose
 
-   if [ ! -x "$(command -v docker)" ]; then
+   if [ -x "$(command -v docker)" ]; then
       echo "Docker install successful!"
    else
       echo -e "\e[91mDocker install failed! Please try and install Docker manually and try again.\e[0m"
