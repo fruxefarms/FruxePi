@@ -56,7 +56,7 @@ install_docker()
 }
 
 # Install Docker and Docker Compose if missing
-if [  -x "$(command -v docker)" ]; then
+if [ ! -x "$(command -v docker)" ]; then
    echo -e "\e[91mDocker is missing!\e[0m"
    
    while true; do
