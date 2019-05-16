@@ -10,7 +10,7 @@ echo ""
 # Arguments
 args=$1
 
-//# To get the latest package lists
+# To get the latest package lists
 echo -e "\e[35mGetting Latest Updates...\e[0m"
 {
    sudo apt-get update
