@@ -49,10 +49,10 @@
             <?php if ($sensor_state['lights_state'] == 1): ?>
             <ul class="list-inline font-size-16 white">
               <li class="list-inline-item">
-                <?php if ( $grow_data['light_status'] == 1 ): ?>
+                <?php if ($lights_status == 1 ): ?>
                   <i class="fas fa-sun" aria-hidden="true"></i>
                   <?php echo $grow_data['light_status_message']; ?>
-                <?php elseif ( $grow_data['light_status'] == 0 ): ?>
+                <?php elseif ($lights_status == 0 ): ?>
                   <i class="fas fa-moon" aria-hidden="true"></i>
                   <?php echo $grow_data['light_status_message']; ?>
                 <?php endif; ?>
@@ -176,7 +176,7 @@
                     <div class="tab-pane fade show active p-3" id="nav-status" role="tabpanel" aria-labelledby="nav-status-tab">
                       <div class="row">
                         <div class="col-md-9 col-8 text-left pl-3 pt-1">
-                          <h4>Grow Room</h4>
+                          <h4>Growing Environment</h4>
                         </div>
                         <div class="col-md-3 col-4 settings-dropdown pt-3">
                           
@@ -283,7 +283,11 @@
                         <?php if ($sensor_state['lights_state'] == 1): ?>
                         <div class="roomStats col-6 col-md-2 col-sm-6 text-left p-0">
                           LIGHTS
-                          <span class="font-size-12 medium-grey"><?php echo $grow_data['light_hours']; ?> hrs</span>
+                          <?php if($lights_status == 1): ?>
+                            <i class="fas fa-check-circle light-green mr-2"></i>
+                          <?php elseif($lights_status == 0): ?>
+                            <i class="fas fa-minus-circle light-red mr-2"></i>
+                          <?php endif; ?>
 
                           <div class="font-size-40 medium-grey">
                             <?php if ($lights_status == 1): ?>
@@ -544,7 +548,7 @@
                               <!-- Fan Settings -->
                               <?php if ($sensor_state['fan_state'] == 1): ?>
                               <h4>Fans</h4>
-                              <p class="text-muted">The fans will run if the temperature or humidity rises above these Temperature Thresholds.</p>
+                              <p class="text-muted">The fans will run if the temperature or humidity rises above these temperature thresholds.</p>
                               <div class="form-group row">
                                     
                                     <!-- Fan Climate Thresholds -->
