@@ -2,7 +2,7 @@
 <?php $this->load->view('core/header'); ?>
   
   <!-- Body - Camera Settings -->
-  <body class="pages-bg">
+  <body>
 
     <!-- Page Sidebar Nav -->
     <?php $this->load->view('core/nav'); ?>

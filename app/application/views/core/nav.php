@@ -43,5 +43,10 @@
                 <li class="nav-item-sub"><a href="<?php echo base_url("user/edit/" . $user_info[0]->id); ?>" title="User Settings">User</a></li>
             </ul>
         </li>
+
+        <!-- Logout -->
+        <li class="nav-item">
+            <a href="<?php echo base_url("logout"); ?>" title="Logout">Logout</a>
+        </li>
     </ul>
 </div>

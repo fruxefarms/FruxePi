@@ -49,10 +49,10 @@
             <?php if ($sensor_state['lights_state'] == 1): ?>
             <ul class="list-inline font-size-16 white">
               <li class="list-inline-item">
-                <?php if ( $grow_data['light_status'] == 1 ): ?>
+                <?php if ($lights_status == 1 ): ?>
                   <i class="fas fa-sun" aria-hidden="true"></i>
                   <?php echo $grow_data['light_status_message']; ?>
-                <?php elseif ( $grow_data['light_status'] == 0 ): ?>
+                <?php elseif ($lights_status == 0 ): ?>
                   <i class="fas fa-moon" aria-hidden="true"></i>
                   <?php echo $grow_data['light_status_message']; ?>
                 <?php endif; ?>
@@ -71,6 +71,26 @@
                 
                 <!-- Crop Info -->
                 <div class="card-body">
+
+                  <!-- If no Crops still display camera -->
+                  <?php if (empty($crops)): ?>
+                    <div class="row">
+                      <div class="col-12 text-right">
+                        <?php if ($sensor_state['camera_state'] == "1"): ?>
+                          <!-- Camera View Functions -->
+                          <div class="btn-group btn-group-sm">
+                            <a id="cameraView" href="<?php echo asset_url(); ?>img/crop_bg.jpg" role="button" class="btn btn-outline-secondary image-popup-vertical-fit" data-plugin="magnificPopup">VIEW <i class="fas fa-video pl-1"></i></a>
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item fruxe-grey" href="<?php echo base_url("dashboard/latestPhoto"); ?>">Take Photo <i class="fas fa-camera pl-1"></i></a>
+                            </div>
+                          </div>
+                        <?php endif; ?>
+                      </div>
+                    </div>
+
+                  <!-- Show Crops -->
+                  <?php else: ?>
 
                   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     
@@ -133,6 +153,7 @@
                     </div>
 
                   </div>
+                  <?php endif; ?>
 
                 </div>
 
@@ -155,7 +176,7 @@
                     <div class="tab-pane fade show active p-3" id="nav-status" role="tabpanel" aria-labelledby="nav-status-tab">
                       <div class="row">
                         <div class="col-md-9 col-8 text-left pl-3 pt-1">
-                          <h4>Grow Room</h4>
+                          <h4>Growing Environment</h4>
                         </div>
                         <div class="col-md-3 col-4 settings-dropdown pt-3">
                           
@@ -262,7 +283,11 @@
                         <?php if ($sensor_state['lights_state'] == 1): ?>
                         <div class="roomStats col-6 col-md-2 col-sm-6 text-left p-0">
                           LIGHTS
-                          <span class="font-size-12 medium-grey"><?php echo $grow_data['light_hours']; ?> hrs</span>
+                          <?php if($lights_status == 1): ?>
+                            <i class="fas fa-check-circle light-green mr-2"></i>
+                          <?php elseif($lights_status == 0): ?>
+                            <i class="fas fa-minus-circle light-red mr-2"></i>
+                          <?php endif; ?>
 
                           <div class="font-size-40 medium-grey">
                             <?php if ($lights_status == 1): ?>
@@ -523,7 +548,7 @@
                               <!-- Fan Settings -->
                               <?php if ($sensor_state['fan_state'] == 1): ?>
                               <h4>Fans</h4>
-                              <p class="text-muted">The fans will run if the temperature or humidity rises above these values:</p>
+                              <p class="text-muted">The fans will run if the temperature or humidity rises above these temperature thresholds.</p>
                               <div class="form-group row">
                                     
                                     <!-- Fan Climate Thresholds -->
@@ -569,13 +594,15 @@
                                     </div>
 
                                     <div class="col-sm-6 pt-1">
-                                          <h5>Run Duration</h5>
+                                          <h5>Run Duration <small class="text-muted">minutes</small></h5>
                                           <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                       <div class="input-group-text"><i class="far fa-clock"></i></div>
                                                 </div>
                                                 <input type="text" name="fan_duration" class="form-control" value="<?php echo $fan_schedule[0]->fan_duration; ?>">
                                           </div>
+                                          <small class="form-text text-muted">Fan will run for <?php echo $fan_schedule[0]->fan_duration != "" ? $fan_schedule[0]->fan_duration : " this many " ?> minutes.</small>
+
                                     </div>
                               </div>
                               <hr>
@@ -596,13 +623,14 @@
                                           <small class="form-text text-muted">Pump will run each day at the prescribed time.</small>
                                     </div>
                                     <div class="col-sm-6 pt-1">
-                                          <h5>Run Duration</h5>
+                                          <h5>Run Duration <small class="text-muted">minutes</small></h5>
                                           <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                       <div class="input-group-text"><i class="far fa-clock"></i></div>
                                                 </div>
                                                 <input type="text" class="form-control" id="pumpDuration" name="pump_duration" value="<?php echo $pump_schedule[0]->pump_duration; ?>">
                                           </div>
+                                          <small class="form-text text-muted">Pump will run for <?php echo $pump_schedule[0]->pump_duration != "" ? $pump_schedule[0]->pump_duration : " this many " ?> minutes.</small>
                                     </div>
                               </div>
                               <hr>

@@ -120,8 +120,17 @@ sudo python -m pip install --upgrade pip setuptools wheel
 Install the following packages and modules from the command line using `pip`:
 
 ```
-sudo pip install Adafruit_DHT pymysql pillow
+sudo pip install pymysql pillow
 ```
+
+#### Install Adafruit DHT library
+```
+sudo apt-get install build-essential python-dev
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+cd Adafruit_Python_DHT/
+python setup.py install
+```
+
 #### Installing WiringPi
 Install WiringPi to your `home/` directory or preferred destination.
 ```
@@ -141,7 +150,7 @@ Once the application has been installed please check that the following settings
 Ensure that these database credentials match your MYSQL user authorization. 
 
 **Codeigniter Config**
-</br>Open the Codeigniter `database.php` config file in the `/html/application/config/` folder:
+</br>Open the Codeigniter `database.php` config file in the `/html/app/application/config/` folder:
 
 ```
 cd /var/www/html/application/config
@@ -158,7 +167,7 @@ Make sure that the following fields are set properly with your MYSQL database cr
 'database' => 'frx_db',
 ```
 **FruxePi CLI Python Script**
-</br>Open the FruxePi CLI Python file `fruxepi.py` in the `/html/actions/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
+</br>Open the FruxePi CLI Python file `fruxepi.py` in the `/html/app/actions/` folder and make sure that the following fields are set properly with your MYSQL database credentials.
 
 ```
 host = "localhost"

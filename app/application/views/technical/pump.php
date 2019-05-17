@@ -72,7 +72,7 @@
                                           <small class="form-text text-muted">Pump will run each day at the prescribed time.</small>
                                     </div>
                                     <div class="col-sm-6 pt-3">
-                                          <h5>Duration <small class="text-muted">minutes</small></h5>
+                                          <h5>Run Duration <small class="text-muted">minutes</small></h5>
                                           <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                       <div class="input-group-text"><i class="far fa-clock"></i></div>
