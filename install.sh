@@ -58,27 +58,25 @@ install_docker()
    if [ $rpi_model == "armv6" ]; then
       # Install RPi ZeroW (armv6 arch)
       sudo apt-get -y install docker-ce=18.06.2~ce~3-0~raspbian
+      sudo usermod -a -G docker $USER
+      sudo pip install docker-compose
+      sudo chmod +x /usr/local/bin/docker-compose
    else
       # Install RPi 3 B/B+ (armv7 arch)
       sudo apt-get -y install docker-ce
+      sudo usermod -a -G docker $USER
+      sudo pip install docker-compose
    fi
    
-   sudo usermod -a -G docker $USER
-   
-   pip install docker-compose
 
    if [ -x "$(command -v docker)" ]; then
       echo "Docker install successful!"
+      sudo systemctl restart docker
    else
       echo -e "\e[91mDocker install failed! Please try and install Docker manually and try again.\e[0m"
       exit 1
    fi
 
-}
-
-install_docker_armv6()
-{
-   sudo apt-get -y --allowdowngrade install docker-ce=18.06.2~ce~3-0~raspbian containerd.io
 }
 
 # Install Docker and Docker Compose if missing
