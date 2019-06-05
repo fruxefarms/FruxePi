@@ -86,6 +86,7 @@
                         </div>
 
                         <?php echo form_hidden('id', $user->id);?>
+                        <?php echo form_hidden($csrf); ?>
                         
                         <!-- Buttons -->
                         <button type="submit" class="btn btn-activity"><i class="far fa-save"></i> Save Settings</button>
