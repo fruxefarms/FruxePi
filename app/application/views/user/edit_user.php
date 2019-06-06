@@ -95,6 +95,27 @@
 
                         <?php echo form_close();?>
 
+                        <!-- Confirm Delete Modal -->
+                        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header text-light" style="background-color: red;">
+                                          <h5 class="modal-title" id="exampleModalLabel">Confirm Account Deletion</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                          </button>
+                                    </div>
+                                    <div class="modal-body">
+                                          Are you sure you want to delete the user <span class="text-capitalize font-weight-bold"><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?> <?php echo htmlspecialchars($user->last_name,ENT_QUOTES,'UTF-8');?></span>?
+                                    </div>
+                                    <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                          <a href="<?php echo base_url("user/delete/"); ?><?php echo $user->id; ?>" class="btn btn-danger">Delete</a>
+                                    </div>
+                                    </div>
+                              </div>
+                        </div>
+
                   </div>
               <div class="card-footer text-muted">
                 <!-- <em>Last Updated: </em>2 days ago -->

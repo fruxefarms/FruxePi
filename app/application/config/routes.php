@@ -60,6 +60,7 @@ $route['logout'] = 'auth/logout';
 // Users
 $route['users'] = 'auth/index';
 $route['user/edit/(:num)'] = 'auth/edit_user/$1';
+$route['user/delete/(:num)'] = 'auth/delete_user/$1';
 $route['reset'] = 'dashboard/reset';
 
 // Dashboard
