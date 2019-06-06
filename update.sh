@@ -22,6 +22,19 @@ detect_rpi_model()
 
 detect_rpi_model
 
+# Check if git installed function
+check_for_git() {
+   echo "Checking for Git installation..."
+   git --version
+   GIT_IS_AVAILABLE=$?
+ 
+   if [ ! $GIT_IS_AVAILABLE -eq 0 ]; then
+         echo "Installing Git"
+         sudo apt-get install git
+   fi
+}
+
+
 # Build Docker function
 build_docker()
 {
@@ -94,6 +107,7 @@ run_update() {
     echo -e "\e[35mRunning update...\e[0m"
 
     # Fetch updates
+    check_for_git
     sudo git fetch --all
     git reset --hard origin/master
 
@@ -114,3 +128,4 @@ fi
 
 # Run normal update]
 run_update
+
