@@ -75,7 +75,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <a href="<?php echo base_url("auth/delete_user/"); ?><?php echo $user->id; ?>" class="btn btn-danger">Delete</a>
+                                <a href="<?php echo base_url("user/delete/"); ?><?php echo $user->id; ?>" class="btn btn-danger">Delete</a>
                             </div>
                         </div>
                     </div>
