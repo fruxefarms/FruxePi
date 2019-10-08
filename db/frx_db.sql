@@ -15,13 +15,13 @@ CREATE TABLE activity (
 );
 
 -- TEST DATA: activity
-INSERT INTO activity
-    (cropID, date_time, activity_type, msg) 
-VALUES
-    ('FRX-CR0001', '2019-03-20 11:11:00','Trimming','Cleared yellow leaves'),
-    ('FRX-CR0001', '2019-03-20 20:11:00','Pest Control','Watch for pests'),
-    ('FRX-CR0001', '2019-03-20 20:11:00','Notes','Transplanted some plants'),
-    ('FRX-CR0001', '2019-03-20 20:11:00','Spraying','Sprayed plants with water');
+-- INSERT INTO activity
+--     (cropID, date_time, activity_type, msg) 
+-- VALUES
+--     ('FRX-CR0001', '2019-03-20 11:11:00','Trimming','Cleared yellow leaves'),
+--     ('FRX-CR0001', '2019-03-20 20:11:00','Pest Control','Watch for pests'),
+--     ('FRX-CR0001', '2019-03-20 20:11:00','Notes','Transplanted some plants'),
+--     ('FRX-CR0001', '2019-03-20 20:11:00','Spraying','Sprayed plants with water');
 
 
 -- TABLE: climate_threshold
