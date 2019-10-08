@@ -4,12 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [frx-pi-v0.4-BETA] - XXXX-MM-DD
+## [frx-pi-v0.4-BETA] - 2019-10-08
 PRE-RELEASE: Initial BETA release of open prototype for public testing.
 
 ### Improvements
  - Continued work and improvements to installation and upgrade bash script.
- - Added robots.txt file to stop bot indexing.
+ - Added `robots.txt` file to stop bot indexing.
  - As always, more documentation!
 
 ### Fixes
