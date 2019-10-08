@@ -23,8 +23,7 @@ install:
 before_script:
   - node --version
   - npm --version
-  - node_modules/.bin/newman --version
   - docker ps
 
 script:
-  - curl localhost:8080/climate/
+  - curl localhost:8080/login/

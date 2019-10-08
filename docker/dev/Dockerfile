@@ -1,5 +1,5 @@
 # FRXPI Dockerfile
-FROM debian:jessie
+FROM balenalib/raspberrypi3-python:3.6-jessie-build
 
 LABEL maintainer="dev@fruxe.co"
 

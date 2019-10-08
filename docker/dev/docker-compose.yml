@@ -3,7 +3,7 @@ version: '2'
 services:
   db:
    container_name: frxpi-MYSQL
-   image: mysql:5.7.22
+   image: mysql:5.7
    restart: always
    environment:
      MYSQL_ROOT_PASSWORD: fruxefarms
