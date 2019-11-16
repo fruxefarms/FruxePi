@@ -1,0 +1,19 @@
+version: '3'
+  services:
+    frx-api:
+      container_name: frx-api
+      image: fruxefarms/frx-api:latest
+      privileged: true
+      restart: always
+      devices:
+        - /dev/gpiomem:/dev/gpiomem
+        - /dev/vchiq:/dev/vchiq
+        - /dev/vcsm:/dev/vcsm
+      ports:
+        - '8080:80/tcp'
+    frx-dashboard: 
+      container_name: frx-dashboard
+      image: fruxefarms/frx-dashboard:latest
+      restart: always
+      ports: 
+        - '4200:4200'

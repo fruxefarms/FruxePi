@@ -1,4 +1,4 @@
-# FruxePi OPEN-PROTOTYPE v0.3-BETA
+# FruxePi OPEN-PROTOTYPE v0.5-BETA
 A browser-based dashboard to monitor and automate indoor agriculture using the Raspberry Pi.
 
 ![FruxePi Dashboard](https://github.com/fruxefarms/FruxePi/blob/master/docs/img/screenshot-frame.png?raw=true)
@@ -85,7 +85,7 @@ Run `sudo bash install.sh` to quickly install the application as well as Docker,
 ![FruxePi Install](docs/img/fruxepi_install.gif?raw=true)
 
 
-#### Manual Installation
+#### Developers Installation
 Besides the Docker installation, the FruxePi can also be manually installed and configured by following these [instructions](https://docs.fruxe.co/#/install?id=manual-installation-1). Good luck! 
 
 ---
@@ -132,7 +132,7 @@ This project was built with the assistance of the following libraries and tools:
 
 ## Version 
 
-### frx-pi-v0.3-BETA
+### frx-pi-v0.5-BETA
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/fruxefarms/FruxePi/tags). 
 
 ---
